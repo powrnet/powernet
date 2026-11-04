@@ -3,96 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET - Earn Online in Kenya</title>
+<title>POWRNET - Dashboard</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:white;padding:15px}
-.header{text-align:center;padding:15px 0}
-.header h1{font-size:32px;color:#22c55e}
-.header p{color:#cbd5e1;margin-top:5px;font-size:14px}
-.joinbtn{display:block;background:#facc15;color:#000;text-align:center;padding:14px;border-radius:10px;font-weight:bold;text-decoration:none;margin:12px 0;font-size:16px}
-.social{display:flex;gap:10px;justify-content:center;margin:10px 0}
-.social a{flex:1;text-align:center;padding:12px;border-radius:10px;text-decoration:none;color:white;font-weight:bold;font-size:14px}
-.wa{background:#25D366}.tk{background:#333;color:#aaa}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.card{background:#1e293b;border-radius:15px;padding:15px;text-align:center}
-.card h3{font-size:16px;margin:8px 0}
-.card p{font-size:12px;color:#94a3b8;line-height:1.4}
-.card a{display:block;margin-top:10px;background:#22c55e;color:#000;padding:10px;border-radius:8px;text-decoration:none;font-weight:bold}
-.card.coming a{background:#475569;color:white}
-.badge{background:#facc15;color:#000;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:bold}
-.footer{text-align:center;margin:20px 0;color:#64748b;font-size:12px}
-.page{display:none}
-.page.active{display:block}
-input,select{width:100%;padding:14px;margin:8px 0;border-radius:10px;border:none;font-size:16px}
-.bigbtn{width:100%;padding:15px;background:#25D366;color:white;border:none;border-radius:10px;font-weight:bold;font-size:17px;cursor:pointer}
-.job{background:#1e293b;padding:15px;border-radius:15px;margin:12px 0}
-.job h3{font-size:16px}.job p{font-size:13px;color:#94a3b8;margin:6px 0}
-.job a{display:block;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:8px}
+body{background:#0f172a;color:white;padding:15px;padding-bottom:90px}
+.page{display:none}.page.active{display:block}
+.center{text-align:center}
+h1{font-size:32px;color:#22c55e}
+.sub{color:#cbd5e1;font-size:14px;margin:8px 0 15px;line-height:1.5}
+input,select,textarea{width:100%;padding:14px;margin:7px 0;border-radius:12px;border:none;font-size:15px;background:white;color:#000}
+textarea{height:80px}
+.btn{width:100%;padding:15px;border:none;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer;margin:5px 0}
+.green{background:#25D366;color:white}.yellow{background:#facc15;color:#000}.blue{background:#38bdf8;color:#000}.red{background:#ef4444;color:white}
+.card{background:#1e293b;border-radius:15px;padding:15px;margin:11px 0;border-left:4px solid #22c55e}
+.card h3{font-size:15px}.card p{font-size:13px;color:#94a3b8;margin:6px 0;line-height:1.4}
+.card a{display:block;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:9px;text-decoration:none;font-weight:bold;margin-top:9px}
 .pay{color:#facc15!important;font-weight:bold}
-.back{color:#facc15;display:block;text-align:center;margin:12px;text-decoration:none}
-.nav{display:flex;gap:8px;margin:10px 0}
-.nav button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:bold;cursor:pointer}
+.balance{background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:15px;padding:18px;text-align:center;margin:12px 0}
+.balance b{font-size:32px;display:block}
+.tabs{position:fixed;bottom:0;left:0;right:0;background:#1e293b;display:flex;padding:10px;gap:8px;z-index:99}
+.tabs button{flex:1;padding:13px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;background:#334155;color:white}
+.tabs button.on{background:#22c55e;color:#000}
+.update{background:#1e293b;border-radius:12px;padding:13px;margin:10px 0;border-left:4px solid #facc15}
+.update small{color:#94a3b8}.update p{font-size:14px;margin:5px 0}
+.link{color:#facc15;display:block;text-align:center;margin:10px;text-decoration:none}
+.filter{display:flex;gap:7px;overflow-x:auto;padding:5px 0}
+.filter button{white-space:nowrap;padding:9px 14px;border-radius:20px;border:none;background:#334155;color:white;font-weight:bold;cursor:pointer}
+.filter button.on{background:#facc15;color:#000}
 </style>
 </head>
 <body>
 
-<!-- TOP NAV -->
-<div class="nav">
-<button onclick="show('home')" style="background:#22c55e">🏠 Home</button>
-<button onclick="show('signup')" style="background:#facc15">🚀 Join Free</button>
-<button onclick="show('jobs')" style="background:#38bdf8">💼 Jobs</button>
-</div>
-
-<!-- HOME PAGE -->
-<div id="home" class="page active">
-<div class="header"><h1>⚡ POWRNET</h1><p>Earn Online in Kenya<br>No Experience Needed</p></div>
-<a class="joinbtn" onclick="show('signup')">🚀 JOIN FREE - Sign Up Now</a>
-<div class="social">
-<a class="wa" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20to%20earn" target="_blank">💬 WhatsApp Me</a>
-<a class="tk" href="#" onclick="return false;">🎵 TikTok - Soon</a>
-</div>
-<p style="text-align:center;font-size:13px;color:#facc15">👇 Pick One & Start Today - All Free To Join</p>
-<div class="grid">
-<div class="card coming"><span class="badge">COMING SOON</span><h3>💼 Fiverr Freelancing</h3><p>Writing, Design, Video Editing. Earn $5 - $100 per job.</p><a href="#" onclick="show('signup');return false;">Join Waitlist</a></div>
-<div class="card"><span class="badge">EASY • KSH 500/DAY</span><h3>📝 Remotasks</h3><p>Do small tasks online. No skill needed.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
-<div class="card"><span class="badge">PASSIVE</span><h3>📶 Pawns.app</h3><p>Earn by sharing your internet. Works in Kenya.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
-<div class="card"><span class="badge">SURVEYS</span><h3>📊 Attapoll</h3><p>Answer surveys, get paid to M-Pesa via PayPal.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
-<div class="card"><span class="badge">BEGINNER</span><h3>🎮 Swagbucks</h3><p>Watch videos, play games, earn points.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
-<div class="card"><span class="badge">NEW</span><h3>✍️ Writing Jobs</h3><p>Get paid to write articles for blogs.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
-</div>
-<div class="footer">POWRNET © 2026 • Made in Kenya 🇰🇪<br>WhatsApp: 0112072729 for daily new jobs!</div>
-</div>
-
-<!-- SIGNUP PAGE -->
-<div id="signup" class="page">
-<h1 style="text-align:center;color:#22c55e">⚡ JOIN POWRNET</h1>
-<p style="text-align:center;color:#cbd5e1;margin:10px 0">Free To Join • Get Daily Jobs On WhatsApp</p>
+<!-- SIGNUP -->
+<div id="signup" class="page active">
+<div class="center" style="padding:25px 0 10px"><h1>⚡ POWRNET</h1><p class="sub">Earn Online in Kenya<br>No Experience Needed<br><b style="color:#facc15">Join Free - Get Daily Jobs</b></p></div>
 <input id="name" placeholder="Your Full Name">
 <input id="phone" placeholder="Your WhatsApp Number e.g 0112072729">
-<select id="skill"><option>What can you do?</option><option>📝 Easy Tasks - No Skill</option><option>✍️ Writing</option><option>📊 Surveys</option><option>🎨 Design / Video</option></select>
+<select id="skill"><option>What can you do?</option><option>Easy Tasks - No Skill</option><option>Writing</option><option>Surveys</option><option>Design / Video</option></select>
 <select id="pay"><option>How to get paid?</option><option>M-Pesa</option><option>PayPal</option></select>
-<button class="bigbtn" onclick="join()">✅ JOIN FREE VIA WHATSAPP →</button>
-<a class="back" onclick="show('jobs')">Skip - See Jobs First →</a>
-<a class="back" onclick="show('home')">← Back Home</a>
+<button class="btn green" onclick="goDashboard()">✅ CREATE MY ACCOUNT →</button>
+<p class="center" style="font-size:12px;color:#94a3b8;margin-top:10px">Free to join • Daily jobs on WhatsApp</p>
 </div>
 
-<!-- JOBS PAGE -->
-<div id="jobs" class="page">
-<h1 style="text-align:center;color:#22c55e">⚡ POWRNET JOBS</h1>
-<p style="text-align:center;color:#cbd5e1;font-size:13px">New Jobs Daily • Tap Apply To Get Job</p>
-<div class="job"><h3>📝 Job #1: Do 20 Remotasks</h3><p>Easy tasks, no skill. Use your phone.</p><p class="pay">Pay: KSH 500 / Day</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%231%20Remotasks" target="_blank">Apply Now →</a></div>
-<div class="job"><h3>📊 Job #2: Answer 10 Surveys</h3><p>Attapoll surveys, 5 mins each.</p><p class="pay">Pay: KSH 150 - 300</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%232%20Surveys" target="_blank">Apply Now →</a></div>
-<div class="job"><h3>✍️ Job #3: Write 300 Words Article</h3><p>Write about Nairobi / Football / Phones.</p><p class="pay">Pay: KSH 250 Per Article</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%233%20Writing" target="_blank">Apply Now →</a></div>
-<div class="job"><h3>📶 Job #4: Install Pawns.app</h3><p>Share internet, earn passive.</p><p class="pay">Pay: Passive - Daily</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%234%20Pawns" target="_blank">Apply Now →</a></div>
-<div class="job"><h3>🎮 Job #5: Play Games on Swagbucks</h3><p>Play + watch videos.</p><p class="pay">Pay: KSH 200 / Day</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%235%20Swagbucks" target="_blank">Apply Now →</a></div>
-<a class="back" onclick="show('home')">← Back Home</a>
-<a class="back" onclick="show('signup')">🚀 Join Free First</a>
+<!-- DASHBOARD WRAP -->
+<div id="dashWrap" style="display:none">
+<div class="center"><h1>⚡ POWRNET</h1><p style="color:#cbd5e1;font-size:14px">Welcome, <b id="showName" style="color:#facc15">Friend</b> 👋 <a href="#" onclick="logout()" style="color:#94a3b8;font-size:12px">Log out</a></p></div>
+<div class="balance"><small>💰 YOUR BALANCE</small><b>KSH <span id="bal">0</span></b><small>Complete jobs to earn • Bonus KSH 50 on signup</small></div>
+
+<!-- CREATE TAB -->
+<div id="tab-create" class="page">
+<h2>➕ CREATE NEW JOB</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">You (Admin) create a job here. It will appear in JOBS + UPDATES instantly.</p>
+<input id="cTitle" placeholder="Job Title e.g Write Article About Nairobi">
+<input id="cPay" placeholder="Pay e.g KSH 250">
+<select id="cCat"><option>📝 Easy Tasks</option><option>✍️ Writing</option><option>📊 Surveys</option><option>🎨 Design</option><option>📶 Passive</option><option>🎮 Games / Apps</option><option>📱 Social Media</option></select>
+<textarea id="cDesc" placeholder="Job Description - What should worker do?"></textarea>
+<input id="cLink" placeholder="Apply Link (WhatsApp or Website) - Leave empty for WhatsApp">
+<button class="btn green" onclick="createJob()">✅ PUBLISH JOB NOW →</button>
+<button class="btn yellow" onclick="showTab('jobs')">See All Jobs →</button>
+<p style="font-size:12px;color:#94a3b8;text-align:center;margin-top:8px">Tip: After you publish, send WhatsApp broadcast to all members: "New Job Posted!"</p>
+</div>
+
+<!-- JOBS TAB -->
+<div id="tab-jobs" class="page active">
+<h2>💼 ALL JOBS (<span id="jobCount">0</span>)</h2>
+<div class="filter">
+<button class="on" onclick="filterJobs('All',this)">All</button>
+<button onclick="filterJobs('Writing',this)">✍️ Writing</button>
+<button onclick="filterJobs('Tasks',this)">📝 Tasks</button>
+<button onclick="filterJobs('Surveys',this)">📊 Surveys</button>
+<button onclick="filterJobs('Passive',this)">📶 Passive</button>
+<button onclick="filterJobs('Games',this)">🎮 Games</button>
+</div>
+<div id="jobsList"></div>
+</div>
+
+<!-- UPDATES TAB -->
+<div id="tab-updates" class="page">
+<h2>📢 UPDATES</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Post updates here. Members see them instantly.</p>
+<input id="uTitle" placeholder="Update Title e.g NEW: 10 Writing Jobs Today!">
+<textarea id="uText" placeholder="Write your update... e.g Guys, new Remotasks jobs are live. Apply fast, only 20 slots!"></textarea>
+<button class="btn blue" onclick="postUpdate()">📢 POST UPDATE →</button>
+<button class="btn red" onclick="clearAll()" style="font-size:13px">🗑️ Clear My Custom Jobs / Updates</button>
+<div id="updatesList"></div>
+</div>
+
+</div>
+
+<!-- BOTTOM TABS -->
+<div class="tabs" id="bottomTabs" style="display:none">
+<button id="btn-create" onclick="showTab('create')">➕ CREATE</button>
+<button id="btn-jobs" class="on" onclick="showTab('jobs')">💼 JOBS</button>
+<button id="btn-updates" onclick="showTab('updates')">📢 UPDATES</button>
 </div>
 
 <script>
-function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
-function join(){let n=document.getElementById('name').value;let p=document.getElementById('phone').value;let s=document.getElementById('skill').value;let pay=document.getElementById('pay').value;if(!n||!p){alert('Please enter Name + WhatsApp');return;}let msg="Hi POWRNET! I want to JOIN%0AName: "+n+"%0APhone: "+p+"%0ASkill: "+s+"%0APayment: "+pay;window.open("https://wa.me/254112072729?text="+msg,"_blank");}
+// --- DEFAULT 20 JOBS ---
+let defaultJobs=[
+{t:"Do 20 Remotasks",p:"KSH 500 / Day",c:"Tasks",d:"Easy tasks on your phone. Label images, check data. No skill needed."},
+{t:"Write 300 Words Article",p:"KSH 250 / Article",c:"Writing",d:"Write about Nairobi, Football, Phones. 300 words, simple English."},
+{t:"Write 10 Product Descriptions",p:"KSH 500",c:"Writing",d:"Write short descriptions for Jumia-style products."},
+{t:"Write 5 Blog Posts - Health",p:"KSH 1,250",c:"Writing",d:"Health & fitness blogs, 500 words each."},
+{t:"Answer 10 Attapoll Surveys",p:"KSH 150 - 300",c:"Surveys",d:"5 mins each survey. Paid via PayPal to M-Pesa."},
+{t:"Answer Swagbucks Surveys",p:"KSH 200 / Day",c:"Surveys",d:"Daily surveys + watch videos."},
+{t:"Install Pawns.app - Passive",p:"KSH 300 / Month Passive",c:"Passive",d:"Install app, share internet, earn daily even while sleeping."},
+{t:"Install Honeygain",p:"KSH 250 / Month Passive",c:"Passive",d:"Similar to Pawns, earn by sharing internet."},
+{t:"Play Games on Swagbucks",p:"KSH 200 / Day",c:"Games",d:"Play games, reach level 5, get paid."},
+{t:"Test New App - Give Feedback",p:"KSH 300",c:"Tasks",d:"Download app, use 10 mins, screenshot + review."},
+{t:"Transcribe 10 Min Audio",p:"KSH 400",c:"Writing",d:"Listen and type what you hear. English / Swahili."},
+{t:"Translate English to Swahili",p:"KSH 350 / Page",c:"Writing",d:"Translate short articles."},
+{t:"Design Simple Logo on Canva",p:"KSH 500 / Logo",c:"Design",d:"Use Canva free. Make logo for small business."},
+{t:"Edit 1 TikTok Video",p:"KSH 300 / Video",c:"Design",d:"Edit with CapCut, add captions + music."},
+{t:"Manage Instagram Page - 1 Week",p:"KSH 1,000",c:"Social",d:"Post 1x daily, reply comments."},
+{t:"Like / Follow / Comment Job",p:"KSH 50 - 100",c:"Social",d:"Follow pages, like posts, screenshot proof."},
+{t:"Data Entry - Copy 50 Names",p:"KSH 350",c:"Tasks",d:"Copy names from PDF to Google Sheet."},
+{t:"Virtual Assistant - Reply WhatsApp",p:"KSH 800 / Day",c:"Tasks",d:"Reply customers for a shop, 9am-5pm."},
+{t:"Sell Digital Products",p:"KSH 500 Commission",c:"Tasks",d:"Share link, earn per sale."},
+{t:"Refer Friends to POWRNET",p:"KSH 50 / Friend",c:"Tasks",d:"Invite friend to join POWRNET, earn when they join."}
+];
+let defaultUpdates=[
+{title:"🎉 WELCOME TO POWRNET!",text:"New members get KSH 50 bonus on first job. Apply to any job below to start!",time:"Today"},
+{title:"🔥 20 JOBS LIVE NOW",text:"We just added 20 jobs! Writing, Surveys, Tasks, Passive. Apply fast - slots limited.",time:"Today"},
+{title:"💸 PAYMENT DAY: FRIDAY",text:"All completed jobs paid every Friday via M-Pesa. Send proof on WhatsApp 0112072729",time:"Pinned"}
+];
+
+function getJobs(){let s=localStorage.getItem('powr_jobs');return s?JSON.parse(s):defaultJobs;}
+function saveJobs(j){localStorage.setItem('powr_jobs',JSON.stringify(j));}
+function getUpdates(){let s=localStorage.getItem('powr_updates');return s?JSON.parse(s):defaultUpdates;}
+function saveUpdates(u){localStorage.setItem('powr_updates',JSON.stringify(u));}
+
+let currentFilter='All';
+function renderJobs(){
+let jobs=getJobs();
+let filtered=currentFilter==='All'?jobs:jobs.filter(j=>j.c.includes(currentFilter)|| (currentFilter==='Tasks'&&j.c==='Tasks')||(currentFilter==='Social'&&j.c==='Social') );
+document.getElementById('jobCount').innerText=jobs.length;
+let html='';
+jobs.forEach((j,i)=>{
+let show = currentFilter==='All' || j.c.toLowerCase().includes(currentFilter.toLowerCase()) || (currentFilter==='Tasks'&&j.c==='Tasks');
+if(!show && currentFilter!=='All') return;
+let icon=j.c==='Writing'?'✍️':j.c==='Surveys'?'📊':j.c==='Passive'?'📶':j.c==='Games'?'🎮':j.c==='Design'?'🎨':j.c==='Social'?'📱':'📝';
+html+=`<div class="card"><h3>${icon} ${j.t}</h3><p>${j.d}</p><p class="pay">Pay: ${j.p} • ${j.c}</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job:%20${encodeURIComponent(j.t)}" target="_blank">Apply Now →</a></div>`;
+});
+document.getElementById('jobsList').innerHTML=html||'<p style="text-align:center;color:#94a3b8">No jobs in this category yet.</p>';
+}
+function renderUpdates(){
+let u=getUpdates();
+let html='';
+u.forEach(x=>{html+=`<div class="update"><small>📢 ${x.time}</small><h3>${x.title}</h3><p>${x.text}</p></div>`;});
+document.getElementById('updatesList').innerHTML=html;
+}
+function filterJobs(f,el){
+currentFilter = f==='All'?'All':f;
+document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('on'));
+if(el) el.classList.add('on');
+renderJobs();
+}
+function showTab(tab){
+['create','jobs','updates'].forEach(t=>{document.getElementById('tab-'+t).classList.remove('active');document.getElementById('btn-'+t).classList.remove('on');});
+document.getElementById('tab-'+tab).classList.add('active');
+document.getElementById('btn-'+tab).classList.add('on');
+window.scrollTo(0,0);
+}
+function createJob(){
+let t=document.getElementById('cTitle').value;
+let p=document.getElementById('cPay').value||'KSH 250';
+let c=document.getElementById('cCat').value.replace(/[^a-zA-Z ]/g,'').trim();
+let d=document.getElementById('cDesc').value||'Apply now on WhatsApp for details.';
+if(!t){alert('Please enter Job Title');return;}
+let jobs=getJobs();
+jobs.unshift({t:t,p:p,c:c,d:d});
+saveJobs(jobs);
+// Auto create update
+let ups=getUpdates();
+ups.unshift({title:'🆕 NEW JOB: '+t,text:d+' | Pay: '+p,time:'Just Now'});
+saveUpdates(ups);
+document.getElementById('cTitle').value='';document.getElementById('cDesc').value='';
+alert('✅ Job Published! It is now in JOBS + UPDATES');
+renderJobs();renderUpdates();showTab('jobs');
+}
+function postUpdate(){
+let t=document.getElementById('uTitle').value;
+let x=document.getElementById('uText').value;
+if(!t||!x){alert('Please enter Title + Update');return;}
+let ups=getUpdates();
+ups.unshift({title:t,text:x,time:'Just Now'});
+saveUpdates(ups);
+document.getElementById('uTitle').value='';document.getElementById('uText').value='';
+alert('✅ Update Posted!');
+renderUpdates();showTab('updates');
+}
+function clearAll(){if(confirm('Clear all your custom jobs and updates?')){localStorage.removeItem('powr_jobs');localStorage.removeItem('powr_updates');renderJobs();renderUpdates();alert('Cleared - Back to 20 default jobs');}}
+function goDashboard(){
+let n=document.getElementById('name').value;
+let p=document.getElementById('phone').value;
+if(!n||!p){alert('Please enter Name + WhatsApp');return;}
+localStorage.setItem('powr_name',n);localStorage.setItem('powr_phone',p);
+document.getElementById('showName').innerText=n;
+let msg="Hi POWRNET! NEW SIGNUP%0AName: "+n+"%0APhone: "+p;
+window.open("https://wa.me/254112072729?text="+msg,"_blank");
+openDash();
+}
+function openDash(){
+document.getElementById('signup').classList.remove('active');
+document.getElementById('dashWrap').style.display='block';
+document.getElementById('bottomTabs').style.display='flex';
+renderJobs();renderUpdates();
+}
+function logout(){localStorage.removeItem('powr_name');document.getElementById('dashWrap').style.display='none';document.getElementById('bottomTabs').style.display='none';document.getElementById('signup').classList.add('active');}
+let saved=localStorage.getItem('powr_name');
+if(saved){document.getElementById('showName').innerText=saved;openDash();}
+renderJobs();renderUpdates();
 </script>
 </body>
 </html>
