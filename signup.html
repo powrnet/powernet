@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign Up - POWRNET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0;padding:20px}
+.box{max-width:400px;background:#fff;margin:30px auto;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+h1{color:#0a7a42;text-align:center;margin:0}
+p{text-align:center;color:#666;font-size:14px}
+label{font-weight:bold;font-size:14px;display:block;margin-top:15px}
+input{width:100%;padding:12px;margin-top:5px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;font-size:15px}
+button{width:100%;padding:13px;margin-top:20px;background:#0a7a42;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer}
+button:hover{background:#086636}
+.links{text-align:center;margin-top:15px;font-size:13px}
+.links a{color:#0a7a42;text-decoration:none}
+.success{background:#e8f5e9;color:#0a7a42;padding:12px;border-radius:8px;text-align:center;display:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>POWRNET</h1>
+<p>Create your free account</p>
+
+<form id="signupForm">
+<label>Full Name</label>
+<input type="text" id="name" placeholder="e.g. Ezra Korir" required>
+
+<label>Phone Number</label>
+<input type="tel" id="phone" placeholder="e.g. 0712345678" required>
+
+<label>Email Address</label>
+<input type="email" id="email" placeholder="e.g. you@gmail.com" required>
+
+<label>Create Password</label>
+<input type="password" id="password" placeholder="At least 6 characters" minlength="6" required>
+
+<button type="submit">Create Account</button>
+</form>
+
+<div class="success" id="successMsg">✅ Account created! Welcome to POWRNET.</div>
+
+<div class="links">
+Already have an account? <a href="login.html">Login</a><br><br>
+By signing up, you agree to our<br>
+<a href="privacy-policy.html">Privacy Policy</a> • <a href="about-us.html">About Us</a><br><br>
+<a href="index.html">← Back to Home</a>
+</div>
+</div>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e){
+e.preventDefault();
+var name = document.getElementById('name').value;
+localStorage.setItem('powrnet_user', name);
+document.getElementById('successMsg').style.display = 'block';
+document.getElementById('successMsg').innerHTML = '✅ Welcome, ' + name + '! Your POWRNET account is created.';
+this.reset();
+});
+</script>
+</body>
+</html>
