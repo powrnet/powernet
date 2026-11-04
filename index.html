@@ -4,255 +4,347 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="google-site-verification" content="bYAtPnFXM8-eN-95XVLVfZP3C3_64P_r3jwx-qJ5OXM" />
+
 <title>Powernet AI Studio</title>
+<meta name="description" content="Discover AI tools, learn artificial intelligence and explore online AI training and job opportunities with Powernet AI Studio.">
+<meta name="keywords" content="AI tools, AI jobs, AI training, online jobs, artificial intelligence, Powernet AI Studio">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#081a15;
-  color:white;
-}<meta name="google-site-verification" content="bYAtPnFXM8-eN-95XVLVfZP3C3_64P_r3jwx-qJ5OXM" />
-  padding:18px;
-  background:#102c23;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo{font-size:20px;font-weight:bold;color:#6ee7a8}
-
-button{
-  cursor:pointer;
-  border:0;
-  border-radius:9px;
-  padding:12px 18px;
-  font-weight:bold;
+body {
+  font-family: Arial, sans-serif;
+  background: #081a15;
+  color: white;
 }
 
-.google{background:white;color:#222}
-.logout{background:#284b3d;color:white}
-
-main{max-width:1000px;margin:auto;padding:25px}
-
-.welcome{margin:25px 0}
-.welcome p{color:#a9bdb3;margin-top:8px}
-
-nav{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin:25px 0;
+header {
+  padding: 20px;
+  background: #102c23;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-nav button{
-  background:#153b2e;
-  color:white;
-  padding:22px 8px;
-  font-size:16px;
-  border:1px solid #286347;
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #45e5a0;
 }
 
-nav button.active{background:#176b49}
-
-.panel{display:none}
-.panel.active{display:block}
-
-.card{
-  background:#102c23;
-  border:1px solid #28533f;
-  padding:18px;
-  border-radius:13px;
-  margin:15px 0;
+button {
+  cursor: pointer;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #24b879;
+  color: white;
+  font-weight: bold;
 }
 
-.card p{color:#b4c9bd;margin:10px 0}
-
-.apply{
-  background:#39c981;
-  color:#062015;
+button:hover {
+  background: #15945e;
 }
 
-.search{
-  width:100%;
-  padding:14px;
-  border-radius:9px;
-  border:1px solid #365d49;
-  background:#102c23;
-  color:white;
-  margin:15px 0;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 18px;
 }
 
-.small{color:#9eb5a7;font-size:13px}
-footer{text-align:center;padding:30px;color:#78998a}
-
-#loginScreen{
-  max-width:450px;
-  margin:70px auto;
-  padding:30px;
-  text-align:center;
-  background:#102c23;
-  border:1px solid #28533f;
-  border-radius:16px;
+.hero {
+  padding: 45px 20px;
+  text-align: center;
+  background: #10372a;
+  border-radius: 15px;
+  margin-bottom: 25px;
 }
 
-#loginScreen p{color:#b4c9bd;margin:15px 0 25px}
-
-#loginScreen button{width:100%}
-
-#appContent{display:none}
-
-#userInfo{font-size:12px;color:#a9bdb3;margin-top:5px}
-
-#status{
-  color:#ffb6a0;
-  margin-top:15px;
-  font-size:14px;
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
 }
 
-@media(max-width:500px){
-  nav button{font-size:13px;padding:17px 4px}
-  .logo{font-size:16px}
+.hero p {
+  color: #c4d9ce;
+  line-height: 1.7;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+nav button {
+  flex: 1;
+  min-width: 90px;
+  background: #183c30;
+}
+
+nav button.active {
+  background: #24b879;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #102c23;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #23513e;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #45e5a0;
+}
+
+.card p {
+  color: #c3d5cb;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #45e5a0;
+  font-weight: bold;
+}
+
+.search {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #37644f;
+  background: #102c23;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.search::placeholder {
+  color: #b2c8bb;
+}
+
+#loginScreen {
+  max-width: 420px;
+  margin: 90px auto;
+  padding: 30px;
+  background: #102c23;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#loginScreen p {
+  color: #c4d9ce;
+  line-height: 1.6;
+  margin: 15px 0 25px;
+}
+
+#dashboard {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #9db8a9;
+  margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div>
-    <div class="logo">POWERNET AI STUDIO</div>
-    <div id="userInfo"></div>
-  </div>
-
-  <button id="authButton" class="google">
+<div id="loginScreen">
+  <div class="logo">POWERNET AI STUDIO</div>
+  <h2 style="margin-top:25px">Welcome to Powernet</h2>
+  <p>Discover AI tools, learn artificial intelligence and explore online opportunities.</p>
+  <button onclick="login()" style="width:100%">
     Continue with Google
   </button>
+  <p id="loginMessage"></p>
+</div>
+
+<div id="dashboard">
+
+<header>
+  <div class="logo">POWERNET AI STUDIO</div>
+  <div>
+    <span id="userName"></span>
+    <button onclick="logout()">Sign out</button>
+  </div>
 </header>
 
-<!-- LOGIN SCREEN -->
-<section id="loginScreen">
-  <h1>Welcome to Powernet</h1>
-  <p>
-    Your gateway to AI tools, artificial intelligence
-    education and online work opportunities.
-  </p>
+<div class="container">
 
-  <button class="google" onclick="signIn()">
-    🌐 Continue with Google
-  </button>
+<div class="hero">
+  <h1>Explore the Power of AI</h1>
+  <p>Create, learn and discover opportunities in artificial intelligence.</p>
+</div>
 
-  <div id="status"></div>
+<nav>
+  <button class="active" onclick="showTab('create',this)">Create</button>
+  <button onclick="showTab('learn',this)">Learn AI</button>
+  <button onclick="showTab('jobs',this)">Jobs</button>
+</nav>
+
+<!-- CREATE -->
+
+<section id="create" class="section active">
+<h2>Create with AI</h2>
+<div class="grid">
+
+<div class="card">
+<h3>AI Video Generation</h3>
+<p>Explore tools for generating videos from text prompts.</p>
+<a href="https://runwayml.com/" target="_blank">Explore →</a>
+</div>
+
+<div class="card">
+<h3>AI Image Creation</h3>
+<p>Discover artificial intelligence image creation tools.</p>
+<a href="https://www.canva.com/ai-image-generator/" target="_blank">Explore →</a>
+</div>
+
+<div class="card">
+<h3>AI Writing</h3>
+<p>Explore AI writing and content creation tools.</p>
+<a href="https://chatgpt.com/" target="_blank">Explore →</a>
+</div>
+
+<div class="card">
+<h3>AI Voice</h3>
+<p>Discover AI voice and audio creation tools.</p>
+<a href="https://elevenlabs.io/" target="_blank">Explore →</a>
+</div>
+
+<div class="card">
+<h3>AI Design</h3>
+<p>Explore creative design tools powered by AI.</p>
+<a href="https://www.adobe.com/products/firefly.html" target="_blank">Explore →</a>
+</div>
+
+<div class="card">
+<h3>AI Coding</h3>
+<p>Explore AI tools that assist with programming.</p>
+<a href="https://github.com/features/copilot" target="_blank">Explore →</a>
+</div>
+
+</div>
 </section>
 
-<!-- DASHBOARD -->
-<div id="appContent">
+<!-- LEARN AI -->
 
-<main>
+<section id="learn" class="section">
+<h2>Learn Artificial Intelligence</h2>
+<div class="grid">
 
-  <section class="welcome">
-    <h1 id="welcomeText">Welcome to Powernet</h1>
-    <p>Create, learn artificial intelligence and discover online opportunities.</p>
-  </section>
+<div class="card">
+<h3>Google AI Learning</h3>
+<p>Explore AI courses and educational resources.</p>
+<a href="https://grow.google/ai/" target="_blank">Start learning →</a>
+</div>
 
-  <nav>
-    <button class="active" onclick="showTab('create',this)">✨ Create</button>
-    <button onclick="showTab('learn',this)">🎓 Learn AI</button>
-    <button onclick="showTab('jobs',this)">💼 Jobs</button>
-  </nav>
+<div class="card">
+<h3>Microsoft AI</h3>
+<p>Learn about AI concepts and applications.</p>
+<a href="https://learn.microsoft.com/en-us/ai/" target="_blank">Start learning →</a>
+</div>
 
-  <!-- CREATE -->
-  <section id="create" class="panel active">
-    <h2>Create with AI</h2>
+<div class="card">
+<h3>IBM SkillsBuild</h3>
+<p>Explore digital skills and AI learning resources.</p>
+<a href="https://skillsbuild.org/" target="_blank">Start learning →</a>
+</div>
 
-    <div class="card">
-      <h3>AI Image Creation</h3>
-      <p>Explore tools for creating images using artificial intelligence.</p>
-      <button class="apply" onclick="openLink('https://www.canva.com/')">Explore</button>
-    </div>
+<div class="card">
+<h3>Elements of AI</h3>
+<p>Learn the fundamentals of artificial intelligence.</p>
+<a href="https://www.elementsofai.com/" target="_blank">Start learning →</a>
+</div>
 
-    <div class="card">
-      <h3>AI Video Creation</h3>
-      <p>Discover AI video generation platforms.</p>
-      <button class="apply" onclick="openLink('https://runwayml.com/')">Explore</button>
-    </div>
+<div class="card">
+<h3>DeepLearning.AI</h3>
+<p>Explore AI and machine learning courses.</p>
+<a href="https://www.deeplearning.ai/" target="_blank">Start learning →</a>
+</div>
 
-    <div class="card">
-      <h3>AI Writing</h3>
-      <p>Discover tools for writing and productivity.</p>
-      <button class="apply" onclick="openLink('https://chatgpt.com/')">Explore</button>
-    </div>
-  </section>
+<div class="card">
+<h3>Coursera AI</h3>
+<p>Discover AI courses from different institutions.</p>
+<a href="https://www.coursera.org/" target="_blank">Start learning →</a>
+</div>
 
-  <!-- LEARN -->
-  <section id="learn" class="panel">
-    <h2>Learn AI</h2>
+</div>
+</section>
 
-    <div class="card">
-      <h3>Introduction to AI</h3>
-      <p>Understand artificial intelligence and how it works.</p>
-      <button class="apply" onclick="openLink('https://www.elementsofai.com/')">Start Learning</button>
-    </div>
+<!-- JOBS -->
 
-    <div class="card">
-      <h3>Machine Learning</h3>
-      <p>Learn the fundamentals of machine learning.</p>
-      <button class="apply" onclick="openLink('https://developers.google.com/machine-learning/crash-course')">Start Learning</button>
-    </div>
+<section id="jobs" class="section">
+<h2>AI Jobs & Online Opportunities</h2>
+<p style="color:#c4d9ce;margin-bottom:18px">
+Explore external platforms offering AI training, data annotation and remote work opportunities. Availability depends on location and qualifications.
+</p>
 
-    <div class="card">
-      <h3>Generative AI</h3>
-      <p>Explore generative AI learning resources.</p>
-      <button class="apply" onclick="openLink('https://www.cloudskillsboost.google/')">Start Learning</button>
-    </div>
-  </section>
+<input
+class="search"
+id="jobSearch"
+placeholder="Search jobs or platforms..."
+oninput="searchJobs()"
+>
 
-  <!-- JOBS -->
-  <section id="jobs" class="panel">
-    <h2>Online Jobs & Opportunities</h2>
+<div class="grid" id="jobList"></div>
+</section>
 
-    <p class="small">
-      Explore opportunities and apply through official company websites.
-      Availability varies by country.
-    </p>
-
-    <input
-      class="search"
-      id="search"
-      placeholder="Search jobs..."
-      oninput="filterJobs()"
-    >
-
-    <div id="jobList"></div>
-  </section>
-
-</main>
+</div>
 
 <footer>
-  © 2026 Powernet AI Studio
-  <p>Explore. Learn. Create. Discover.</p>
+<p>© 2026 Powernet AI Studio. All rights reserved.</p>
+<p>Explore. Learn. Create.</p>
 </footer>
 
 </div>
 
 <script type="module">
 
-// FIREBASE CONNECTION
-
 import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 }
-from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClOxfEC1JwvzvmehwBq9CDaLGZXrvBbEI",
@@ -268,187 +360,167 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-const loginScreen = document.getElementById("loginScreen");
-const appContent = document.getElementById("appContent");
-const authButton = document.getElementById("authButton");
-const status = document.getElementById("status");
+window.login = async function() {
+  const message = document.getElementById("loginMessage");
 
-// GOOGLE SIGN IN
-
-window.signIn = async function(){
-
-  status.textContent = "Connecting to Google...";
-
-  try{
-    await signInWithPopup(auth,provider);
-    status.textContent = "";
+  try {
+    await signInWithPopup(auth, provider);
+  } catch(error) {
+    message.textContent = error.message;
   }
-  catch(error){
-    console.error(error);
-    status.textContent = "Login failed: " + error.message;
-  }
-
 };
 
-// SIGN OUT
-
-window.logout = async function(){
-
-  try{
-    await signOut(auth);
-  }
-  catch(error){
-    alert("Sign out failed: " + error.message);
-  }
-
+window.logout = async function() {
+  await signOut(auth);
 };
 
-// AUTHENTICATION STATE
-
-onAuthStateChanged(auth,(user)=>{
-
-  if(user){
-
-    loginScreen.style.display = "none";
-    appContent.style.display = "block";
-
-    document.getElementById("welcomeText").textContent =
-      "Welcome, " + (user.displayName || "User");
-
-    document.getElementById("userInfo").textContent =
-      user.email || "";
-
-    authButton.textContent = "Sign Out";
-    authButton.className = "logout";
-    authButton.onclick = logout;
-
-  }else{
-
-    loginScreen.style.display = "block";
-    appContent.style.display = "none";
-
-    document.getElementById("userInfo").textContent = "";
-
-    authButton.textContent = "Continue with Google";
-    authButton.className = "google";
-    authButton.onclick = signIn;
-
+onAuthStateChanged(auth, user => {
+  if(user) {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+    document.getElementById("userName").textContent =
+      user.displayName || user.email;
+  } else {
+    document.getElementById("loginScreen").style.display = "block";
+    document.getElementById("dashboard").style.display = "none";
   }
-
 });
 
-// JOB DATABASE
-
-const jobs = [
-
-{name:"CrowdGen by Appen",title:"AI Training and Data Collection",type:"AI Training",link:"https://crowdgen.com/"},
-
-{name:"OneForma",title:"AI Data Annotation",type:"Data Annotation",link:"https://www.oneforma.com/jobs/"},
-
-{name:"TELUS Digital",title:"AI Community Jobs",type:"AI Evaluation",link:"https://www.telusdigital.com/careers/ai-community"},
-
-{name:"RWS TrainAI",title:"AI Data and Language Projects",type:"AI Training",link:"https://www.rws.com/artificial-intelligence/train-ai-data-services/trainai-community/"},
-
-{name:"Toloka",title:"Data Labelling Projects",type:"Data Annotation",link:"https://toloka.ai/tolokers/"},
-
-{name:"Sama",title:"AI Data Services Careers",type:"AI Data",link:"https://www.sama.com/careers/"},
-
-{name:"CloudFactory",title:"Data Operations Careers",type:"Data Operations",link:"https://www.cloudfactory.com/careers"},
-
-{name:"Upwork",title:"Freelance Online Work",type:"Freelancing",link:"https://www.upwork.com/"},
-
-{name:"Fiverr",title:"Freelance Services",type:"Freelancing",link:"https://www.fiverr.com/"},
-
-{name:"Freelancer",title:"Remote Freelance Projects",type:"Freelancing",link:"https://www.freelancer.com/"},
-
-{name:"TranscribeMe",title:"Transcription Opportunities",type:"Transcription",link:"https://www.transcribeme.com/jobs/"},
-
-{name:"GoTranscript",title:"Transcription Jobs",type:"Transcription",link:"https://gotranscript.com/transcription-jobs"},
-
-{name:"Rev",title:"Transcription and Captioning",type:"Transcription",link:"https://www.rev.com/freelancers"},
-
-{name:"Amazon Mechanical Turk",title:"Microtask Opportunities",type:"Microtasks",link:"https://www.mturk.com/"},
-
-{name:"Clickworker",title:"Online Microtasks",type:"Microtasks",link:"https://www.clickworker.com/clickworker/"}
-
-];
-
-// DISPLAY JOBS
-
-function renderJobs(list){
-
-  const container = document.getElementById("jobList");
-  container.innerHTML = "";
-
-  if(!list.length){
-    container.textContent = "No matching jobs found.";
-    return;
-  }
-
-  list.forEach(job=>{
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const title = document.createElement("h3");
-    title.textContent = job.title;
-
-    const company = document.createElement("p");
-    company.textContent = job.name;
-
-    const type = document.createElement("p");
-    type.textContent = "Category: " + job.type;
-
-    const button = document.createElement("button");
-    button.className = "apply";
-    button.textContent = "Apply";
-
-    button.onclick = ()=>openLink(job.link);
-
-    card.append(title,company,type,button);
-    container.appendChild(card);
-
+window.showTab = function(id, button) {
+  document.querySelectorAll(".section").forEach(section => {
+    section.classList.remove("active");
   });
 
-}
-
-// SEARCH JOBS
-
-window.filterJobs = function(){
-
-  const value = document.getElementById("search").value.toLowerCase();
-
-  renderJobs(jobs.filter(job=>
-    (job.title+" "+job.name+" "+job.type)
-    .toLowerCase().includes(value)
-  ));
-
-};
-
-// NAVIGATION
-
-window.showTab = function(id,button){
-
-  document.querySelectorAll(".panel").forEach(panel=>{
-    panel.classList.remove("active");
-  });
-
-  document.querySelectorAll("nav button").forEach(btn=>{
+  document.querySelectorAll("nav button").forEach(btn => {
     btn.classList.remove("active");
   });
 
   document.getElementById(id).classList.add("active");
   button.classList.add("active");
-
 };
 
-// OPEN EXTERNAL LINKS
+const jobs = [
+  {
+    name:"CrowdGen by Appen",
+    description:"AI training, data collection and evaluation projects.",
+    url:"https://crowdgen.com/"
+  },
+  {
+    name:"TELUS Digital AI",
+    description:"AI data evaluation and online task opportunities.",
+    url:"https://www.telusdigital.com/careers/ai-community"
+  },
+  {
+    name:"OneForma",
+    description:"Data collection, language and AI training projects.",
+    url:"https://www.oneforma.com/"
+  },
+  {
+    name:"Toloka",
+    description:"Online data labelling and AI-related tasks.",
+    url:"https://toloka.ai/"
+  },
+  {
+    name:"DataAnnotation",
+    description:"AI evaluation and training opportunities.",
+    url:"https://www.dataannotation.tech/"
+  },
+  {
+    name:"Outlier",
+    description:"AI model evaluation and specialist projects.",
+    url:"https://outlier.ai/"
+  },
+  {
+    name:"Clickworker",
+    description:"Microtasks, data and online projects.",
+    url:"https://www.clickworker.com/"
+  },
+  {
+    name:"RWS TrainAI",
+    description:"Language and AI data-related opportunities.",
+    url:"https://www.rws.com/artificial-intelligence/train-ai-data-services/"
+  },
+  {
+    name:"Remotasks",
+    description:"Explore AI data annotation opportunities.",
+    url:"https://www.remotasks.com/"
+  },
+  {
+    name:"Amazon Mechanical Turk",
+    description:"Online microtask marketplace.",
+    url:"https://www.mturk.com/"
+  },
+  {
+    name:"Upwork",
+    description:"Freelance work in technology, writing and design.",
+    url:"https://www.upwork.com/"
+  },
+  {
+    name:"Fiverr",
+    description:"Offer digital and creative services.",
+    url:"https://www.fiverr.com/"
+  },
+  {
+    name:"Freelancer",
+    description:"Explore freelance projects worldwide.",
+    url:"https://www.freelancer.com/"
+  },
+  {
+    name:"Prolific",
+    description:"Research participation opportunities.",
+    url:"https://www.prolific.com/"
+  },
+  {
+    name:"Indeed",
+    description:"Search for remote and AI-related jobs.",
+    url:"https://www.indeed.com/"
+  }
+];
 
-window.openLink = function(url){
-  window.open(url,"_blank","noopener,noreferrer");
+const jobList = document.getElementById("jobList");
+
+function displayJobs(items) {
+  jobList.innerHTML = "";
+
+  if(items.length === 0) {
+    jobList.innerHTML = "<p>No matching opportunities found.</p>";
+    return;
+  }
+
+  items.forEach(job => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const title = document.createElement("h3");
+    title.textContent = job.name;
+
+    const description = document.createElement("p");
+    description.textContent = job.description;
+
+    const link = document.createElement("a");
+    link.textContent = "Visit platform →";
+    link.href = job.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    card.append(title, description, link);
+    jobList.appendChild(card);
+  });
+}
+
+displayJobs(jobs);
+
+window.searchJobs = function() {
+  const query = document.getElementById("jobSearch")
+    .value.toLowerCase();
+
+  const filtered = jobs.filter(job =>
+    job.name.toLowerCase().includes(query) ||
+    job.description.toLowerCase().includes(query)
+  );
+
+  displayJobs(filtered);
 };
-
-renderJobs(jobs);
 
 </script>
 
