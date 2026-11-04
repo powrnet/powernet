@@ -2,74 +2,87 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>POWRNET - Power Your Network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POWRNET - Earn Online in Kenya</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif}
-body{background:#000;color:#fff;padding:16px;max-width:600px;margin:0 auto}
-.logo{text-align:center;font-size:22px;font-weight:900;letter-spacing:1px}
-.logo span{color:#a855f7}
-.top-btns{text-align:center;margin:12px 0}
-.top-btns a{display:inline-block;padding:10px 20px;border-radius:99px;text-decoration:none;font-weight:bold;margin:3px;font-size:14px}
-.btn-login{background:#222;color:#fff}
-.btn-signup{background:#a855f7;color:#fff}
-h1{text-align:center;font-size:32px;line-height:1.1;margin:10px 0}
-h1 span{color:#a855f7}
-.sub{text-align:center;color:#999;font-size:13px;margin-bottom:15px}
-.tabs{display:flex;background:#111;border-radius:99px;padding:4px;gap:4px;margin-bottom:15px}
-.tabs button{flex:1;border:0;background:transparent;color:#ccc;padding:10px 5px;border-radius:99px;font-weight:bold;cursor:pointer;font-size:13px}
-.tabs button.on{background:#a855f7;color:#fff}
-.box{background:#111;border:1px solid #222;border-radius:16px;padding:14px;margin-bottom:12px}
-.box b{font-size:15px;line-height:1.3;display:block}
-.box p{color:#aaa;font-size:13px;margin:6px 0;line-height:1.4}
-.tag{color:#a855f7!important;font-weight:700;font-size:12px}
-.btn{width:100%;background:#a855f7;border:0;color:#fff;padding:12px;border-radius:99px;font-weight:bold;cursor:pointer;margin-top:8px}
-.btn-outline{background:#222}
-input,textarea,select{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px;border-radius:10px;margin-top:8px}
-textarea{min-height:70px;resize:vertical}
-.footer{text-align:center;color:#555;font-size:12px;margin:20px 0}
-a{text-decoration:none}
-.badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:4px 10px;border-radius:99px;font-size:11px;margin:2px}
-.warn{background:#2a1a00;border:1px solid #16207;padding:12px;border-radius:12px;margin:10px 0;font-size:13px}
-.hidden{display:none}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f172a;color:white;padding:15px}
+.header{text-align:center;padding:20px 0}
+.header h1{font-size:32px;color:#22c55e}
+.header p{color:#cbd5e1;margin-top:5px}
+.social{display:flex;gap:10px;justify-content:center;margin:15px 0}
+.social a{flex:1;text-align:center;padding:12px;border-radius:10px;text-decoration:none;color:white;font-weight:bold;font-size:14px}
+.wa{background:#25D366}.tk{background:#000;border:1px solid #fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.card{background:#1e293b;border-radius:15px;padding:15px;text-align:center}
+.card h3{font-size:16px;margin:8px 0}
+.card p{font-size:12px;color:#94a3b8;line-height:1.4}
+.card a{display:block;margin-top:10px;background:#22c55e;color:#000;padding:10px;border-radius:8px;text-decoration:none;font-weight:bold}
+.card.coming a{background:#475569;color:white}
+.badge{background:#facc15;color:#000;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:bold}
+.footer{text-align:center;margin:25px 0;color:#64748b;font-size:12px}
 </style>
 </head>
 <body>
-
-<div class="logo">POWR<span>NET</span>.COM</div>
-
-<div class="top-btns">
-<a href="login.html" class="btn-login">Login</a>
-<a href="signup.html" class="btn-signup">Sign Up FREE</a>
+<div class="header">
+<h1>⚡ POWRNET</h1>
+<p>Earn Online in Kenya - No Experience Needed</p>
 </div>
 
-<h1>POWER YOUR<br><span>NETWORK.</span></h1>
-<p class="sub">Create • Find Jobs • Learn AI • Daily Updates 🇰🇪</p>
-
-<div class="tabs">
-<button id="t1" class="on" onclick="show('p1','t1')">✨ Create</button>
-<button id="t2" onclick="show('p2','t2')">💼 Job Ideas</button>
-<button id="t3" onclick="show('p3','t3')">🧠 Learn AI</button>
-<button id="t4" onclick="show('p4','t4')">🔥 Real Sites</button>
+<div class="social">
+<a class="wa" href="https://wa.me/254700000000?text=Hi%20POWRNET%20I%20want%20to%20earn" target="_blank">💬 WhatsApp Group</a>
+<a class="tk" href="https://www.tiktok.com/@powrnet" target="_blank">🎵 TikTok</a>
 </div>
 
-<!-- CREATE -->
-<div id="p1">
-<div class="box">
-<b>✨ Create a Post / Video Idea</b>
-<p class="tag">Get trending ideas for TikTok, YouTube & Facebook</p>
-<textarea id="ideaInput" placeholder="e.g. matatu life in Nairobi..."></textarea>
-<button class="btn" onclick="genIdea()">Generate Idea →</button>
-<div id="ideaOut" class="warn hidden"></div>
+<p style="text-align:center;font-size:13px;color:#facc15">👇 Pick One & Start Today - All Free To Join</p>
+
+<div class="grid">
+<div class="card coming">
+<span class="badge">COMING SOON</span>
+<h3>💼 Fiverr Freelancing</h3>
+<p>Writing, Design, Video Editing. Earn $5 - $100 per job.</p>
+<a href="#">Soon - Wait For Approval</a>
 </div>
-<div class="box">
-<b>💡 Video Ideas</b>
-<p>• A day with a boda rider in Nairobi<br>• Nairobi vs Mombasa - who wins?<br>• Landlord vs Tenant in Kenya 😂</p>
+
+<div class="card">
+<span class="badge">EASY • KSH 500/DAY</span>
+<h3>📝 Remotasks</h3>
+<p>Do small tasks online. No skill needed.</p>
+<a href="https://www.remotasks.com" target="_blank">Start Tasks →</a>
+</div>
+
+<div class="card">
+<span class="badge">PASSIVE</span>
+<h3>📶 Pawns.app</h3>
+<p>Earn by sharing your internet. Works in Kenya.</p>
+<a href="https://pawns.app/?r=powrnet" target="_blank">Earn Passive →</a>
+</div>
+
+<div class="card">
+<span class="badge">SURVEYS</span>
+<h3>📊 Attapoll</h3>
+<p>Answer surveys, get paid to M-Pesa via PayPal.</p>
+<a href="https://attapoll.app" target="_blank">Take Surveys →</a>
+</div>
+
+<div class="card">
+<span class="badge">BEGINNER</span>
+<h3>🎮 Swagbucks</h3>
+<p>Watch videos, play games, earn points.</p>
+<a href="https://www.swagbucks.com" target="_blank">Start Earning →</a>
+</div>
+
+<div class="card">
+<span class="badge">NEW</span>
+<h3>✍️ Writing Jobs</h3>
+<p>Get paid to write articles for blogs.</p>
+<a href="https://www.remotasks.com" target="_blank">Apply Now →</a>
 </div>
 </div>
 
-<!-- JOB IDEAS -->
-<div id="p2" class="hidden">
-<div class="box"><b>💼 Matatu Conductor - Nairobi</b><p>Earn daily, learn routes, grow to own your own matatu. <br><span class="badge">Ksh 800-1500 / day</span></p></div>
-<div class="box"><b>🍲 Kenyan Street Food Seller</b><p>Mutura, smokie, mayai pasua - high demand in town. <br><span class="badge">Ksh 1000-2500 / day</span></p></div>
-<div class="box"><b>📱 Phone Repair</b><p>Learn in 
+<div class="footer">
+POWRNET © 2026 • Made in Kenya 🇰🇪<br>
+Join WhatsApp for daily new jobs!
+</div>
+</body>
+</html>
