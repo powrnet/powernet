@@ -4,129 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>POWRNET | Learn AI & Earn in Dollars</title>
-
-<!-- THIS MAKES IT LOOK LIKE MAN CITY ON WHATSAPP -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="POWRNET | Learn AI & Earn in Dollars">
 <meta property="og:description" content="Learn AI Training, Freelancing & Writing. Get real AI jobs paying in Dollars ($). No sign in needed. Start learning today.">
 <meta property="og:url" content="https://powrnet.github.io/powernet/">
 <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712107.png">
 <meta property="og:site_name" content="POWRNET">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="POWRNET | Learn AI & Earn in Dollars">
-<meta name="twitter:description" content="Learn AI Training, Freelancing & Writing. Get real AI jobs paying in Dollars ($).">
-<meta name="description" content="Learn AI Training, Freelancing & Writing. Get real AI jobs paying in Dollars ($). No sign in needed.">
-
+<meta name="description" content="Learn AI Training, Freelancing & Writing. Get real AI jobs paying in Dollars ($).">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:white;padding:15px;padding-bottom:110px}
+body{background:#f1f5f9;color:#111;padding:12px;padding-bottom:110px}
 .page{display:none}.page.active{display:block}
 .center{text-align:center}
-h1{font-size:34px;color:#22c55e}
-input,select,textarea{width:100%;padding:15px;margin:7px 0;border-radius:12px;border:none;font-size:15px;background:white;color:#000}
+h1{font-size:32px;color:#16a34a}
+input,select,textarea{width:100%;padding:14px;margin:7px 0;border-radius:10px;border:1px solid #ddd;font-size:15px;background:white;color:#000}
 textarea{height:80px}
-.btn{width:100%;padding:15px;border:none;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer;margin:5px 0}
+.btn{width:100%;padding:14px;border:none;border-radius:10px;font-weight:bold;font-size:15px;cursor:pointer;margin:5px 0}
 .green{background:#25D366;color:white}.yellow{background:#facc15;color:#000}.blue{background:#38bdf8;color:#000}.red{background:#ef4444;color:white}
-.card{background:#1e293b;border-radius:15px;padding:15px;margin:11px 0;border-left:4px solid #22c55e}
-.card h3{font-size:15px}.card p{font-size:13px;color:#94a3b8;margin:6px 0;line-height:1.5}
-.card a{display:block;width:100%;background:#22c55e;color:#000;text-align:center;padding:12px;border-radius:9px;font-weight:bold;margin-top:9px;text-decoration:none;font-size:15px}
-.card a.learn{background:#38bdf8}
-.card a.watch{background:#ef4444;color:white}
-.pay{color:#4ade80!important;font-weight:bold;font-size:14px}
-.verified{color:#4ade80;font-size:12px;font-weight:bold}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:#1e293b;display:flex;padding:8px;gap:6px;z-index:99}
-.tabs button{flex:1;padding:12px 4px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;background:#334155;color:white;font-size:12px}
-.tabs button.on{background:#22c55e;color:#000}
-.update{background:#1e293b;border-radius:12px;padding:13px;margin:10px 0;border-left:4px solid #facc15}
-.update small{color:#94a3b8}.update p{font-size:14px;margin:5px 0}
-.link{color:#25D366;display:block;text-align:center;margin:12px;text-decoration:none;font-weight:bold}
+/* MAN CITY CARD STYLE - WHITE LIKE YOUR SCREENSHOT */
+.mancard{background:white;border-radius:12px;padding:14px;margin:12px 0;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
+.toprow{display:flex;gap:10px;align-items:flex-start}
+.logo{width:42px;height:42px;border-radius:50%;background:#16a34a;color:white;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.toptext b{font-size:15px;color:#111;display:block}
+.toptext small{font-size:12px;color:#64748b}
+.bluetitle{color:#1a0dab;font-size:19px;line-height:1.3;margin:10px 0 6px;display:block;text-decoration:none;font-weight:normal}
+.bluetitle:hover{text-decoration:underline}
+.grey{color:#4d5156;font-size:14px;line-height:1.5}
+.pay{color:#16a34a!important;font-weight:bold;margin-top:8px}
+.apply{display:block;background:#16a34a;color:white;text-align:center;padding:12px;border-radius:8px;font-weight:bold;margin-top:10px;text-decoration:none}
 .filter{display:flex;gap:7px;overflow-x:auto;padding:5px 0}
-.filter button{white-space:nowrap;padding:9px 14px;border-radius:20px;border:none;background:#334155;color:white;font-weight:bold;cursor:pointer}
-.filter button.on{background:#facc15;color:#000}
-.wa-box{background:#1e293b;border:1px solid #25D366;border-radius:12px;padding:13px;text-align:center;margin:15px 0}
-.wa-box p{font-size:13px;color:#cbd5e1}
-.badge{background:#facc15;color:#000;font-size:11px;padding:3px 8px;border-radius:10px;font-weight:bold}
-.lesson{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:12px;margin:8px 0}
-.lesson b{color:white;font-size:14px}.lesson p{font-size:13px}
-.hero{background:linear-gradient(135deg,#22c55e,#0ea5e9);border-radius:15px;padding:18px;text-align:center;margin:12px 0;color:white}
-.hero b{font-size:22px}
+.filter button{white-space:nowrap;padding:9px 14px;border-radius:20px;border:none;background:#e2e8f0;color:#111;font-weight:bold;cursor:pointer}
+.filter button.on{background:#111;color:white}
+.tabs{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;padding:8px;gap:6px;z-index:99;border-top:1px solid #ddd}
+.tabs button{flex:1;padding:12px 4px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;background:#f1f5f9;color:#111;font-size:12px}
+.tabs button.on{background:#16a34a;color:white}
+.update{background:white;border-radius:10px;padding:13px;margin:10px 0;border-left:4px solid #facc15}
+.update small{color:#94a3b8}.update p{font-size:14px;margin:5px 0;color:#333}
+.link{color:#25D366;display:block;text-align:center;margin:12px;text-decoration:none;font-weight:bold}
+.wa-box{background:white;border:1px solid #25D366;border-radius:12px;padding:13px;text-align:center;margin:15px 0}
+.lesson{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:11px;margin:8px 0}
+.lesson b{font-size:14px}.lesson p{font-size:13px;color:#475569;margin-top:4px;line-height:1.5}
+.hero{background:white;border-radius:12px;padding:16px;text-align:center;margin:12px 0;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
 </style>
 </head>
 <body>
-<div class="center"><h1>⚡ POWRNET</h1><p style="color:#cbd5e1;font-size:14px">Learn AI • Get Real Jobs • Earn in <b style="color:#4ade80">DOLLARS ($)</b><br>No Sign In Needed</p></div>
+<div class="center"><h1>⚡ POWRNET</h1><p style="color:#475569;font-size:14px">Learn AI • Real Jobs • Earn in <b style="color:#16a34a">DOLLARS ($)</b><br>No Sign In Needed</p></div>
+<div class="hero"><b style="font-size:18px">Learn First. Earn Next.</b><p style="font-size:13px;color:#64748b;margin-top:6px">1. LEARN AI in LEARN tab → 2. APPLY in JOBS tab → 3. GET PAID in $</p></div>
 
-<div class="hero"><b>Learn First. Earn Next.</b><p style="font-size:13px;margin-top:6px">1. LEARN AI in LEARN tab (Free) → 2. APPLY in JOBS tab → 3. GET PAID in $</p></div>
-
-<!-- LEARN TAB -->
 <div id="tab-learn" class="page active">
 <h2>🎓 LEARN AI - FREE</h2>
-<p style="color:#94a3b8;font-size:13px;margin:6px 0">Learn first, then apply. Even if you know nothing.</p>
-
-<div class="card"><span class="badge">STEP 1 - START HERE</span><h3 style="margin-top:6px">🤖 What is AI Training? (5 Mins)</h3><p>AI Training = You teach AI by rating its answers, writing prompts, labelling images. Companies pay you $15-$25/hr. No coding needed.</p>
-<div class="lesson"><b>Lesson 1: What is AI?</b><p>AI learns from humans. You are the teacher. You rate: Good answer vs Bad answer.</p></div>
-<div class="lesson"><b>Lesson 2: What is Annotation?</b><p>Annotation = Labelling. Example: Draw box around a car in a photo. AI learns: This is a car. Easy work.</p></div>
-<div class="lesson"><b>Lesson 3: How to Pass AI Tests</b><p>1. Read instructions slowly 2. Be consistent 3. Never rush 4. Use good English. Tests are easy if you read.</p></div>
-<a class="watch" href="https://www.youtube.com/results?search_query=what+is+ai+training+job+for+beginners" target="_blank">▶️ Watch Free Video Lesson</a>
-<a class="learn" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank">📘 Free Course: Google AI Essentials</a>
-</div>
-
-<div class="card"><span class="badge">STEP 2 - ANNOTATION</span><h3 style="margin-top:6px">🏷️ Learn Annotation - Label Images & Text</h3><p>Annotation is the easiest AI job. Learn in 10 mins, start earning.</p>
-<div class="lesson"><b>Image Annotation:</b><p>Label: Car, Person, Dog, Road sign. Use Remotasks free training.</p></div>
-<div class="lesson"><b>Text Annotation:</b><p>Read sentence, say if Positive / Negative / Neutral. Example: "I love this" = Positive.</p></div>
-<a class="watch" href="https://www.youtube.com/results?search_query=how+to+do+data+annotation+remotasks+tutorial" target="_blank">▶️ Watch Annotation Tutorial</a>
-<a class="learn" href="https://www.remotasks.com" target="_blank">Practice Now on Remotasks →</a>
-</div>
-
-<div class="card"><span class="badge">STEP 3 - FREELANCING</span><h3 style="margin-top:6px">💻 Learn Freelancing - Upwork & Fiverr</h3><p>Freelancing = Sell your skill to clients in US/UK. VA, Design, Data Entry, Video Editing.</p>
-<div class="lesson"><b>How to Get First Client:</b><p>1. Create Upwork profile 2. Add 1 skill (e.g Data Entry) 3. Apply to 10 small jobs daily 4. Reply fast.</p></div>
-<a class="watch" href="https://www.youtube.com/results?search_query=how+to+get+first+job+on+upwork+beginner+kenya" target="_blank">▶️ Watch Upwork Tutorial</a>
-<a class="learn" href="https://www.upwork.com" target="_blank">Create Upwork Profile →</a>
-</div>
-
-<div class="card"><span class="badge">STEP 4 - WRITING</span><h3 style="margin-top:6px">✍️ Learn Writing - Blog & SEO Writing</h3><p>Writing = Write 500-word articles for $15. Learn SEO = Earn $30/article.</p>
-<div class="lesson"><b>How to Write a Blog:</b><p>Title + Intro (50 words) + 3 Headings + Conclusion. Use simple English. Use Grammarly free to check.</p></div>
-<div class="lesson"><b>What is SEO?</b><p>SEO = Use keyword many times. Example: Keyword "Best Shoes" - put it in title + 3 times in article.</p></div>
-<a class="watch" href="https://www.youtube.com/results?search_query=how+to+write+blog+article+for+beginners+earn+money" target="_blank">▶️ Watch Writing Tutorial</a>
-<a class="learn" href="https://www.textbroker.com" target="_blank">Start Writing on Textbroker →</a>
-</div>
-
-<div class="card"><span class="badge">DAILY TASK</span><h3 style="margin-top:6px">✅ Today's Practice Task</h3><p>Write 5 prompts for AI. Example: "Write a story about a boy in Nairobi who learns AI." Then rate AI's answer. This is EXACTLY what DataAnnotation pays you $20/hr to do.</p></div>
-</div>
-
-<!-- JOBS TAB -->
-<div id="tab-jobs" class="page">
-<h2>💼 REAL AI JOBS (<span id="jobCount">0</span>) - Paid in $</h2>
-<p style="color:#4ade80;font-size:12px;margin:4px 0">Learned? Now Apply - Goes to OFFICIAL site.</p>
-<div class="filter">
-<button class="on" onclick="filterJobs('All',this)">All</button>
-<button onclick="filterJobs('AI',this)">AI Training</button>
-<button onclick="filterJobs('Annotation',this)">Annotation</button>
-<button onclick="filterJobs('Freelancing',this)">Freelancing</button>
-<button onclick="filterJobs('Writing',this)">Writing</button>
-</div>
-<div id="jobsList"></div>
-</div>
-
-<!-- CREATE TAB -->
-<div id="tab-create" class="page">
-<h2>➕ CREATE NEW JOB / LESSON</h2>
-<input id="cTitle" placeholder="Job Title">
-<input id="cPay" placeholder="Pay e.g $15 / Hour">
-<input id="cLink" placeholder="Real Apply Link e.g https://www.upwork.com">
-<select id="cCat"><option>AI Training</option><option>Annotation</option><option>Freelancing</option><option>Writing</option><option>Data</option></select>
-<textarea id="cDesc" placeholder="Job Description / Lesson"></textarea>
-<button class="btn green" onclick="createJob()">PUBLISH NOW</button>
-<button class="btn yellow" onclick="showTab('jobs')">See All Jobs</button>
-</div>
-
-<!-- UPDATES TAB -->
-<div id="tab-updates" class="page">
-<h2>📢 UPDATES</h2>
-<input id="uTitle" placeholder="Update Title">
-<textarea id="uText" placeholder="Write your update..."></textarea>
-<button class="btn blue" onclick="postUpdate()">POST UPDATE</button>
-<button class="btn red" onclick="clearAll()" style="font-size:13px">Clear My Custom Jobs</button>
-<div id="updatesList"></div>
-</div>
-
-<div class="wa-box"><p>Need Help? WhatsApp is for <b>Queries Only</b></p><a class="link" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20have%20a%
+<!-- LEARN CARDS IN MAN CITY STYLE -->
+<div class="mancard"><div class="toprow"><div class="logo">🤖</div><div class="toptext"><b>POWRNET Learn</b><small>powrnet.github.io/powernet</small></div></div><a class="bluetitle" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank">What is AI Training? | Learn AI & Earn in Dollars</a><p class="grey">Learn what AI Training is. You teach AI by rating its answers, writing prompts, labelling images. Companies pay you $15-$25/hr. No coding needed. Start with Lesson 1, 2, 3 below.</p><div class="lesson"><b>Lesson 1: What is AI?</b><p>AI learns from humans. You are the teacher. You rate: Good answer vs Bad answer.</p></div><div class="lesson"><b>Lesson 2: What is Annotation?</b><p>Annotation = Labelling. Example: Draw box around a car. AI learns: This is a car.</p></div><div class="lesson"><b>Lesson 3: How to Pass AI
