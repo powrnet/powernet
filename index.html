@@ -2,183 +2,74 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>POWRNET - Power Your Network</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif}
 body{background:#000;color:#fff;padding:16px;max-width:600px;margin:0 auto}
 .logo{text-align:center;font-size:22px;font-weight:900;letter-spacing:1px}
 .logo span{color:#a855f7}
-h1{text-align:center;font-size:32px;line-height:1.1;margin:16px 0 8px}
+.top-btns{text-align:center;margin:12px 0}
+.top-btns a{display:inline-block;padding:10px 20px;border-radius:99px;text-decoration:none;font-weight:bold;margin:3px;font-size:14px}
+.btn-login{background:#222;color:#fff}
+.btn-signup{background:#a855f7;color:#fff}
+h1{text-align:center;font-size:32px;line-height:1.1;margin:10px 0}
 h1 span{color:#a855f7}
-.sub{text-align:center;color:#999;font-size:13px;margin-bottom:16px}
-.tabs{display:flex;background:#111;border-radius:99px;padding:4px;gap:4px;margin-bottom:10px}
-.tabs button{flex:1;border:0;background:transparent;color:#aaa;padding:12px 4px;border-radius:99px;font-weight:700;font-size:12px;cursor:pointer}
+.sub{text-align:center;color:#999;font-size:13px;margin-bottom:15px}
+.tabs{display:flex;background:#111;border-radius:99px;padding:4px;gap:4px;margin-bottom:15px}
+.tabs button{flex:1;border:0;background:transparent;color:#ccc;padding:10px 5px;border-radius:99px;font-weight:bold;cursor:pointer;font-size:13px}
 .tabs button.on{background:#a855f7;color:#fff}
-.box{background:#111;border:1px solid #222;border-radius:16px;padding:14px;margin:10px 0}
+.box{background:#111;border:1px solid #222;border-radius:16px;padding:14px;margin-bottom:12px}
 .box b{font-size:15px;line-height:1.3;display:block}
-.box p{color:#aaa;font-size:13px;margin:6px 0;line-height:1.5}
-.tag{color:#a855f7!important;font-weight:700;font-size:12px!important}
-.btn{width:100%;background:#a855f7;border:0;color:#fff;padding:12px;border-radius:99px;font-weight:800;cursor:pointer;margin-top:8px}
+.box p{color:#aaa;font-size:13px;margin:6px 0;line-height:1.4}
+.tag{color:#a855f7!important;font-weight:700;font-size:12px}
+.btn{width:100%;background:#a855f7;border:0;color:#fff;padding:12px;border-radius:99px;font-weight:bold;cursor:pointer;margin-top:8px}
 .btn-outline{background:#222}
-input,textarea,select{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px;border-radius:12px;margin:8px 0;font-size:14px}
+input,textarea,select{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px;border-radius:10px;margin-top:8px}
 textarea{min-height:70px;resize:vertical}
-.footer{text-align:center;color:#555;font-size:12px;margin:24px 0 10px}
+.footer{text-align:center;color:#555;font-size:12px;margin:20px 0}
 a{text-decoration:none}
-.badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:6px 10px;border-radius:99px;font-size:11px;color:#aaa;margin:3px 2px}
-.warn{background:#2a1a00;border:1px solid #a16207;border-radius:16px;padding:14px;margin:10px 0;font-size:13px;line-height:1.5;color:#fde68a}
+.badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:4px 10px;border-radius:99px;font-size:11px;margin:2px}
+.warn{background:#2a1a00;border:1px solid #16207;padding:12px;border-radius:12px;margin:10px 0;font-size:13px}
+.hidden{display:none}
 </style>
 </head>
 <body>
 
 <div class="logo">POWR<span>NET</span>.COM</div>
+
+<div class="top-btns">
+<a href="login.html" class="btn-login">Login</a>
+<a href="signup.html" class="btn-signup">Sign Up FREE</a>
+</div>
+
 <h1>POWER YOUR<br><span>NETWORK.</span></h1>
 <p class="sub">Create • Find Jobs • Learn AI • Daily Updates 🇰🇪</p>
 
 <div class="tabs">
-  <button id="t1" class="on" onclick="show('p1','t1')">✨ Create</button>
-  <button id="t2" onclick="show('p2','t2')">💼 Job Ideas</button>
-  <button id="t3" onclick="show('p3','t3')">🧠 Learn AI</button>
-  <button id="t4" onclick="show('p4','t4')">🔥 Real Sites</button>
+<button id="t1" class="on" onclick="show('p1','t1')">✨ Create</button>
+<button id="t2" onclick="show('p2','t2')">💼 Job Ideas</button>
+<button id="t3" onclick="show('p3','t3')">🧠 Learn AI</button>
+<button id="t4" onclick="show('p4','t4')">🔥 Real Sites</button>
 </div>
 
 <!-- CREATE -->
 <div id="p1">
-  <textarea id="prompt">Funny matatu driver dancing in Nairobi traffic</textarea>
-  <button class="btn" onclick="generateVideo()">✨ GENERATE 30s VIDEO</button>
-  <div id="videoResult"></div>
-  <div class="box"><b>🔥 Trending Now</b><p>Matatu conductor singing in traffic — 120K views</p><p>Kenyan street food AI video — 85K views</p><p>Nairobi at night drone style — 200K views</p></div>
-  <div class="box"><b>💡 Video Ideas</b><p>• A day in life of a boda rider<br>• Nairobi vs Mombasa food battle<br>• Funny landlord vs tenant skit</p></div>
+<div class="box">
+<b>✨ Create a Post / Video Idea</b>
+<p class="tag">Get trending ideas for TikTok, YouTube & Facebook</p>
+<textarea id="ideaInput" placeholder="e.g. matatu life in Nairobi..."></textarea>
+<button class="btn" onclick="genIdea()">Generate Idea →</button>
+<div id="ideaOut" class="warn hidden"></div>
+</div>
+<div class="box">
+<b>💡 Video Ideas</b>
+<p>• A day with a boda rider in Nairobi<br>• Nairobi vs Mombasa - who wins?<br>• Landlord vs Tenant in Kenya 😂</p>
+</div>
 </div>
 
-<!-- JOBS - NOW HONEST -->
-<div id="p2" style="display:none">
-  <div class="warn">⚠️ <b>These are JOB IDEAS, not live vacancies.</b><br>Use them to know what to search for. Real sites to apply are in the 🔥 Real Sites tab. POWRNET does not hire directly. Never pay to get a job!</div>
-  <input id="jobSearch" placeholder="🔍 Search idea... e.g driver, design" oninput="renderJobs()">
-  <div id="jobList"></div>
-</div>
-
-<!-- LEARN -->
-<div id="p3" style="display:none">
-  <input id="courseSearch" placeholder="🔍 Search course... e.g video, ChatGPT" oninput="renderCourses()">
-  <div id="courseList"></div>
-</div>
-
-<!-- UPDATES - REAL SITES -->
-<div id="p4" style="display:none">
-  <div class="box"><b>📢 Real Platforms - Apply Here</b><p>These are real websites. Pay depends on your skills, tests & availability in Kenya. Never pay to join.</p></div>
-  <input id="updateSearch" placeholder="🔍 Search... e.g Populii, AI Training" oninput="renderUpdates()">
-  <div id="updateList"></div>
-</div>
-
-<p class="footer">© 2026 POWRNET • Nairobi 🇰🇪<br>Made for Kenya, by Kenya</p>
-
-<script>
-function show(pageId, tabId){
-  ['p1','p2','p3','p4'].forEach(function(id){ document.getElementById(id).style.display='none'; });
-  document.getElementById(pageId).style.display='block';
-  ['t1','t2','t3','t4'].forEach(function(id){ document.getElementById(id).className=''; });
-  document.getElementById(tabId).className='on';
-}
-function generateVideo(){
-  var p = document.getElementById('prompt').value;
-  document.getElementById('videoResult').innerHTML = '<div class="box"><b>🎬 Your Video Concept is Ready!</b><p>Prompt: "'+p+'"</p><p>Style: Cinematic, Nairobi street, 30s, trending music</p><p style="color:#4ade80">✅ Demo Mode — Full AI video generation coming soon!</p><button class="btn btn-outline" onclick="alert(\'Link copied! Share on TikTok\')">📤 Copy & Share Idea</button></div>';
-}
-
-// JOBS - [Title, Pay/Location, Description, Real Link to Apply]
-var JOBS = [
-  ["AI Video Editor - Remote","Remote • Example: KSh 80K/mo","Edit AI videos for TikTok brands. CapCut + AI tools.","https://www.upwork.com"],
-  ["Prompt Engineer Intern","Nairobi • Example: KSh 50K/mo","Write prompts for businesses. No degree needed.","https://www.upwork.com"],
-  ["Social Media Manager","Westlands • Example: Full-time","Manage 5 Kenyan brands. Content + replies.","https://www.upwork.com"],
-  ["Delivery Driver Bolt / Glovo","Nairobi • Daily Pay","Earn daily with motorbike or bicycle.","https://glovoapp.com"],
-  ["Graphic Designer Freelance","Remote • Per Project","Posters, logos, thumbnails for YouTubers.","https://www.fiverr.com"],
-  ["Virtual Assistant","Remote • Example: KSh 45K/mo","Emails, WhatsApp, scheduling for US clients.","https://www.upwork.com"],
-  ["Content Writer AI","Remote • Example: KSh 30K/mo","Write blogs using ChatGPT. English + Swahili.","https://www.upwork.com"],
-  ["TikTok Content Creator","Nairobi • Flexible","Film matatu + street culture. Grow + earn.","https://www.tiktok.com"],
-  ["AI Customer Support","Remote • Example: KSh 60K/mo","Answer chats using AI tools. Night shift available.","https://www.upwork.com"],
-  ["Transcriptionist Swahili","Remote • Example: KSh 25/hr","Transcribe audio to text. Fast typing needed.","https://appen.com"],
-  ["Data Entry Clerk","Nairobi • Example: KSh 35K/mo","Enter data, Excel basics. Day shift.","https://www.upwork.com"],
-  ["ChatGPT Trainer","Remote • Example: $15/hr","Train AI, English + Swahili. Part-time.","https://dataannotation.tech"],
-  ["Video Editor CapCut","Remote • Example: KSh 70K/mo","Edit Reels, TikTok, Shorts for influencers.","https://www.fiverr.com"],
-  ["Sales Agent","Nairobi • Commission","Sell airtime, phones. High commission.","https://www.upwork.com"],
-  ["Online Tutor","Remote • Example: KSh 500/hr","Teach Maths, English, KCSE. Zoom classes.","https://www.upwork.com"],
-  ["Photographer Events","Nairobi • Per Event","Weddings, birthdays, graduations. Own camera.","https://www.fiverr.com"],
-  ["Web Designer","Remote • Example: KSh 90K/mo","Build sites for small businesses. HTML + AI.","https://www.fiverr.com"],
-  ["Cashier Supermarket","Nairobi • Example: KSh 30K/mo","Naivas, Quickmart, Carrefour branches.","https://www.brightermonday.co.ke"],
-  ["Motorbike Rider","Nairobi • Daily","Deliver parcels, food. Must have license.","https://glovoapp.com"],
-  ["AI Voice Actor","Remote • Per Job","Record voiceovers for ads. Good mic needed.","https://www.fiverr.com"]
-];
-function renderJobs(){
-  var q = document.getElementById('jobSearch').value.toLowerCase();
-  var html = '';
-  JOBS.forEach(function(j){
-    if(j[0].toLowerCase().includes(q) || j[1].toLowerCase().includes(q)){
-      html += '<div class="box"><b>'+j[0]+'</b><p class="tag">'+j[1]+'</p><p>'+j[2]+'</p><a href="'+j[3]+'" target="_blank"><button class="btn">How to Apply →</button></a></div>';
-    }
-  });
-  document.getElementById('jobList').innerHTML = html || '<div class="box">No ideas found. Try another word.</div>';
-}
-
-var COURSES = [
-  ["ChatGPT for Beginners","FREE • 45 mins","Learn prompts, CVs, content creation."],
-  ["AI Video Mastery","KSh 500 • 2 hours","Prompt to viral video. Full workflow."],
-  ["Learn Python for AI","FREE • 7 days","No coding needed. Start from zero."],
-  ["AI for Business","KSh 999 • 3 hours","Automate WhatsApp, marketing, sales."],
-  ["AI Photo Design","FREE • 1 hour","Posters, thumbnails, product photos."],
-  ["Prompt Engineer Full Course","KSh 2500 • Certificate","Get hired as AI freelancer."],
-  ["CapCut Editing Masterclass","FREE • 2 hours","Edit viral Reels + TikTok like a pro."],
-  ["Make Money with TikTok","KSh 799 • 2 hours","Grow + monetize your account."],
-  ["Excel + AI for Jobs","FREE • 1 hour","Get office jobs faster."],
-  ["Learn Canva Design","FREE • 1 hour","Design posters, CVs, business cards."],
-  ["WhatsApp Business AI","KSh 499 • 1 hour","Auto-reply, sell more on WhatsApp."],
-  ["AI Music Creation","FREE • 1 hour","Make Gengetone beats with AI."],
-  ["Freelancing on Upwork","KSh 999 • 3 hours","Get your first client step by step."],
-  ["Learn Coding HTML","FREE • 3 days","Build your first website."],
-  ["AI for Teachers","FREE • 2 hours","Lesson plans, marking fast."],
-  ["YouTube Growth Course","KSh 799 • 2 hours","0 to 10K subscribers."],
-  ["Digital Marketing Basics","FREE • 2 hours","Facebook, Instagram ads."],
-  ["AI CV + Interview Prep","FREE • 1 hour","Get hired faster with AI CV."],
-  ["Learn Swahili to English AI","FREE • 1 hour","Translate + earn with AI."],
-  ["Start Online Shop","KSh 999 • 2 hours","Sell on Jumia, Instagram, TikTok Shop."]
-];
-function renderCourses(){
-  var q = document.getElementById('courseSearch').value.toLowerCase();
-  var html = '';
-  COURSES.forEach(function(c){
-    if(c[0].toLowerCase().includes(q)){
-      html += '<div class="box"><b>'+c[0]+'</b><p class="tag">'+c[1]+'</p><p>'+c[2]+'</p><button class="btn" onclick="alert(\'🎓 Enrolled: '+c[0]+'\')">Start Learning</button></div>';
-    }
-  });
-  document.getElementById('courseList').innerHTML = html || '<div class="box">No course found.</div>';
-}
-
-var UPDATES = [
-  ["🔥 NEW: Populii Hiring Kenyans","TODAY • AI Training","No degree needed. Rate photos, transcribe, label data. Pays via Airtm + Payoneer.","https://populii.com"],
-  ["Mercor - Experts $50-$200/hr","HOT • AI Training","For coders, doctors, lawyers, PhDs. Weekly pay via Stripe.","https://mercor.com"],
-  ["DataAnnotation.tech $20-$40/hr","AI Training","Write + rate AI answers. Best for beginners. PayPal.","https://dataannotation.tech"],
-  ["Outlier AI - Up to $50/hr","AI Training","Rate AI answers. Tough test but steady work.","https://outlier.ai"],
-  ["Alignerr by Labelbox $30-$120/hr","AI Training","Many roles, weekly pay. Good for language experts.","https://alignerr.com"],
-  ["Upwork - Remote Freelance","REMOTE JOBS","Biggest freelance site. Video, design, writing.","https://upwork.com"],
-  ["We Work Remotely","REMOTE JOBS","Real remote jobs from US companies.","https://weworkremotely.com"],
-  ["Remotive.io","REMOTE JOBS","Curated remote jobs posted daily.","https://remotive.com"],
-  ["Turing.com $30-$200/hr","REMOTE JOBS","For developers. Long-term remote work.","https://turing.com"],
-  ["Appen CrowdGen","AI Training","Oldest platform. Many small tasks worldwide.","https://appen.com"],
-  ["Toloka - Accepts Everyone","AI Training","Lower pay $10-15/hr but accepts Kenya easily.","https://toloka.ai"],
-  ["Fiverr - Sell AI Services","REMOTE JOBS","Sell prompt writing, AI videos, thumbnails.","https://fiverr.com"]
-];
-function renderUpdates(){
-  var q = document.getElementById('updateSearch').value.toLowerCase();
-  var html = '';
-  UPDATES.forEach(function(u){
-    if(u[0].toLowerCase().includes(q) || u[1].toLowerCase().includes(q)){
-      html += '<div class="box"><b>'+u[0]+'</b><p class="tag">'+u[1]+'</p><p>'+u[2]+'</p><a href="'+u[3]+'" target="_blank"><button class="btn">Visit Site →</button></a></div>';
-    }
-  });
-  document.getElementById('updateList').innerHTML = html || '<div class="box">No updates found.</div>';
-}
-renderJobs();
-renderCourses();
-renderUpdates();
-</script>
-</body>
-</html>
+<!-- JOB IDEAS -->
+<div id="p2" class="hidden">
+<div class="box"><b>💼 Matatu Conductor - Nairobi</b><p>Earn daily, learn routes, grow to own your own matatu. <br><span class="badge">Ksh 800-1500 / day</span></p></div>
+<div class="box"><b>🍲 Kenyan Street Food Seller</b><p>Mutura, smokie, mayai pasua - high demand in town. <br><span class="badge">Ksh 1000-2500 / day</span></p></div>
+<div class="box"><b>📱 Phone Repair</b><p>Learn in 
