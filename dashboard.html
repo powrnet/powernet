@@ -4,32 +4,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dashboard - POWRNET</title>
 <style>
-body{background:#000;color:#fff;font-family:system-ui;padding:16px;max-width:600px;margin:0 auto}
-.logo{text-align:center;font-weight:900;font-size:22px}
-.logo span{color:#a855f7}
-.box{background:#111;border:1px solid #222;border-radius:16px;padding:16px;margin:12px 0}
-.btn{width:100%;background:#a855f7;color:#fff;border:0;padding:12px;border-radius:99px;font-weight:bold}
-a{color:#a855f7}
+body{background:#000;color:#fff;font-family:system-ui;margin:0;padding:16px}
+.top{text-align:center}
+.logo{font-size:28px;font-weight:900} .logo span{color:#a855f7}
+.btns{display:flex;gap:10px;justify-content:center;margin:12px 0}
+.btns button{padding:10px 18px;border-radius:20px;border:0;font-weight:bold;cursor:pointer}
+.welcome{background:#1a1a1a;padding:12px;border-radius:12px;text-align:center}
+.tabs{display:flex;gap:8px;background:#1a1a1a;padding:8px;border-radius:30px;margin:16px 0;overflow-x:auto}
+.tabs button{background:transparent;color:#fff;border:0;padding:10px 16px;border-radius:20px;white-space:nowrap;cursor:pointer;font-weight:bold}
+.tabs button.active{background:#a855f7}
+.card{background:#111;border:1px solid #333;padding:16px;border-radius:16px;margin-bottom:12px;display:none}
+.card.active{display:block}
+textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;border-radius:12px;padding:12px;box-sizing:border-box}
+.big{background:#a855f7;color:#fff;border:0;width:100%;padding:14px;border-radius:30px;font-weight:bold;margin-top:10px;font-size:16px}
+.logout{background:#333;color:#fff}
 </style>
 </head>
 <body>
+<div class="top">
 <div class="logo">POWR<span>NET</span>.COM</div>
-<h2 style="text-align:center;margin:15px 0">Welcome Back! 👋</h2>
-<p style="text-align:center;color:#999">You are logged in to POWRNET</p>
-
-<div class="box">
-<b>🔥 Your Dashboard</b><br><br>
-✅ My Posts<br>
-✅ My Job Ideas<br>
-✅ My AI Lessons<br>
-✅ My Earnings: Ksh 0
+<p>Welcome Back! 👋 You are logged in</p>
+<div class="btns">
+<button class="logout" onclick="window.location.href='index.html'">Logout</button>
+<button style="background:#a855f7;color:#fff" onclick="showTab('create')">+ Create</button>
+</div>
 </div>
 
-<div class="box">
-<b>✨ Create New Post</b><br><br>
-<button class="btn" onclick="location.href='index.html'">+ Create Now</button>
+<div class="tabs">
+<button id="t-create" class="active" onclick="showTab('create')">✨ Create</button>
+<button id="t-jobs" onclick="showTab('jobs')">💼 Job Ideas</button>
+<button id="t-ai" onclick="showTab('ai')">🧠 Learn AI</button>
+<button id="t-sites" onclick="showTab('sites')">🔥 Real Sites</button>
 </div>
 
-<p style="text-align:center"><a href="index.html">← Back to Home</a> • <a href="index.html" onclick="localStorage.clear()">Logout</a></p>
+<div id="create" class="card active">
+<h3>✨ Create a Post / Video Idea</h3>
+<p style="color:#a855f7">Get trending ideas for TikTok, YouTube & Facebook</p>
+<textarea placeholder="e.g. matatu life in Nairobi..."></textarea>
+<button class="big" onclick="alert('Idea Generated! Try: A day with a boda rider in Nairobi')">Generate Idea →</button>
+<p>💡 Video Ideas<br>• A day with a boda rider in Nairobi<br>• Nairobi vs Mombasa - who wins?<br>• Landlord vs Tenant in Kenya 😂</p>
+</div>
+
+<div id="jobs" class="card">
+<h3>💼 Job Ideas</h3>
+<p>• Become a TikTok Creator - Post daily<br>• Freelance Video Editing - Ksh 500-2000 per video<br>• Sell on Jumia / Facebook Marketplace<br>• AI Content Writer - Use ChatGPT<br>• Boda / Delivery with Apps</p>
+<button class="big" onclick="alert('More jobs coming soon!')">See More Jobs</button>
+</div>
+
+<div id="ai" class="card">
+<h3>🧠 Learn AI</h3>
+<p>• Lesson 1: What is ChatGPT?<br>• Lesson 2: How to write good prompts<br>• Lesson 3: Make money with AI<br>• Lesson 4: Create videos with AI</p>
+<button class="big" onclick="alert('AI Lesson 1: Ask ChatGPT - Write me 5 video ideas about Nairobi life')">Start Lesson 1 →</button>
+</div>
+
+<div id="sites" class="card">
+<h3>🔥 Real Sites - Earn Real Money</h3>
+<p>• <b>Upwork.com</b> - Freelance work<br>• <b>Fiverr.com</b> - Sell skills<br>• <b>YouTube.com</b> - Post videos<br>• <b>Remotasks.com</b> - Small tasks<br>• <b>Ajira Digital Kenya</b> - Free training</p>
+<button class="big" onclick="window.open('https://www.upwork.com','_blank')">Open Upwork →</button>
+</div>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+  document.getElementById('t-'+name).classList.add('active');
+}
+</script>
 </body>
 </html>
