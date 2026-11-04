@@ -26,6 +26,7 @@ textarea{min-height:70px;resize:vertical}
 .footer{text-align:center;color:#555;font-size:12px;margin:24px 0 10px}
 a{text-decoration:none}
 .badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:6px 10px;border-radius:99px;font-size:11px;color:#aaa;margin:3px 2px}
+.warn{background:#2a1a00;border:1px solid #a16207;border-radius:16px;padding:14px;margin:10px 0;font-size:13px;line-height:1.5;color:#fde68a}
 </style>
 </head>
 <body>
@@ -36,9 +37,9 @@ a{text-decoration:none}
 
 <div class="tabs">
   <button id="t1" class="on" onclick="show('p1','t1')">✨ Create</button>
-  <button id="t2" onclick="show('p2','t2')">💼 Jobs</button>
+  <button id="t2" onclick="show('p2','t2')">💼 Job Ideas</button>
   <button id="t3" onclick="show('p3','t3')">🧠 Learn AI</button>
-  <button id="t4" onclick="show('p4','t4')">🔥 Updates</button>
+  <button id="t4" onclick="show('p4','t4')">🔥 Real Sites</button>
 </div>
 
 <!-- CREATE -->
@@ -50,9 +51,10 @@ a{text-decoration:none}
   <div class="box"><b>💡 Video Ideas</b><p>• A day in life of a boda rider<br>• Nairobi vs Mombasa food battle<br>• Funny landlord vs tenant skit</p></div>
 </div>
 
-<!-- JOBS -->
+<!-- JOBS - NOW HONEST -->
 <div id="p2" style="display:none">
-  <input id="jobSearch" placeholder="🔍 Search job... e.g driver, design" oninput="renderJobs()">
+  <div class="warn">⚠️ <b>These are JOB IDEAS, not live vacancies.</b><br>Use them to know what to search for. Real sites to apply are in the 🔥 Real Sites tab. POWRNET does not hire directly. Never pay to get a job!</div>
+  <input id="jobSearch" placeholder="🔍 Search idea... e.g driver, design" oninput="renderJobs()">
   <div id="jobList"></div>
 </div>
 
@@ -62,66 +64,61 @@ a{text-decoration:none}
   <div id="courseList"></div>
 </div>
 
-<!-- UPDATES -->
+<!-- UPDATES - REAL SITES -->
 <div id="p4" style="display:none">
-  <div class="box"><b>📢 Daily Opportunities Feed</b><p>New remote jobs, AI training sites & money platforms. Updated by POWRNET team. Never pay to get a job!</p></div>
-  <input id="updateSearch" placeholder="🔍 Search updates... e.g Populii, AI Training" oninput="renderUpdates()">
+  <div class="box"><b>📢 Real Platforms - Apply Here</b><p>These are real websites. Pay depends on your skills, tests & availability in Kenya. Never pay to join.</p></div>
+  <input id="updateSearch" placeholder="🔍 Search... e.g Populii, AI Training" oninput="renderUpdates()">
   <div id="updateList"></div>
 </div>
 
 <p class="footer">© 2026 POWRNET • Nairobi 🇰🇪<br>Made for Kenya, by Kenya</p>
 
 <script>
-// ===== TABS =====
 function show(pageId, tabId){
   ['p1','p2','p3','p4'].forEach(function(id){ document.getElementById(id).style.display='none'; });
   document.getElementById(pageId).style.display='block';
   ['t1','t2','t3','t4'].forEach(function(id){ document.getElementById(id).className=''; });
   document.getElementById(tabId).className='on';
 }
-
-// ===== CREATE =====
 function generateVideo(){
   var p = document.getElementById('prompt').value;
   document.getElementById('videoResult').innerHTML = '<div class="box"><b>🎬 Your Video Concept is Ready!</b><p>Prompt: "'+p+'"</p><p>Style: Cinematic, Nairobi street, 30s, trending music</p><p style="color:#4ade80">✅ Demo Mode — Full AI video generation coming soon!</p><button class="btn btn-outline" onclick="alert(\'Link copied! Share on TikTok\')">📤 Copy & Share Idea</button></div>';
 }
 
-// ===== JOBS DATA - [Title, Pay/Location, Description] =====
+// JOBS - [Title, Pay/Location, Description, Real Link to Apply]
 var JOBS = [
-  ["AI Video Editor - Remote","Remote • KSh 80K/mo","Edit AI videos for TikTok brands. CapCut + AI tools."],
-  ["Prompt Engineer Intern","Nairobi • KSh 50K/mo","Write prompts for businesses. No degree needed."],
-  ["Social Media Manager","Westlands • Full-time","Manage 5 Kenyan brands. Content + replies."],
-  ["Delivery Driver Bolt / Glovo","Nairobi • Daily Pay","Earn daily with motorbike or bicycle."],
-  ["Graphic Designer Freelance","Remote • Per Project","Posters, logos, thumbnails for YouTubers."],
-  ["Virtual Assistant","Remote • KSh 45K/mo","Emails, WhatsApp, scheduling for US clients."],
-  ["Content Writer AI","Remote • KSh 30K/mo","Write blogs using ChatGPT. English + Swahili."],
-  ["TikTok Content Creator","Nairobi • Flexible","Film matatu + street culture. Grow + earn."],
-  ["AI Customer Support","Remote • KSh 60K/mo","Answer chats using AI tools. Night shift available."],
-  ["Transcriptionist Swahili","Remote • KSh 25/hr","Transcribe audio to text. Fast typing needed."],
-  ["Data Entry Clerk","Nairobi • KSh 35K/mo","Enter data, Excel basics. Day shift."],
-  ["ChatGPT Trainer","Remote • $15/hr","Train AI, English + Swahili. Part-time."],
-  ["Video Editor CapCut","Remote • KSh 70K/mo","Edit Reels, TikTok, Shorts for influencers."],
-  ["Sales Agent","Nairobi • Commission","Sell airtime, phones. High commission."],
-  ["Online Tutor","Remote • KSh 500/hr","Teach Maths, English, KCSE. Zoom classes."],
-  ["Photographer Events","Nairobi • Per Event","Weddings, birthdays, graduations. Own camera."],
-  ["Web Designer","Remote • KSh 90K/mo","Build sites for small businesses. HTML + AI."],
-  ["Cashier Supermarket","Nairobi • KSh 30K/mo","Naivas, Quickmart, Carrefour branches."],
-  ["Motorbike Rider","Nairobi • Daily","Deliver parcels, food. Must have license."],
-  ["AI Voice Actor","Remote • Per Job","Record voiceovers for ads. Good mic needed."]
+  ["AI Video Editor - Remote","Remote • Example: KSh 80K/mo","Edit AI videos for TikTok brands. CapCut + AI tools.","https://www.upwork.com"],
+  ["Prompt Engineer Intern","Nairobi • Example: KSh 50K/mo","Write prompts for businesses. No degree needed.","https://www.upwork.com"],
+  ["Social Media Manager","Westlands • Example: Full-time","Manage 5 Kenyan brands. Content + replies.","https://www.upwork.com"],
+  ["Delivery Driver Bolt / Glovo","Nairobi • Daily Pay","Earn daily with motorbike or bicycle.","https://glovoapp.com"],
+  ["Graphic Designer Freelance","Remote • Per Project","Posters, logos, thumbnails for YouTubers.","https://www.fiverr.com"],
+  ["Virtual Assistant","Remote • Example: KSh 45K/mo","Emails, WhatsApp, scheduling for US clients.","https://www.upwork.com"],
+  ["Content Writer AI","Remote • Example: KSh 30K/mo","Write blogs using ChatGPT. English + Swahili.","https://www.upwork.com"],
+  ["TikTok Content Creator","Nairobi • Flexible","Film matatu + street culture. Grow + earn.","https://www.tiktok.com"],
+  ["AI Customer Support","Remote • Example: KSh 60K/mo","Answer chats using AI tools. Night shift available.","https://www.upwork.com"],
+  ["Transcriptionist Swahili","Remote • Example: KSh 25/hr","Transcribe audio to text. Fast typing needed.","https://appen.com"],
+  ["Data Entry Clerk","Nairobi • Example: KSh 35K/mo","Enter data, Excel basics. Day shift.","https://www.upwork.com"],
+  ["ChatGPT Trainer","Remote • Example: $15/hr","Train AI, English + Swahili. Part-time.","https://dataannotation.tech"],
+  ["Video Editor CapCut","Remote • Example: KSh 70K/mo","Edit Reels, TikTok, Shorts for influencers.","https://www.fiverr.com"],
+  ["Sales Agent","Nairobi • Commission","Sell airtime, phones. High commission.","https://www.upwork.com"],
+  ["Online Tutor","Remote • Example: KSh 500/hr","Teach Maths, English, KCSE. Zoom classes.","https://www.upwork.com"],
+  ["Photographer Events","Nairobi • Per Event","Weddings, birthdays, graduations. Own camera.","https://www.fiverr.com"],
+  ["Web Designer","Remote • Example: KSh 90K/mo","Build sites for small businesses. HTML + AI.","https://www.fiverr.com"],
+  ["Cashier Supermarket","Nairobi • Example: KSh 30K/mo","Naivas, Quickmart, Carrefour branches.","https://www.brightermonday.co.ke"],
+  ["Motorbike Rider","Nairobi • Daily","Deliver parcels, food. Must have license.","https://glovoapp.com"],
+  ["AI Voice Actor","Remote • Per Job","Record voiceovers for ads. Good mic needed.","https://www.fiverr.com"]
 ];
-
 function renderJobs(){
   var q = document.getElementById('jobSearch').value.toLowerCase();
   var html = '';
   JOBS.forEach(function(j){
     if(j[0].toLowerCase().includes(q) || j[1].toLowerCase().includes(q)){
-      html += '<div class="box"><b>'+j[0]+'</b><p class="tag">'+j[1]+'</p><p>'+j[2]+'</p><button class="btn" onclick="alert(\'✅ Applied for: '+j[0]+'\')">Apply Now</button></div>';
+      html += '<div class="box"><b>'+j[0]+'</b><p class="tag">'+j[1]+'</p><p>'+j[2]+'</p><a href="'+j[3]+'" target="_blank"><button class="btn">How to Apply →</button></a></div>';
     }
   });
-  document.getElementById('jobList').innerHTML = html || '<div class="box">No jobs found. Try another word.</div>';
+  document.getElementById('jobList').innerHTML = html || '<div class="box">No ideas found. Try another word.</div>';
 }
 
-// ===== COURSES DATA =====
 var COURSES = [
   ["ChatGPT for Beginners","FREE • 45 mins","Learn prompts, CVs, content creation."],
   ["AI Video Mastery","KSh 500 • 2 hours","Prompt to viral video. Full workflow."],
@@ -144,7 +141,6 @@ var COURSES = [
   ["Learn Swahili to English AI","FREE • 1 hour","Translate + earn with AI."],
   ["Start Online Shop","KSh 999 • 2 hours","Sell on Jumia, Instagram, TikTok Shop."]
 ];
-
 function renderCourses(){
   var q = document.getElementById('courseSearch').value.toLowerCase();
   var html = '';
@@ -156,8 +152,6 @@ function renderCourses(){
   document.getElementById('courseList').innerHTML = html || '<div class="box">No course found.</div>';
 }
 
-// ===== UPDATES DATA - [Title, Tag, Description, Link] =====
-// TO POST A NEW UPDATE: Copy one line, paste at TOP of this list, change the text!
 var UPDATES = [
   ["🔥 NEW: Populii Hiring Kenyans","TODAY • AI Training","No degree needed. Rate photos, transcribe, label data. Pays via Airtm + Payoneer.","https://populii.com"],
   ["Mercor - Experts $50-$200/hr","HOT • AI Training","For coders, doctors, lawyers, PhDs. Weekly pay via Stripe.","https://mercor.com"],
@@ -172,7 +166,6 @@ var UPDATES = [
   ["Toloka - Accepts Everyone","AI Training","Lower pay $10-15/hr but accepts Kenya easily.","https://toloka.ai"],
   ["Fiverr - Sell AI Services","REMOTE JOBS","Sell prompt writing, AI videos, thumbnails.","https://fiverr.com"]
 ];
-
 function renderUpdates(){
   var q = document.getElementById('updateSearch').value.toLowerCase();
   var html = '';
@@ -183,8 +176,6 @@ function renderUpdates(){
   });
   document.getElementById('updateList').innerHTML = html || '<div class="box">No updates found.</div>';
 }
-
-// Load all on start
 renderJobs();
 renderCourses();
 renderUpdates();
