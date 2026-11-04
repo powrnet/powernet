@@ -3,43 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET | Learn AI & Earn in Dollars</title>
-<meta name="description" content="Learn AI Training, Annotation, Freelancing & Writing. Get real AI jobs paying in Dollars ($). No sign in needed.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="POWRNET | Learn AI & Earn in Dollars">
-<meta property="og:description" content="Learn AI Training, Freelancing & Writing. Get real AI jobs paying in Dollars ($). No sign in needed.">
-<meta property="og:url" content="https://powrnet.github.io/powernet/">
+<title>POWRNET | Find Real Jobs - Earn in Dollars</title>
+<meta property="og:title" content="POWRNET | Find Real Jobs - Earn in Dollars">
+<meta property="og:description" content="Find real AI jobs paying in Dollars. AI Training, Annotation, Freelancing, Writing.">
 <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712107.png">
-<meta property="og:site_name" content="POWRNET">
-
 <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:Inter, Arial, sans-serif; }
-  body { background:#f8fafc; color:#0f172a; padding-bottom:110px; }
-  .page { display:none; }
-  .page.active { display:block; }
-  input, select, textarea { width:100%; padding:14px; margin:7px 0; border-radius:12px; border:1px solid #e2e8f0; font-size:15px; background:#fff; }
-  textarea { height:80px; }
-  .btn { width:100%; padding:14px; border:none; border-radius:12px; font-weight:bold; font-size:15px; cursor:pointer; margin:5px 0; }
-  .green { background:#16a34a; color:#fff; }
-  .yellow { background:#facc15; color:#000; }
-  .blue { background:#0ea5e9; color:#fff; }
-  .red { background:#ef4444; color:#fff; }
-
-  /* HEADER */
-  .header { background:linear-gradient(135deg,#7c3aed 0%,#2563eb 45%,#06b6d4 100%); padding:24px 16px 32px; color:#fff; text-align:center; border-radius:0 0 28px 28px; }
-  .header h1 { font-size:36px; letter-spacing:1px; }
-  .header h1 span { color:#facc15; }
-  .header p { font-size:14px; margin-top:8px; line-height:1.5; opacity:.95; }
-  .header .pill { display:inline-block; background:rgba(255,255,255,.22); padding:7px 14px; border-radius:20px; font-size:12px; font-weight:bold; margin-top:12px; }
-
-  .stats { display:flex; gap:10px; padding:0 14px; margin-top:-16px; }
-  .stat { flex:1; background:#fff; border-radius:16px; padding:12px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,.08); }
-  .stat b { font-size:18px; display:block; }
-  .stat span { font-size:11px; color:#64748b; }
-
-  .wrap { padding:14px; }
-  .sectionTitle { font-size:20px; margin:6px 0 4px; }
-  .sectionSub { font-size:13px; color:#64748b; margin-bottom:6px; }
-
-  /* JOB / LEARN CARD */
-  .mancard { background:#fff; border-radius:18px; padding:16px; margin:14px 0;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f6f7fb;color:#111}
+.header{background:linear-gradient(135deg,#6d28d9,#2563eb);color:#fff;padding:30px 16px 24px;text-align:center}
+.header h1{font-size:38px}
+.header h1 span{color:#facc15}
+.header p{margin-top:8px;font-size:14px;opacity:.9}
+.search{margin:-14px 14px 0;background:#fff;border-radius:14px;padding:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);display:flex;gap:8px}
+.search input{flex:1;border:none;outline:none;font-size:15px;padding:10px}
+.search button{border:none;background:#111;color:#fff;padding:10px 16px;border-radius:10px;font-weight:bold}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:14px}
+.filters button{white-space:nowrap;border:none;background:#fff;padding:10px 16px;border-radius:25px;font-weight:bold;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filters button.on{background:#111;color:#fff}
+.wrap{padding:0 14px 30px}
+.card{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.top{display:flex;gap:12px;align-items:center}
+.icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff}
+.purple{background:#7c3aed}.orange{background:#f59e0b}.cyan{background:#06b6d4}.pink{background:#ec4899}.green{background:#16a34a}
+.top b{font-size:15px;display:block}
+.top small{color:#888;font-size:12px}
+.title{color:#1d4ed8;font-size:19px;font-weight:bold;margin:12px 0 6px;display:block;text-decoration:none}
+.desc{color:#555;font-size:14px;line-height:1.6}
+.tags{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.tags span{background:#ecfdf5;color:#047857;padding:7px 12px;border-radius:20px;font-size:13px;font-weight:bold}
+.tags span:last-child{background:#fef3c7;color:#92400e}
+.apply{display:block;background:#16a34a;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:bold;margin-top:12px;text-decoration:none}
+.footer{text-align:center;color:#999;font-size:12px;padding:20px}
+</style>
+</head>
+<body>
+<div class="header"><h1>⚡ POWR<span>NET</span></h1><p>Find Real Jobs • Earn in Dollars ($)<br>AI Training • Annotation • Freelancing • Writing</p></div>
+<div class="search"><input id="searchInput" placeholder="Search jobs... e.g AI, Writing, Upwork" oninput="render()"><button onclick="render()">Search</button></div>
+<div class="filters" id="filters">
+<button class="on" onclick="setFilter('All',this)">All Jobs</button>
+<button onclick="setFilter('AI',this)">AI Training</button>
+<button onclick="setFilter('Annotation',this)">Annotation</button>
+<button onclick="setFilter('Freelancing',this)">Freelancing</button>
+<button onclick="setFilter('Writing',this)">Writing</button>
+<button onclick="setFilter('Data',this)">Data</button>
+</div>
+<div class="wrap"><div id="list"></div><div class="footer">POWRNET 2026 • Real Jobs • Made in Kenya 🇰🇪</div></div>
+<script>
+var jobs=[
+["DataAnnotation","dataannotation.tech","AI Trainer - DataAnnotation","Rate AI answers, write prompts. Top paying AI job.","$20 / Hour","AI Training","https://www.dataannotation.tech","🤖","purple"],
+["Remotasks","remotasks.com","AI Trainer - Remotasks","Image labelling, Lidar tasks. Free training inside.","$15 / Hour","AI Training","https://www.remotasks.com","🤖","purple"],
+["Outlier AI","outlier.ai","AI Trainer - Outlier AI","Writing, math, coding AI tasks. Flexible hours.","$25 / Hour","AI Training","https://outlier.ai","🤖","purple"],
+["Mercor","mercor.com","AI Trainer - Mercor Swahili","Swahili speakers to train AI. Translate + rate answers.","$22 / Hour","AI Training","https://mercor.com","🤖","purple"],
+["Alignerr","alignerr.com","AI Trainer - Alignerr","Rate AI answers. No experience needed.","$15 / Hour","AI Training","https://alignerr.com","🤖","purple"],
+["Surge AI","surgehq.ai","AI Trainer - Surge AI","Train AI with language and coding tasks.","$18 / Hour","AI Training","https://www.surgehq.ai","🤖","purple"],
+["Scale AI","scale.com","Annotation - Scale AI","Label images for ChatGPT and self-driving cars.","$18 / Hour","Annotation","https://scale.com","🏷️","orange"],
+["Appen","appen.com","Annotation - Appen","Text, image, voice annotation.","$12 / Hour","Annotation","https://appen.com","🏷️","orange"],
+["Sama","sama.com","Annotation - Sama AI","AI data labelling. Hiring in Kenya.","$13 / Hour","Annotation","https://www.sama.com","🏷️","orange"],
+["Toloka","toloka.ai","AI Training - Toloka","Small AI tasks, image, text. Pay via PayPal.","$12 / Hour","AI Training","https://toloka.ai","🤖","purple"],
+["Clickworker","clickworker.com","AI Training - Clickworker","AI training, text creation, data tasks.","$15 / Hour","AI Training","https://www.clickworker.com","🤖","purple"],
+["TELUS Digital","telusdigital.com","AI Trainer - TELUS Digital","AI data collection, voice, text tasks.","$18 / Hour","AI Training","https://www.telusdigital.com","🤖","purple"],
+["Upwork","upwork.com","Freelancing - Upwork VA","Virtual Assistant, data entry for US clients.","$15 / Hour","Freelancing","https://www.upwork.com","💻","cyan"],
+["Fiverr","fiverr.com","Freelancing - Fiverr","Sell logo, video editing, writing gigs.","$50 / Gig","Freelancing","https://www.fiverr.com","💻","cyan"],
+["Freelancer.com","freelancer.com","Freelancing - Freelancer.com","Bid on data entry, writing, design.","$10 / Hour","Freelancing","https://www.freelancer.com","💻","cyan"],
+["Rev","rev.com","Freelancing - Rev Transcription","Listen to audio, type what you hear.","$15 / Hour","Fre
