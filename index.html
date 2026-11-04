@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,175 +6,329 @@
 
 <meta name="google-site-verification" content="bYAtPnFXM8-eN-95XVLVfZP3C3_64P_r3jwx-qJ5OXM" />
 
-<title>Powernet AI Studio</title>
-<meta name="description" content="Discover AI tools, learn artificial intelligence and explore online AI training and job opportunities with Powernet AI Studio.">
-<meta name="keywords" content="AI tools, AI jobs, AI training, online jobs, artificial intelligence, Powernet AI Studio">
+<title>Powernet AI Studio | Create, Learn & Discover AI</title>
+<meta name="description" content="Explore AI tools, learn artificial intelligence and discover AI training and remote work opportunities with Powernet AI Studio.">
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --bg:#07140f;
+  --panel:#10251c;
+  --panel2:#153328;
+  --green:#36d995;
+  --muted:#a6bdb1;
+  --border:#254b39;
 }
+
+* {box-sizing:border-box;margin:0;padding:0}
 
 body {
-  font-family: Arial, sans-serif;
-  background: #081a15;
-  color: white;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:white;
+  min-height:100vh;
 }
 
-header {
-  padding: 20px;
-  background: #102c23;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+button,input {font:inherit}
+button,a {cursor:pointer}
+
+#loginScreen {
+  max-width:430px;
+  margin:90px auto;
+  padding:30px 22px;
+  text-align:center;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:18px;
 }
 
 .logo {
-  font-size: 23px;
-  font-weight: bold;
-  color: #45e5a0;
+  color:var(--green);
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
-  background: #24b879;
-  color: white;
-  font-weight: bold;
+.login-text {
+  color:var(--muted);
+  line-height:1.7;
+  margin:18px 0 25px;
 }
 
-button:hover {
-  background: #15945e;
+.primary {
+  background:var(--green);
+  color:#062116;
+  border:0;
+  padding:13px 20px;
+  border-radius:9px;
+  font-weight:bold;
+}
+
+.primary:hover {background:#65e9b0}
+
+#dashboard {display:none}
+
+header {
+  padding:17px 5%;
+  background:#0d2118;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.profile {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.avatar {
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--green);
+  color:#062116;
+  display:grid;
+  place-items:center;
+  font-weight:bold;
+}
+
+.logout {
+  background:#244333;
+  color:white;
+  border:0;
+  padding:10px 13px;
+  border-radius:8px;
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 25px 18px;
+  width:92%;
+  max-width:1200px;
+  margin:auto;
+  padding:28px 0;
 }
 
 .hero {
-  padding: 45px 20px;
-  text-align: center;
-  background: #10372a;
-  border-radius: 15px;
-  margin-bottom: 25px;
+  padding:45px 28px;
+  border-radius:20px;
+  background:linear-gradient(120deg,#123e2d,#10251c 75%);
+  border:1px solid #286247;
+  margin-bottom:25px;
+}
+
+.hero small {
+  color:var(--green);
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
 .hero h1 {
-  font-size: 34px;
-  margin-bottom: 15px;
+  font-size:clamp(28px,5vw,43px);
+  margin:17px 0;
+  line-height:1.2;
 }
 
 .hero p {
-  color: #c4d9ce;
-  line-height: 1.7;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:650px;
 }
 
+.hero button {margin-top:22px}
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:28px;
+}
+
+.stat {
+  padding:18px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+
+.stat strong {
+  display:block;
+  color:var(--green);
+  font-size:25px;
+  margin-bottom:7px;
+}
+
+.stat span {color:var(--muted);font-size:13px}
+
 nav {
-  display: flex;
-  gap: 10px;
-  margin: 25px 0;
-  flex-wrap: wrap;
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  padding-bottom:12px;
+  margin-bottom:27px;
 }
 
 nav button {
-  flex: 1;
-  min-width: 90px;
-  background: #183c30;
+  background:#142a20;
+  color:#c3d8cb;
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:13px 23px;
+  white-space:nowrap;
 }
 
 nav button.active {
-  background: #24b879;
+  background:var(--green);
+  color:#062116;
+  font-weight:bold;
+  border-color:var(--green);
 }
 
-.section {
-  display: none;
+.section {display:none}
+.section.active {display:block}
+
+.section-heading {margin-bottom:22px}
+
+.section-heading h2 {
+  font-size:25px;
+  margin-bottom:9px;
 }
 
-.section.active {
-  display: block;
-}
-
-h2 {
-  margin-bottom: 18px;
+.section-heading p {
+  color:var(--muted);
+  line-height:1.6;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+  gap:16px;
 }
 
 .card {
-  background: #102c23;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #23513e;
+  background:var(--panel);
+  padding:21px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  transition:.2s;
+}
+
+.card:hover {
+  border-color:var(--green);
+  transform:translateY(-3px);
+}
+
+.card .symbol {
+  font-size:25px;
+  margin-bottom:14px;
 }
 
 .card h3 {
-  margin-bottom: 10px;
-  color: #45e5a0;
+  color:var(--green);
+  font-size:17px;
+  margin-bottom:10px;
 }
 
 .card p {
-  color: #c3d5cb;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
+  min-height:65px;
+  margin-bottom:16px;
 }
 
 .card a {
-  display: inline-block;
-  text-decoration: none;
-  color: #45e5a0;
-  font-weight: bold;
+  display:inline-block;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.card a:hover {text-decoration:underline}
+
+.tag {
+  display:inline-block;
+  padding:5px 9px;
+  background:#1d4030;
+  color:#9ff2c9;
+  border-radius:20px;
+  font-size:11px;
+  margin-bottom:12px;
 }
 
 .search {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #37644f;
-  background: #102c23;
-  color: white;
-  margin-bottom: 20px;
+  width:100%;
+  padding:15px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  color:white;
+  border-radius:10px;
+  margin-bottom:15px;
+  outline:none;
 }
 
-.search::placeholder {
-  color: #b2c8bb;
+.search:focus {border-color:var(--green)}
+
+.filters {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
 }
 
-#loginScreen {
-  max-width: 420px;
-  margin: 90px auto;
-  padding: 30px;
-  background: #102c23;
-  border-radius: 15px;
-  text-align: center;
+.filters button {
+  background:#173326;
+  color:#c5d9ce;
+  border:1px solid var(--border);
+  padding:9px 13px;
+  border-radius:20px;
+  font-size:12px;
 }
 
-#loginScreen p {
-  color: #c4d9ce;
-  line-height: 1.6;
-  margin: 15px 0 25px;
+.filters button.active {
+  background:var(--green);
+  color:#062116;
 }
 
-#dashboard {
-  display: none;
+.notice {
+  background:#192f23;
+  border-left:3px solid var(--green);
+  color:#c7d8ce;
+  padding:15px;
+  border-radius:7px;
+  line-height:1.6;
+  font-size:13px;
+  margin:18px 0;
+}
+
+.empty {
+  color:var(--muted);
+  padding:25px;
 }
 
 footer {
-  text-align: center;
-  padding: 30px;
-  color: #9db8a9;
-  margin-top: 40px;
+  text-align:center;
+  padding:30px 15px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  line-height:2;
+  margin-top:45px;
+}
+
+@media(max-width:600px) {
+  header {padding:16px}
+  .logo {font-size:18px}
+  .container {width:94%}
+  .hero {padding:32px 20px}
+  .stats {gap:8px}
+  .stat {padding:12px 8px}
+  .stat strong {font-size:20px}
+  .stat span {font-size:11px}
+  nav button {padding:12px 16px}
 }
 </style>
 </head>
@@ -184,150 +337,229 @@ footer {
 
 <div id="loginScreen">
   <div class="logo">POWERNET AI STUDIO</div>
-  <h2 style="margin-top:25px">Welcome to Powernet</h2>
-  <p>Discover AI tools, learn artificial intelligence and explore online opportunities.</p>
-  <button onclick="login()" style="width:100%">
+  <h2 style="margin-top:28px">Welcome to Powernet</h2>
+  <p class="login-text">
+    Your destination for AI creativity, learning and discovering opportunities in the digital world.
+  </p>
+  <button class="primary" onclick="login()" style="width:100%">
     Continue with Google
   </button>
-  <p id="loginMessage"></p>
+  <p id="loginMessage" style="color:#ff9999;margin-top:15px;font-size:13px"></p>
 </div>
 
 <div id="dashboard">
 
 <header>
   <div class="logo">POWERNET AI STUDIO</div>
-  <div>
-    <span id="userName"></span>
-    <button onclick="logout()">Sign out</button>
+  <div class="profile">
+    <div class="avatar" id="avatar">P</div>
+    <span id="userName">Welcome</span>
+    <button class="logout" onclick="logout()">Sign out</button>
   </div>
 </header>
 
-<div class="container">
+<main class="container">
 
 <div class="hero">
-  <h1>Explore the Power of AI</h1>
-  <p>Create, learn and discover opportunities in artificial intelligence.</p>
+  <small>WELCOME TO YOUR AI WORLD</small>
+  <h1>Explore. Learn. Create.</h1>
+  <p>
+    Discover powerful AI tools, develop valuable digital skills
+    and explore opportunities in the growing artificial intelligence industry.
+  </p>
+  <button class="primary" onclick="showTab('create',document.getElementById('tabCreate'))">
+    Explore AI tools →
+  </button>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <strong>AI</strong>
+    <span>Creative tools</span>
+  </div>
+  <div class="stat">
+    <strong>Learn</strong>
+    <span>Build your skills</span>
+  </div>
+  <div class="stat">
+    <strong>Explore</strong>
+    <span>Digital opportunities</span>
+  </div>
 </div>
 
 <nav>
-  <button class="active" onclick="showTab('create',this)">Create</button>
-  <button onclick="showTab('learn',this)">Learn AI</button>
-  <button onclick="showTab('jobs',this)">Jobs</button>
+  <button id="tabCreate" class="active" onclick="showTab('create',this)">✦ Create</button>
+  <button id="tabLearn" onclick="showTab('learn',this)">▣ Learn AI</button>
+  <button id="tabJobs" onclick="showTab('jobs',this)">⌕ Jobs</button>
 </nav>
 
-<!-- CREATE -->
+<!-- CREATE SECTION -->
 
 <section id="create" class="section active">
-<h2>Create with AI</h2>
+
+<div class="section-heading">
+  <h2>Create with AI</h2>
+  <p>Discover tools to bring your ideas to life.</p>
+</div>
+
 <div class="grid">
 
 <div class="card">
+<div class="symbol">🎬</div>
 <h3>AI Video Generation</h3>
-<p>Explore tools for generating videos from text prompts.</p>
-<a href="https://runwayml.com/" target="_blank">Explore →</a>
+<p>Discover tools that turn text prompts into videos.</p>
+<a href="https://runwayml.com/" target="_blank" rel="noopener">Explore tools →</a>
 </div>
 
 <div class="card">
+<div class="symbol">🎨</div>
 <h3>AI Image Creation</h3>
-<p>Discover artificial intelligence image creation tools.</p>
-<a href="https://www.canva.com/ai-image-generator/" target="_blank">Explore →</a>
+<p>Create artwork, illustrations and visual concepts.</p>
+<a href="https://www.canva.com/ai-image-generator/" target="_blank" rel="noopener">Explore tools →</a>
 </div>
 
 <div class="card">
+<div class="symbol">✍️</div>
 <h3>AI Writing</h3>
-<p>Explore AI writing and content creation tools.</p>
-<a href="https://chatgpt.com/" target="_blank">Explore →</a>
+<p>Discover AI writing and content creation assistants.</p>
+<a href="https://chatgpt.com/" target="_blank" rel="noopener">Explore tools →</a>
 </div>
 
 <div class="card">
+<div class="symbol">🎙️</div>
 <h3>AI Voice</h3>
-<p>Discover AI voice and audio creation tools.</p>
-<a href="https://elevenlabs.io/" target="_blank">Explore →</a>
+<p>Explore voice generation and audio technology.</p>
+<a href="https://elevenlabs.io/" target="_blank" rel="noopener">Explore tools →</a>
 </div>
 
 <div class="card">
+<div class="symbol">🖌️</div>
 <h3>AI Design</h3>
-<p>Explore creative design tools powered by AI.</p>
-<a href="https://www.adobe.com/products/firefly.html" target="_blank">Explore →</a>
+<p>Explore creative design and graphic generation.</p>
+<a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener">Explore tools →</a>
 </div>
 
 <div class="card">
+<div class="symbol">💻</div>
 <h3>AI Coding</h3>
-<p>Explore AI tools that assist with programming.</p>
-<a href="https://github.com/features/copilot" target="_blank">Explore →</a>
+<p>Discover tools that assist with software development.</p>
+<a href="https://github.com/features/copilot" target="_blank" rel="noopener">Explore tools →</a>
+</div>
+
+<div class="card">
+<div class="symbol">🤖</div>
+<h3>AI Chatbots</h3>
+<p>Explore conversational AI and virtual assistants.</p>
+<a href="https://gemini.google.com/" target="_blank" rel="noopener">Explore tools →</a>
+</div>
+
+<div class="card">
+<div class="symbol">📊</div>
+<h3>AI Productivity</h3>
+<p>Discover tools for organizing ideas and improving workflows.</p>
+<a href="https://www.notion.com/product/ai" target="_blank" rel="noopener">Explore tools →</a>
 </div>
 
 </div>
 </section>
 
-<!-- LEARN AI -->
+<!-- LEARN SECTION -->
 
 <section id="learn" class="section">
+
+<div class="section-heading">
 <h2>Learn Artificial Intelligence</h2>
+<p>Build knowledge and develop skills with educational resources.</p>
+</div>
+
 <div class="grid">
 
 <div class="card">
-<h3>Google AI Learning</h3>
-<p>Explore AI courses and educational resources.</p>
-<a href="https://grow.google/ai/" target="_blank">Start learning →</a>
+<div class="symbol">🌐</div>
+<h3>Google AI</h3>
+<p>Explore artificial intelligence learning resources.</p>
+<a href="https://grow.google/ai/" target="_blank" rel="noopener">Start learning →</a>
 </div>
 
 <div class="card">
-<h3>Microsoft AI</h3>
-<p>Learn about AI concepts and applications.</p>
-<a href="https://learn.microsoft.com/en-us/ai/" target="_blank">Start learning →</a>
+<div class="symbol">🪟</div>
+<h3>Microsoft Learn</h3>
+<p>Learn AI concepts and technology fundamentals.</p>
+<a href="https://learn.microsoft.com/en-us/ai/" target="_blank" rel="noopener">Start learning →</a>
 </div>
 
 <div class="card">
+<div class="symbol">🎓</div>
 <h3>IBM SkillsBuild</h3>
-<p>Explore digital skills and AI learning resources.</p>
-<a href="https://skillsbuild.org/" target="_blank">Start learning →</a>
+<p>Discover digital skills and AI educational resources.</p>
+<a href="https://skillsbuild.org/" target="_blank" rel="noopener">Start learning →</a>
 </div>
 
 <div class="card">
+<div class="symbol">🧠</div>
 <h3>Elements of AI</h3>
-<p>Learn the fundamentals of artificial intelligence.</p>
-<a href="https://www.elementsofai.com/" target="_blank">Start learning →</a>
+<p>Understand the fundamentals of artificial intelligence.</p>
+<a href="https://www.elementsofai.com/" target="_blank" rel="noopener">Start learning →</a>
 </div>
 
 <div class="card">
+<div class="symbol">📚</div>
 <h3>DeepLearning.AI</h3>
-<p>Explore AI and machine learning courses.</p>
-<a href="https://www.deeplearning.ai/" target="_blank">Start learning →</a>
+<p>Explore machine learning and AI courses.</p>
+<a href="https://www.deeplearning.ai/" target="_blank" rel="noopener">Start learning →</a>
 </div>
 
 <div class="card">
-<h3>Coursera AI</h3>
-<p>Discover AI courses from different institutions.</p>
-<a href="https://www.coursera.org/" target="_blank">Start learning →</a>
+<div class="symbol">🌍</div>
+<h3>Coursera</h3>
+<p>Explore AI courses from universities and institutions.</p>
+<a href="https://www.coursera.org/" target="_blank" rel="noopener">Start learning →</a>
 </div>
 
 </div>
 </section>
 
-<!-- JOBS -->
+<!-- JOBS SECTION -->
 
 <section id="jobs" class="section">
-<h2>AI Jobs & Online Opportunities</h2>
-<p style="color:#c4d9ce;margin-bottom:18px">
-Explore external platforms offering AI training, data annotation and remote work opportunities. Availability depends on location and qualifications.
-</p>
+
+<div class="section-heading">
+<h2>AI Jobs & Opportunities</h2>
+<p>Discover platforms offering AI-related projects, remote work and digital opportunities.</p>
+</div>
+
+<div class="notice">
+<strong>Important:</strong> These are external opportunity platforms, not guaranteed vacancies. Availability depends on your country, skills and project requirements. Many paid contributor and freelance platforms require applicants to be at least 18. Check the official age and eligibility rules before applying. Never pay someone to secure a job.
+</div>
 
 <input
 class="search"
 id="jobSearch"
-placeholder="Search jobs or platforms..."
+type="search"
+placeholder="Search AI training, annotation, transcription..."
 oninput="searchJobs()"
 >
 
-<div class="grid" id="jobList"></div>
-</section>
-
+<div class="filters" id="filters">
+<button class="active" onclick="filterJobs('All',this)">All</button>
+<button onclick="filterJobs('AI Training',this)">AI Training</button>
+<button onclick="filterJobs('Data Annotation',this)">Data Annotation</button>
+<button onclick="filterJobs('Language',this)">Language</button>
+<button onclick="filterJobs('Freelancing',this)">Freelancing</button>
+<button onclick="filterJobs('Research',this)">Research & Data</button>
 </div>
 
+<div class="grid" id="jobList"></div>
+
+</section>
+
+</main>
+
 <footer>
-<p>© 2026 Powernet AI Studio. All rights reserved.</p>
+<strong style="color:var(--green)">POWERNET AI STUDIO</strong>
 <p>Explore. Learn. Create.</p>
+<p>© 2026 Powernet AI Studio. All rights reserved.</p>
+<p>Independent educational and opportunity directory. Not affiliated with listed providers.</p>
 </footer>
 
 </div>
@@ -338,22 +570,22 @@ import { initializeApp }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-  signOut
+getAuth,
+GoogleAuthProvider,
+signInWithPopup,
+onAuthStateChanged,
+signOut
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyClOxfEC1JwvzvmehwBq9CDaLGZXrvBbEI",
-  authDomain: "powernet--ai.firebaseapp.com",
-  projectId: "powernet--ai",
-  storageBucket: "powernet--ai.firebasestorage.app",
-  messagingSenderId: "944126341416",
-  appId: "1:944126341416:web:d0e2e92d0b5e1e5317201d",
-  measurementId: "G-GV86B7EXKB"
+apiKey: "AIzaSyClOxfEC1JwvzvmehwBq9CDaLGZXrvBbEI",
+authDomain: "powernet--ai.firebaseapp.com",
+projectId: "powernet--ai",
+storageBucket: "powernet--ai.firebasestorage.app",
+messagingSenderId: "944126341416",
+appId: "1:944126341416:web:d0e2e92d0b5e1e5317201d",
+measurementId: "G-GV86B7EXKB"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -361,166 +593,269 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 window.login = async function() {
-  const message = document.getElementById("loginMessage");
+const message = document.getElementById("loginMessage");
+message.textContent = "Connecting...";
 
-  try {
-    await signInWithPopup(auth, provider);
-  } catch(error) {
-    message.textContent = error.message;
-  }
+try {
+await signInWithPopup(auth,provider);
+message.textContent = "";
+} catch(error) {
+message.textContent = "Sign-in failed: " + error.message;
+}
 };
 
 window.logout = async function() {
-  await signOut(auth);
+try {
+await signOut(auth);
+} catch(error) {
+alert("Unable to sign out. Please try again.");
+}
 };
 
-onAuthStateChanged(auth, user => {
-  if(user) {
-    document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("dashboard").style.display = "block";
-    document.getElementById("userName").textContent =
-      user.displayName || user.email;
-  } else {
-    document.getElementById("loginScreen").style.display = "block";
-    document.getElementById("dashboard").style.display = "none";
-  }
+onAuthStateChanged(auth,user => {
+
+if(user) {
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("dashboard").style.display="block";
+
+const name = user.displayName || user.email || "User";
+
+document.getElementById("userName").textContent=name;
+document.getElementById("avatar").textContent=name.charAt(0).toUpperCase();
+
+} else {
+
+document.getElementById("loginScreen").style.display="block";
+document.getElementById("dashboard").style.display="none";
+
+}
+
 });
 
-window.showTab = function(id, button) {
-  document.querySelectorAll(".section").forEach(section => {
-    section.classList.remove("active");
-  });
+window.showTab = function(id,button) {
 
-  document.querySelectorAll("nav button").forEach(btn => {
-    btn.classList.remove("active");
-  });
+document.querySelectorAll(".section").forEach(section=>{
+section.classList.remove("active");
+});
 
-  document.getElementById(id).classList.add("active");
-  button.classList.add("active");
+document.querySelectorAll("nav button").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+button.classList.add("active");
+
 };
 
 const jobs = [
-  {
-    name:"CrowdGen by Appen",
-    description:"AI training, data collection and evaluation projects.",
-    url:"https://crowdgen.com/"
-  },
-  {
-    name:"TELUS Digital AI",
-    description:"AI data evaluation and online task opportunities.",
-    url:"https://www.telusdigital.com/careers/ai-community"
-  },
-  {
-    name:"OneForma",
-    description:"Data collection, language and AI training projects.",
-    url:"https://www.oneforma.com/"
-  },
-  {
-    name:"Toloka",
-    description:"Online data labelling and AI-related tasks.",
-    url:"https://toloka.ai/"
-  },
-  {
-    name:"DataAnnotation",
-    description:"AI evaluation and training opportunities.",
-    url:"https://www.dataannotation.tech/"
-  },
-  {
-    name:"Outlier",
-    description:"AI model evaluation and specialist projects.",
-    url:"https://outlier.ai/"
-  },
-  {
-    name:"Clickworker",
-    description:"Microtasks, data and online projects.",
-    url:"https://www.clickworker.com/"
-  },
-  {
-    name:"RWS TrainAI",
-    description:"Language and AI data-related opportunities.",
-    url:"https://www.rws.com/artificial-intelligence/train-ai-data-services/"
-  },
-  {
-    name:"Remotasks",
-    description:"Explore AI data annotation opportunities.",
-    url:"https://www.remotasks.com/"
-  },
-  {
-    name:"Amazon Mechanical Turk",
-    description:"Online microtask marketplace.",
-    url:"https://www.mturk.com/"
-  },
-  {
-    name:"Upwork",
-    description:"Freelance work in technology, writing and design.",
-    url:"https://www.upwork.com/"
-  },
-  {
-    name:"Fiverr",
-    description:"Offer digital and creative services.",
-    url:"https://www.fiverr.com/"
-  },
-  {
-    name:"Freelancer",
-    description:"Explore freelance projects worldwide.",
-    url:"https://www.freelancer.com/"
-  },
-  {
-    name:"Prolific",
-    description:"Research participation opportunities.",
-    url:"https://www.prolific.com/"
-  },
-  {
-    name:"Indeed",
-    description:"Search for remote and AI-related jobs.",
-    url:"https://www.indeed.com/"
-  }
-];
 
-const jobList = document.getElementById("jobList");
+{
+name:"CrowdGen by Appen",
+category:"AI Training",
+icon:"🤖",
+description:"AI model training, data collection, evaluation and language projects.",
+url:"https://crowdgen.com/"
+},
 
-function displayJobs(items) {
-  jobList.innerHTML = "";
+{
+name:"TELUS Digital AI Community",
+category:"AI Training",
+icon:"🌐",
+description:"Explore search evaluation, online rating and AI data opportunities.",
+url:"https://www.telusdigital.com/careers/ai-community"
+},
 
-  if(items.length === 0) {
-    jobList.innerHTML = "<p>No matching opportunities found.</p>";
-    return;
-  }
+{
+name:"OneForma",
+category:"Data Annotation",
+icon:"📊",
+description:"Explore data annotation, search evaluation, language and voice projects. Check individual country requirements.",
+url:"https://www.oneforma.com/projects/"
+},
 
-  items.forEach(job => {
-    const card = document.createElement("div");
-    card.className = "card";
+{
+name:"RWS TrainAI",
+category:"AI Training",
+icon:"🧠",
+description:"Discover AI data collection, online rating, annotation and language projects.",
+url:"https://www.rws.com/artificial-intelligence/train-ai-data-services/trainai-community/"
+},
 
-    const title = document.createElement("h3");
-    title.textContent = job.name;
+{
+name:"CloudFactory",
+category:"Data Annotation",
+icon:"☁️",
+description:"Explore data processing and AI data annotation opportunities.",
+url:"https://www.cloudfactory.com/"
+},
 
-    const description = document.createElement("p");
-    description.textContent = job.description;
+{
+name:"HumanSignal",
+category:"Data Annotation",
+icon:"🏷️",
+description:"Explore contributor opportunities in AI data annotation and quality review.",
+url:"https://onboard.humansignal.com/"
+},
 
-    const link = document.createElement("a");
-    link.textContent = "Visit platform →";
-    link.href = job.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+{
+name:"Equalyz AI",
+category:"Research",
+icon:"🌍",
+description:"Explore African language, text, image and video data contribution projects.",
+url:"https://www.crowd.equalyz.ai/"
+},
 
-    card.append(title, description, link);
-    jobList.appendChild(card);
-  });
+{
+name:"Goloka Contributors",
+category:"Research",
+icon:"🌍",
+description:"Discover African research, surveys, language and data contribution opportunities.",
+url:"https://collect.goloka.io/"
+},
+
+{
+name:"GoTranscript",
+category:"Language",
+icon:"🎙️",
+description:"Explore transcription and audio-related opportunities. Check current contributor eligibility.",
+url:"https://gotranscript.com/"
+},
+
+{
+name:"Upwork",
+category:"Freelancing",
+icon:"💼",
+description:"Explore independent projects in writing, design, technology and digital services.",
+url:"https://www.upwork.com/"
+},
+
+{
+name:"Fiverr",
+category:"Freelancing",
+icon:"🚀",
+description:"Explore digital service categories including graphic design, animation and writing.",
+url:"https://www.fiverr.com/"
+},
+
+{
+name:"Freelancer",
+category:"Freelancing",
+icon:"💻",
+description:"Discover freelance projects in programming, design and other digital skills.",
+url:"https://www.freelancer.com/"
+},
+
+{
+name:"Prolific",
+category:"Research",
+icon:"🔬",
+description:"Explore academic research participation opportunities and eligibility rules.",
+url:"https://www.prolific.com/"
+},
+
+{
+name:"iMerit",
+category:"Data Annotation",
+icon:"📁",
+description:"Explore data annotation and AI data services career opportunities.",
+url:"https://imerit.net/"
+},
+
+{
+name:"Welocalize",
+category:"Language",
+icon:"🌐",
+description:"Explore language, search quality and localization career opportunities.",
+url:"https://www.welocalize.com/careers/"
 }
 
-displayJobs(jobs);
+];
 
-window.searchJobs = function() {
-  const query = document.getElementById("jobSearch")
-    .value.toLowerCase();
+const jobList=document.getElementById("jobList");
 
-  const filtered = jobs.filter(job =>
-    job.name.toLowerCase().includes(query) ||
-    job.description.toLowerCase().includes(query)
-  );
+let activeCategory="All";
 
-  displayJobs(filtered);
+function displayJobs(items) {
+
+jobList.innerHTML="";
+
+if(items.length===0) {
+jobList.innerHTML='<p class="empty">No matching opportunities found.</p>';
+return;
+}
+
+items.forEach(job=>{
+
+const card=document.createElement("article");
+card.className="card";
+
+const icon=document.createElement("div");
+icon.className="symbol";
+icon.textContent=job.icon;
+
+const tag=document.createElement("span");
+tag.className="tag";
+tag.textContent=job.category;
+
+const title=document.createElement("h3");
+title.textContent=job.name;
+
+const description=document.createElement("p");
+description.textContent=job.description;
+
+const link=document.createElement("a");
+link.textContent="Visit official website →";
+link.href=job.url;
+link.target="_blank";
+link.rel="noopener noreferrer";
+
+card.append(icon,tag,title,description,link);
+
+jobList.appendChild(card);
+
+});
+
+}
+
+window.filterJobs=function(category,button) {
+
+activeCategory=category;
+
+document.querySelectorAll(".filters button").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+window.searchJobs();
+
 };
+
+window.searchJobs=function() {
+
+const query=document.getElementById("jobSearch")
+.value.toLowerCase().trim();
+
+const filtered=jobs.filter(job=>{
+
+const matchesCategory=
+activeCategory==="All" || job.category===activeCategory;
+
+const matchesSearch=
+job.name.toLowerCase().includes(query) ||
+job.category.toLowerCase().includes(query) ||
+job.description.toLowerCase().includes(query);
+
+return matchesCategory && matchesSearch;
+
+});
+
+displayJobs(filtered);
+
+};
+
+displayJobs(jobs);
 
 </script>
 
