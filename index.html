@@ -14,7 +14,9 @@ h1{font-size:32px;color:#22c55e}
 input,select,textarea{width:100%;padding:14px;margin:7px 0;border-radius:12px;border:none;font-size:15px;background:white;color:#000}
 textarea{height:80px}
 .btn{width:100%;padding:15px;border:none;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer;margin:5px 0}
-.green{background:#25D366;color:white}.yellow{background:#facc15;color:#000}.blue{background:#38bdf8;color:#000}.red{background:#ef4444;color:white}.grey{background:#334155;color:white}
+.green{background:#25D366;color:white}.yellow{background:#facc15;color:#000}.blue{background:#38bdf8;color:#000}.red{background:#ef4444;color:white}
+.google{background:white;color:#000;display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:12px;font-weight:bold;font-size:17px;cursor:pointer;width:100%;border:none}
+.google span{font-size:20px}
 .card{background:#1e293b;border-radius:15px;padding:15px;margin:11px 0;border-left:4px solid #22c55e}
 .card h3{font-size:15px}.card p{font-size:13px;color:#94a3b8;margin:6px 0;line-height:1.4}
 .card button{display:block;width:100%;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:9px;font-weight:bold;margin-top:9px;border:none;cursor:pointer;font-size:15px}
@@ -33,30 +35,41 @@ textarea{height:80px}
 .filter button.on{background:#facc15;color:#000}
 .wa-box{background:#1e293b;border:1px solid #25D366;border-radius:12px;padding:13px;text-align:center;margin:15px 0}
 .wa-box p{font-size:13px;color:#cbd5e1}
+.divider{display:flex;align-items:center;gap:10px;color:#94a3b8;font-size:12px;margin:15px 0}
+.divider:before,.divider:after{content:"";flex:1;height:1px;background:#334155}
 </style>
 </head>
 <body>
 
-<!-- SIGNUP -->
+<!-- SIGNUP - GOOGLE ONLY -->
 <div id="signup" class="page active">
-<div class="center" style="padding:25px 0 10px"><h1>⚡ POWRNET</h1><p class="sub">Earn Online in Kenya<br>No Experience Needed<br><b style="color:#facc15">Join Free - Get Daily Jobs</b></p></div>
+<div class="center" style="padding:30px 0 10px">
+<div style="font-size:50px">⚡</div>
+<h1>POWRNET</h1>
+<p class="sub">Earn Online in Kenya<br>No Experience Needed<br><b style="color:#facc15">Join Free - Get Daily Jobs</b></p>
+</div>
+
+<!-- GOOGLE BUTTON -->
+<button class="google" onclick="googleLogin()"><span>🟢</span> Continue with Google</button>
+<p class="center" style="font-size:12px;color:#94a3b8;margin-top:8px">We only use your Google name & email to create your account.<br>No password needed.</p>
+
+<div class="divider">OR CONTINUE WITH NAME</div>
 <input id="name" placeholder="Your Full Name">
-<input id="phone" placeholder="Your WhatsApp Number e.g 0112072729">
+<input id="email" placeholder="Your Gmail e.g you@gmail.com">
 <select id="skill"><option>What can you do?</option><option>Easy Tasks - No Skill</option><option>Writing</option><option>Surveys</option><option>Design / Video</option></select>
 <select id="pay"><option>How to get paid?</option><option>M-Pesa</option><option>PayPal</option></select>
 <button class="btn green" onclick="goDashboard()">✅ CREATE MY ACCOUNT →</button>
-<p class="center" style="font-size:12px;color:#94a3b8;margin-top:10px">Free to join • Daily jobs inside the app</p>
+<p class="center" style="font-size:12px;color:#94a3b8;margin-top:10px">Free to join • Daily jobs inside the app • No phone number needed</p>
 <div class="wa-box"><p>💬 Questions Only</p><a class="link" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20have%20a%20question" target="_blank">WhatsApp Us For Queries →</a></div>
 </div>
 
 <!-- DASHBOARD -->
 <div id="dashWrap" style="display:none">
-<div class="center"><h1>⚡ POWRNET</h1><p style="color:#cbd5e1;font-size:14px">Welcome, <b id="showName" style="color:#facc15">Friend</b> 👋 <a href="#" onclick="logout()" style="color:#94a3b8;font-size:12px">Log out</a></p></div>
+<div class="center"><h1>⚡ POWRNET</h1><p style="color:#cbd5e1;font-size:14px">Welcome, <b id="showName" style="color:#facc15">Friend</b> 👋<br><small id="showEmail" style="color:#94a3b8;font-size:12px"></small> <a href="#" onclick="logout()" style="color:#94a3b8;font-size:12px">Log out</a></p></div>
 <div class="balance"><small>💰 YOUR BALANCE</small><b>KSH <span id="bal">0</span></b><small>Tap APPLY on a job to start • <span id="appliedCount">0</span> Jobs Applied</small></div>
 
-<!-- CREATE -->
 <div id="tab-create" class="page">
-<h2>➕ CREATE NEW JOB</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Create a job here. It appears in JOBS + UPDATES instantly. No VIP, no payment.</p>
+<h2>➕ CREATE NEW JOB</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Create a job here. It appears in JOBS + UPDATES instantly.</p>
 <input id="cTitle" placeholder="Job Title e.g Write Article About Nairobi">
 <input id="cPay" placeholder="Pay e.g KSH 250">
 <select id="cCat"><option>Easy Tasks</option><option>Writing</option><option>Surveys</option><option>Design</option><option>Passive</option><option>Games / Apps</option><option>Social Media</option></select>
@@ -65,7 +78,6 @@ textarea{height:80px}
 <button class="btn yellow" onclick="showTab('jobs')">See All Jobs →</button>
 </div>
 
-<!-- JOBS -->
 <div id="tab-jobs" class="page active">
 <h2>💼 ALL JOBS (<span id="jobCount">0</span>)</h2>
 <p style="color:#94a3b8;font-size:12px;margin:4px 0">Apply inside the app. No WhatsApp needed to apply.</p>
@@ -80,7 +92,6 @@ textarea{height:80px}
 <div id="jobsList"></div>
 </div>
 
-<!-- UPDATES -->
 <div id="tab-updates" class="page">
 <h2>📢 UPDATES</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Post updates here. Members see them instantly.</p>
 <input id="uTitle" placeholder="Update Title e.g NEW: 10 Writing Jobs Today!">
@@ -102,62 +113,4 @@ textarea{height:80px}
 
 <script>
 let defaultJobs=[
-{t:"Do 20 Remotasks",p:"KSH 500 / Day",c:"Tasks",d:"Easy tasks on your phone. Label images, check data. No skill needed."},
-{t:"Write 300 Words Article",p:"KSH 250 / Article",c:"Writing",d:"Write about Nairobi, Football, Phones. 300 words, simple English."},
-{t:"Write 10 Product Descriptions",p:"KSH 500",c:"Writing",d:"Write short descriptions for Jumia-style products."},
-{t:"Write 5 Blog Posts - Health",p:"KSH 1,250",c:"Writing",d:"Health & fitness blogs, 500 words each."},
-{t:"Answer 10 Attapoll Surveys",p:"KSH 150 - 300",c:"Surveys",d:"5 mins each survey. Paid via PayPal to M-Pesa."},
-{t:"Answer Swagbucks Surveys",p:"KSH 200 / Day",c:"Surveys",d:"Daily surveys + watch videos."},
-{t:"Install Pawns.app - Passive",p:"KSH 300 / Month Passive",c:"Passive",d:"Install app, share internet, earn daily even while sleeping."},
-{t:"Install Honeygain",p:"KSH 250 / Month Passive",c:"Passive",d:"Similar to Pawns, earn by sharing internet."},
-{t:"Play Games on Swagbucks",p:"KSH 200 / Day",c:"Games",d:"Play games, reach level 5, get paid."},
-{t:"Test New App - Give Feedback",p:"KSH 300",c:"Tasks",d:"Download app, use 10 mins, screenshot + review."},
-{t:"Transcribe 10 Min Audio",p:"KSH 400",c:"Writing",d:"Listen and type what you hear. English / Swahili."},
-{t:"Translate English to Swahili",p:"KSH 350 / Page",c:"Writing",d:"Translate short articles."},
-{t:"Design Simple Logo on Canva",p:"KSH 500 / Logo",c:"Design",d:"Use Canva free. Make logo for small business."},
-{t:"Edit 1 TikTok Video",p:"KSH 300 / Video",c:"Design",d:"Edit with CapCut, add captions + music."},
-{t:"Manage Instagram Page - 1 Week",p:"KSH 1,000",c:"Social",d:"Post 1x daily, reply comments."},
-{t:"Like / Follow / Comment Job",p:"KSH 50 - 100",c:"Social",d:"Follow pages, like posts, screenshot proof."},
-{t:"Data Entry - Copy 50 Names",p:"KSH 350",c:"Tasks",d:"Copy names from PDF to Google Sheet."},
-{t:"Virtual Assistant - Reply WhatsApp",p:"KSH 800 / Day",c:"Tasks",d:"Reply customers for a shop, 9am-5pm."},
-{t:"Sell Digital Products",p:"KSH 500 Commission",c:"Tasks",d:"Share link, earn per sale."},
-{t:"Refer Friends to POWRNET",p:"KSH 50 / Friend",c:"Tasks",d:"Invite friend to join POWRNET, earn when they join."}
-];
-let defaultUpdates=[
-{title:"🎉 WELCOME TO POWRNET!",text:"Apply to any job inside the app using APPLY button. WhatsApp is for queries only.",time:"Today"},
-{title:"🔥 20 JOBS LIVE NOW",text:"Writing, Surveys, Tasks, Passive. Apply fast - slots limited.",time:"Today"},
-{title:"💸 PAYMENT DAY: FRIDAY",text:"All completed jobs paid every Friday via M-Pesa. Ask any question on WhatsApp 0112072729",time:"Pinned"}
-];
-function getJobs(){let s=localStorage.getItem('powr_jobs');return s?JSON.parse(s):defaultJobs;}
-function saveJobs(j){localStorage.setItem('powr_jobs',JSON.stringify(j));}
-function getUpdates(){let s=localStorage.getItem('powr_updates');return s?JSON.parse(s):defaultUpdates;}
-function saveUpdates(u){localStorage.setItem('powr_updates',JSON.stringify(u));}
-function getApplied(){let s=localStorage.getItem('powr_applied');return s?JSON.parse(s):[];}
-function saveApplied(a){localStorage.setItem('powr_applied',JSON.stringify(a));}
-let currentFilter='All';
-function renderJobs(){
-let jobs=getJobs();let applied=getApplied();
-document.getElementById('jobCount').innerText=jobs.length;
-document.getElementById('appliedCount').innerText=applied.length;
-let html='';
-jobs.forEach((j,i)=>{
-if(currentFilter!=='All' && !j.c.toLowerCase().includes(currentFilter.toLowerCase())) return;
-let isApplied=applied.includes(j.t);
-let icon=j.c==='Writing'?'✍️':j.c==='Surveys'?'📊':j.c==='Passive'?'📶':j.c==='Games'?'🎮':j.c==='Design'?'🎨':j.c==='Social'?'📱':'📝';
-html+=`<div class="card"><h3>${icon} ${j.t}</h3><p>${j.d}</p><p class="pay">Pay: ${j.p} • ${j.c}</p><button class="${isApplied?'done':''}" onclick="applyJob('${j.t.replace(/'/g,"")}')">${isApplied?'✅ APPLIED - Wait for Update':'Apply Now →'}</button></div>`;
-});
-document.getElementById('jobsList').innerHTML=html;
-}
-function applyJob(title){
-let a=getApplied();
-if(a.includes(title)){alert('You already applied for this job. Check UPDATES for next steps.');return;}
-a.push(title);saveApplied(a);
-alert('✅ Applied for: '+title+'\n\nCheck UPDATES tab for instructions. WhatsApp is for queries only if you are stuck.');
-renderJobs();
-}
-function renderUpdates(){
-let u=getUpdates();let html='';
-u.forEach(x=>{html+=`<div class="update"><small>📢 ${x.time}</small><h3>${x.title}</h3><p>${x.text}</p></div>`;});
-document.getElementById('updatesList').innerHTML=html;
-}
-function filterJobs(f,el){currentFilter=f;document.query
+{t:"Do 20 Remotasks",p:"KSH 
