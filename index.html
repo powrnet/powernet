@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET.COM</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>POWRNET - Create, Work, Learn AI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
+body{background:#000;color:#fff;padding:0 16px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 4px}
+.logo{font-size:22px;font-weight:900}.logo span{color:#a855f7}
+.join{background:#fff;color:#000;border:0;padding:8px 20px;border-radius:999px;font-weight:700}
+h1{font-size:34px;line-height:1.05;text-align:center;margin:12px 0 6px;font-weight:900}
+h1 span{color:#a855f7}
+.sub{text-align:center;color:#999;margin-bottom:16px;font-size:14px}
+.tabs{display:flex;background:#111;border:1px solid #222;border-radius:999px;padding:4px;margin-bottom:16px}
+.tabs button{flex:1;border:0;background:transparent;color:#aaa;padding:12px;border-radius:999px;font-weight:700;font-size:13px}
+.tabs button.active{background:#a855f7;color:#fff}
+.page{display:none}.page.active{display:block}
+.search{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:14px 16px;border-radius:14px;font-size:15px;outline:none;margin-bottom:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chips button{background:#1a1a1a;border:1px solid #333;color:#fff;padding:7px 12px;border-radius:999px;font-size:12px}
+.chips button.active{background:#a855f7}
+.card{background:#111;border:1px solid #222;border-radius:20px;padding:16px;margin-bottom:12px}
+.card b{font-size:15px}.card p{color:#aaa;font-size:13px;margin:6px 0;line-height:1.5}
+.meta{font-size:11px;color:#888}
+.btn{width:100%;background:#a855f7;border:0;color:#fff;padding:13px;border-radius:999px;font-weight:800;margin-top:10px}
+.btn2{width:100%;background:#fff;color:#000;border:0;padding:13px;border-radius:999px;font-weight:800;margin-top:10px}
+textarea{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:14px;border-radius:14px;min-height:70px;margin:8px 0}
+.videoBox{background:#000;border:1px solid #333;border-radius:16px;height:160px;display:flex;align-items:center;justify-content:center;color:#888;text-align:center;padding:14px;margin-top:10px}
+.badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:4px 8px;border-radius:999px;font-size:11px;margin-right:4px}
+.footer{text-align:center;color:#555;font-size:12px;margin-top:24px}
+.progress{display:none;margin-top:10px;background:#1a1a1a;border-radius:999px;overflow:hidden}.bar{height:8px;background:#a855f7;width:0%}
+</style>
 </head>
-<body class="bg-black text-white">
-<nav class="flex justify-between p-4 max-w-6xl mx-auto">
-<h1 class="font-bold text-xl">POWR<span class="text-purple-500">NET</span>.COM</h1>
-<span class="bg-white text-black px-4 py-1 rounded-full text-sm">Join</span>
-</nav>
-<div class="max-w-md mx-auto px-4 py-10 text-center">
-<h1 class="text-5xl font-black leading-none">POWER YOUR<br><span class="text-purple-500">NETWORK.</span></h1>
-<p class="text-zinc-400 mt-4">Kenya's #1 Creator Network - Built by Ezra 🇰🇪</p>
-<div class="bg-zinc-900 rounded-[30px] p-3 mt-8 border border-zinc-800 text-left">
-<div class="bg-black rounded-[24px] p-3">
-<div class="flex gap-2 items-center"><img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-8 h-8 rounded-full"><div><p class="text-xs font-bold">FunnyKenya ✔️</p><p class="text-[10px] text-zinc-500">2h ago • Nairobi</p></div></div>
-<p class="text-xs mt-3">When mum says "Umechelewa tena!" 😂 #POWRNET</p>
-<div class="h-64 bg-zinc-800 rounded-xl mt-3 flex items-center justify-center">▶️ Your Viral Video Here</div>
-<div class="flex justify-between text-xs mt-3 text-zinc-400"><span>❤️ 120K</span><span>💬 4.8K</span><span>↗️ 12K</span></div>
+<body>
+<div class="top"><div class="logo">POWR<span>NET</span>.COM</div><button class="join">Join Free</button></div>
+<h1>POWER YOUR<br><span>NETWORK.</span></h1>
+<p class="sub">Create • Find Jobs • Learn AI — All in One 🇰🇪</p>
+<div class="tabs">
+<button class="active" onclick="showTab('create',this)">✨ Create Video</button>
+<button onclick="showTab('jobs',this)">💼 Jobs</button>
+<button onclick="showTab('learn',this)">🧠 Learn AI</button>
 </div>
+<div id="create" class="page active">
+<textarea id="prompt">Funny Kenyan matatu driver dancing in Nairobi traffic, sunset</textarea>
+<div class="chips"><button onclick="setPrompt('Funny mama mboga comedy skit, Gikomba market')">😂 Comedy</button><button onclick="setPrompt('Gengetone music video in Kayole, neon lights')">🎵 Music</button><button onclick="setPrompt('Amapiano dance in Kibera at golden hour')">💃 Dance</button><button onclick="setPrompt('Epic football goal in Kasarani, crowd wild')">⚽ Football</button></div>
+<button class="btn" onclick="gen()">✨ GENERATE 30s VIDEO</button>
+<div class="progress" id="prog"><div class="bar" id="bar"></div></div>
+<div class="videoBox" id="vbox"><div><div style="font-size:32px">🎬</div><p>Your 30s video appears here</p></div></div>
+<div class="card" style="margin-top:14px"><b>🔥 Trending Prompt:</b><p>"Matatu conductor singing in traffic" — 120K views</p><button class="btn2" onclick="setPrompt('Matatu conductor singing in traffic, funny, Nairobi')">Use This Prompt →</button></div>
 </div>
-<button class="bg-purple-600 w-full py-3 rounded-full mt-6 font-bold">🔴 Go Live Now</button>
-<p class="text-zinc-600 text-[10px] mt-6">© 2026 POWRNET.COM - ezrakorir650-collab</p>
+<div id="jobs" class="page">
+<input class="search" id="jobSearch" placeholder="🔍 Search ANY job: driver, designer, AI, nurse..." oninput="filterJobs()">
+<div class="chips"><button class="active" onclick="filterJobCat(this,'all')">All</button><button onclick="filterJobCat(this,'AI')">🤖 AI Jobs</button><button onclick="filterJobCat(this,'Remote')">🌍 Remote</button><button onclick="filterJobCat(this,'Nairobi')">📍 Nairobi</button><button onclick="filterJobCat(this,'Creative')">🎨 Creative</button></div>
+<div id="jobList"></div>
+<div class="card"><b>💡 Can't find it? Tell us</b><p>We search 20+ job sites for you.</p><button class="btn" onclick="alert('Job Alert ON!')">🔔 Create Job Alert</button></div>
 </div>
-</body>
-</html>
+<div id="learn" class="page">
+<input class="search" id="learnSearch" placeholder="🔍 Search ANY AI training: ChatGPT, video editing, coding..." oninput="filterLearn()">
+<div class="chips"><button class="active" onclick="filterLearnCat(this,'all')">All</button><button onclick="filterLearnCat(this,'Free')">🆓 Free</button><button onclick="filterLearnCat(this,'Beginner')">🌱 Beginner</button><button onclick="filterLearnCat(this,'Video')">🎬 Video AI</button><button onclick="filterLearnCat(this,'Business')">💰
