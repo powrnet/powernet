@@ -6,7 +6,7 @@
 <title>POWRNET - Dashboard</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:white;padding:15px;padding-bottom:90px}
+body{background:#0f172a;color:white;padding:15px;padding-bottom:110px}
 .page{display:none}.page.active{display:block}
 .center{text-align:center}
 h1{font-size:32px;color:#22c55e}
@@ -14,10 +14,11 @@ h1{font-size:32px;color:#22c55e}
 input,select,textarea{width:100%;padding:14px;margin:7px 0;border-radius:12px;border:none;font-size:15px;background:white;color:#000}
 textarea{height:80px}
 .btn{width:100%;padding:15px;border:none;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer;margin:5px 0}
-.green{background:#25D366;color:white}.yellow{background:#facc15;color:#000}.blue{background:#38bdf8;color:#000}.red{background:#ef4444;color:white}
+.green{background:#25D366;color:white}.yellow{background:#facc15;color:#000}.blue{background:#38bdf8;color:#000}.red{background:#ef4444;color:white}.grey{background:#334155;color:white}
 .card{background:#1e293b;border-radius:15px;padding:15px;margin:11px 0;border-left:4px solid #22c55e}
 .card h3{font-size:15px}.card p{font-size:13px;color:#94a3b8;margin:6px 0;line-height:1.4}
-.card a{display:block;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:9px;text-decoration:none;font-weight:bold;margin-top:9px}
+.card button{display:block;width:100%;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:9px;font-weight:bold;margin-top:9px;border:none;cursor:pointer;font-size:15px}
+.card button.done{background:#334155;color:#94a3b8}
 .pay{color:#facc15!important;font-weight:bold}
 .balance{background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:15px;padding:18px;text-align:center;margin:12px 0}
 .balance b{font-size:32px;display:block}
@@ -26,10 +27,12 @@ textarea{height:80px}
 .tabs button.on{background:#22c55e;color:#000}
 .update{background:#1e293b;border-radius:12px;padding:13px;margin:10px 0;border-left:4px solid #facc15}
 .update small{color:#94a3b8}.update p{font-size:14px;margin:5px 0}
-.link{color:#facc15;display:block;text-align:center;margin:10px;text-decoration:none}
+.link{color:#25D366;display:block;text-align:center;margin:12px;text-decoration:none;font-weight:bold}
 .filter{display:flex;gap:7px;overflow-x:auto;padding:5px 0}
 .filter button{white-space:nowrap;padding:9px 14px;border-radius:20px;border:none;background:#334155;color:white;font-weight:bold;cursor:pointer}
 .filter button.on{background:#facc15;color:#000}
+.wa-box{background:#1e293b;border:1px solid #25D366;border-radius:12px;padding:13px;text-align:center;margin:15px 0}
+.wa-box p{font-size:13px;color:#cbd5e1}
 </style>
 </head>
 <body>
@@ -42,30 +45,30 @@ textarea{height:80px}
 <select id="skill"><option>What can you do?</option><option>Easy Tasks - No Skill</option><option>Writing</option><option>Surveys</option><option>Design / Video</option></select>
 <select id="pay"><option>How to get paid?</option><option>M-Pesa</option><option>PayPal</option></select>
 <button class="btn green" onclick="goDashboard()">✅ CREATE MY ACCOUNT →</button>
-<p class="center" style="font-size:12px;color:#94a3b8;margin-top:10px">Free to join • Daily jobs on WhatsApp</p>
+<p class="center" style="font-size:12px;color:#94a3b8;margin-top:10px">Free to join • Daily jobs inside the app</p>
+<div class="wa-box"><p>💬 Questions Only</p><a class="link" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20have%20a%20question" target="_blank">WhatsApp Us For Queries →</a></div>
 </div>
 
-<!-- DASHBOARD WRAP -->
+<!-- DASHBOARD -->
 <div id="dashWrap" style="display:none">
 <div class="center"><h1>⚡ POWRNET</h1><p style="color:#cbd5e1;font-size:14px">Welcome, <b id="showName" style="color:#facc15">Friend</b> 👋 <a href="#" onclick="logout()" style="color:#94a3b8;font-size:12px">Log out</a></p></div>
-<div class="balance"><small>💰 YOUR BALANCE</small><b>KSH <span id="bal">0</span></b><small>Complete jobs to earn • Bonus KSH 50 on signup</small></div>
+<div class="balance"><small>💰 YOUR BALANCE</small><b>KSH <span id="bal">0</span></b><small>Tap APPLY on a job to start • <span id="appliedCount">0</span> Jobs Applied</small></div>
 
-<!-- CREATE TAB -->
+<!-- CREATE -->
 <div id="tab-create" class="page">
-<h2>➕ CREATE NEW JOB</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">You (Admin) create a job here. It will appear in JOBS + UPDATES instantly.</p>
+<h2>➕ CREATE NEW JOB</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Create a job here. It appears in JOBS + UPDATES instantly. No VIP, no payment.</p>
 <input id="cTitle" placeholder="Job Title e.g Write Article About Nairobi">
 <input id="cPay" placeholder="Pay e.g KSH 250">
-<select id="cCat"><option>📝 Easy Tasks</option><option>✍️ Writing</option><option>📊 Surveys</option><option>🎨 Design</option><option>📶 Passive</option><option>🎮 Games / Apps</option><option>📱 Social Media</option></select>
+<select id="cCat"><option>Easy Tasks</option><option>Writing</option><option>Surveys</option><option>Design</option><option>Passive</option><option>Games / Apps</option><option>Social Media</option></select>
 <textarea id="cDesc" placeholder="Job Description - What should worker do?"></textarea>
-<input id="cLink" placeholder="Apply Link (WhatsApp or Website) - Leave empty for WhatsApp">
 <button class="btn green" onclick="createJob()">✅ PUBLISH JOB NOW →</button>
 <button class="btn yellow" onclick="showTab('jobs')">See All Jobs →</button>
-<p style="font-size:12px;color:#94a3b8;text-align:center;margin-top:8px">Tip: After you publish, send WhatsApp broadcast to all members: "New Job Posted!"</p>
 </div>
 
-<!-- JOBS TAB -->
+<!-- JOBS -->
 <div id="tab-jobs" class="page active">
 <h2>💼 ALL JOBS (<span id="jobCount">0</span>)</h2>
+<p style="color:#94a3b8;font-size:12px;margin:4px 0">Apply inside the app. No WhatsApp needed to apply.</p>
 <div class="filter">
 <button class="on" onclick="filterJobs('All',this)">All</button>
 <button onclick="filterJobs('Writing',this)">✍️ Writing</button>
@@ -77,19 +80,20 @@ textarea{height:80px}
 <div id="jobsList"></div>
 </div>
 
-<!-- UPDATES TAB -->
+<!-- UPDATES -->
 <div id="tab-updates" class="page">
 <h2>📢 UPDATES</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Post updates here. Members see them instantly.</p>
 <input id="uTitle" placeholder="Update Title e.g NEW: 10 Writing Jobs Today!">
-<textarea id="uText" placeholder="Write your update... e.g Guys, new Remotasks jobs are live. Apply fast, only 20 slots!"></textarea>
+<textarea id="uText" placeholder="Write your update..."></textarea>
 <button class="btn blue" onclick="postUpdate()">📢 POST UPDATE →</button>
 <button class="btn red" onclick="clearAll()" style="font-size:13px">🗑️ Clear My Custom Jobs / Updates</button>
 <div id="updatesList"></div>
 </div>
 
+<div class="wa-box"><p>💬 Need Help? WhatsApp is for <b>Queries Only</b></p><a class="link" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20have%20a%20question" target="_blank">💬 WhatsApp For Queries →</a><p style="font-size:12px">Do NOT apply via WhatsApp. Apply inside the app using APPLY button.</p></div>
+<div style="text-align:center;color:#64748b;font-size:12px">POWRNET © 2026 • Made in Kenya 🇰🇪</div>
 </div>
 
-<!-- BOTTOM TABS -->
 <div class="tabs" id="bottomTabs" style="display:none">
 <button id="btn-create" onclick="showTab('create')">➕ CREATE</button>
 <button id="btn-jobs" class="on" onclick="showTab('jobs')">💼 JOBS</button>
@@ -97,7 +101,6 @@ textarea{height:80px}
 </div>
 
 <script>
-// --- DEFAULT 20 JOBS ---
 let defaultJobs=[
 {t:"Do 20 Remotasks",p:"KSH 500 / Day",c:"Tasks",d:"Easy tasks on your phone. Label images, check data. No skill needed."},
 {t:"Write 300 Words Article",p:"KSH 250 / Article",c:"Writing",d:"Write about Nairobi, Football, Phones. 300 words, simple English."},
@@ -121,97 +124,40 @@ let defaultJobs=[
 {t:"Refer Friends to POWRNET",p:"KSH 50 / Friend",c:"Tasks",d:"Invite friend to join POWRNET, earn when they join."}
 ];
 let defaultUpdates=[
-{title:"🎉 WELCOME TO POWRNET!",text:"New members get KSH 50 bonus on first job. Apply to any job below to start!",time:"Today"},
-{title:"🔥 20 JOBS LIVE NOW",text:"We just added 20 jobs! Writing, Surveys, Tasks, Passive. Apply fast - slots limited.",time:"Today"},
-{title:"💸 PAYMENT DAY: FRIDAY",text:"All completed jobs paid every Friday via M-Pesa. Send proof on WhatsApp 0112072729",time:"Pinned"}
+{title:"🎉 WELCOME TO POWRNET!",text:"Apply to any job inside the app using APPLY button. WhatsApp is for queries only.",time:"Today"},
+{title:"🔥 20 JOBS LIVE NOW",text:"Writing, Surveys, Tasks, Passive. Apply fast - slots limited.",time:"Today"},
+{title:"💸 PAYMENT DAY: FRIDAY",text:"All completed jobs paid every Friday via M-Pesa. Ask any question on WhatsApp 0112072729",time:"Pinned"}
 ];
-
 function getJobs(){let s=localStorage.getItem('powr_jobs');return s?JSON.parse(s):defaultJobs;}
 function saveJobs(j){localStorage.setItem('powr_jobs',JSON.stringify(j));}
 function getUpdates(){let s=localStorage.getItem('powr_updates');return s?JSON.parse(s):defaultUpdates;}
 function saveUpdates(u){localStorage.setItem('powr_updates',JSON.stringify(u));}
-
+function getApplied(){let s=localStorage.getItem('powr_applied');return s?JSON.parse(s):[];}
+function saveApplied(a){localStorage.setItem('powr_applied',JSON.stringify(a));}
 let currentFilter='All';
 function renderJobs(){
-let jobs=getJobs();
-let filtered=currentFilter==='All'?jobs:jobs.filter(j=>j.c.includes(currentFilter)|| (currentFilter==='Tasks'&&j.c==='Tasks')||(currentFilter==='Social'&&j.c==='Social') );
+let jobs=getJobs();let applied=getApplied();
 document.getElementById('jobCount').innerText=jobs.length;
+document.getElementById('appliedCount').innerText=applied.length;
 let html='';
 jobs.forEach((j,i)=>{
-let show = currentFilter==='All' || j.c.toLowerCase().includes(currentFilter.toLowerCase()) || (currentFilter==='Tasks'&&j.c==='Tasks');
-if(!show && currentFilter!=='All') return;
+if(currentFilter!=='All' && !j.c.toLowerCase().includes(currentFilter.toLowerCase())) return;
+let isApplied=applied.includes(j.t);
 let icon=j.c==='Writing'?'✍️':j.c==='Surveys'?'📊':j.c==='Passive'?'📶':j.c==='Games'?'🎮':j.c==='Design'?'🎨':j.c==='Social'?'📱':'📝';
-html+=`<div class="card"><h3>${icon} ${j.t}</h3><p>${j.d}</p><p class="pay">Pay: ${j.p} • ${j.c}</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job:%20${encodeURIComponent(j.t)}" target="_blank">Apply Now →</a></div>`;
+html+=`<div class="card"><h3>${icon} ${j.t}</h3><p>${j.d}</p><p class="pay">Pay: ${j.p} • ${j.c}</p><button class="${isApplied?'done':''}" onclick="applyJob('${j.t.replace(/'/g,"")}')">${isApplied?'✅ APPLIED - Wait for Update':'Apply Now →'}</button></div>`;
 });
-document.getElementById('jobsList').innerHTML=html||'<p style="text-align:center;color:#94a3b8">No jobs in this category yet.</p>';
+document.getElementById('jobsList').innerHTML=html;
+}
+function applyJob(title){
+let a=getApplied();
+if(a.includes(title)){alert('You already applied for this job. Check UPDATES for next steps.');return;}
+a.push(title);saveApplied(a);
+alert('✅ Applied for: '+title+'\n\nCheck UPDATES tab for instructions. WhatsApp is for queries only if you are stuck.');
+renderJobs();
 }
 function renderUpdates(){
-let u=getUpdates();
-let html='';
+let u=getUpdates();let html='';
 u.forEach(x=>{html+=`<div class="update"><small>📢 ${x.time}</small><h3>${x.title}</h3><p>${x.text}</p></div>`;});
 document.getElementById('updatesList').innerHTML=html;
 }
-function filterJobs(f,el){
-currentFilter = f==='All'?'All':f;
-document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('on'));
-if(el) el.classList.add('on');
-renderJobs();
-}
-function showTab(tab){
-['create','jobs','updates'].forEach(t=>{document.getElementById('tab-'+t).classList.remove('active');document.getElementById('btn-'+t).classList.remove('on');});
-document.getElementById('tab-'+tab).classList.add('active');
-document.getElementById('btn-'+tab).classList.add('on');
-window.scrollTo(0,0);
-}
-function createJob(){
-let t=document.getElementById('cTitle').value;
-let p=document.getElementById('cPay').value||'KSH 250';
-let c=document.getElementById('cCat').value.replace(/[^a-zA-Z ]/g,'').trim();
-let d=document.getElementById('cDesc').value||'Apply now on WhatsApp for details.';
-if(!t){alert('Please enter Job Title');return;}
-let jobs=getJobs();
-jobs.unshift({t:t,p:p,c:c,d:d});
-saveJobs(jobs);
-// Auto create update
-let ups=getUpdates();
-ups.unshift({title:'🆕 NEW JOB: '+t,text:d+' | Pay: '+p,time:'Just Now'});
-saveUpdates(ups);
-document.getElementById('cTitle').value='';document.getElementById('cDesc').value='';
-alert('✅ Job Published! It is now in JOBS + UPDATES');
-renderJobs();renderUpdates();showTab('jobs');
-}
-function postUpdate(){
-let t=document.getElementById('uTitle').value;
-let x=document.getElementById('uText').value;
-if(!t||!x){alert('Please enter Title + Update');return;}
-let ups=getUpdates();
-ups.unshift({title:t,text:x,time:'Just Now'});
-saveUpdates(ups);
-document.getElementById('uTitle').value='';document.getElementById('uText').value='';
-alert('✅ Update Posted!');
-renderUpdates();showTab('updates');
-}
-function clearAll(){if(confirm('Clear all your custom jobs and updates?')){localStorage.removeItem('powr_jobs');localStorage.removeItem('powr_updates');renderJobs();renderUpdates();alert('Cleared - Back to 20 default jobs');}}
-function goDashboard(){
-let n=document.getElementById('name').value;
-let p=document.getElementById('phone').value;
-if(!n||!p){alert('Please enter Name + WhatsApp');return;}
-localStorage.setItem('powr_name',n);localStorage.setItem('powr_phone',p);
-document.getElementById('showName').innerText=n;
-let msg="Hi POWRNET! NEW SIGNUP%0AName: "+n+"%0APhone: "+p;
-window.open("https://wa.me/254112072729?text="+msg,"_blank");
-openDash();
-}
-function openDash(){
-document.getElementById('signup').classList.remove('active');
-document.getElementById('dashWrap').style.display='block';
-document.getElementById('bottomTabs').style.display='flex';
-renderJobs();renderUpdates();
-}
-function logout(){localStorage.removeItem('powr_name');document.getElementById('dashWrap').style.display='none';document.getElementById('bottomTabs').style.display='none';document.getElementById('signup').classList.add('active');}
-let saved=localStorage.getItem('powr_name');
-if(saved){document.getElementById('showName').innerText=saved;openDash();}
-renderJobs();renderUpdates();
-</script>
-</body>
-</html>
+function filterJobs(f,el){currentFilter=f;document.query
