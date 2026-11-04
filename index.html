@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET - Create, Work, Learn AI</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
-body{background:#000;color:#fff;padding:0 16px 40px}
-.top{display:flex;justify-content:space-between;align-items:center;padding:18px 4px}
-.logo{font-size:22px;font-weight:900}.logo span{color:#a855f7}
-.join{background:#fff;color:#000;border:0;padding:8px 20px;border-radius:999px;font-weight:700}
-h1{font-size:34px;line-height:1.05;text-align:center;margin:12px 0 6px;font-weight:900}
-h1 span{color:#a855f7}
-.sub{text-align:center;color:#999;margin-bottom:16px;font-size:14px}
-.tabs{display:flex;background:#111;border:1px solid #222;border-radius:999px;padding:4px;margin-bottom:16px}
-.tabs button{flex:1;border:0;background:transparent;color:#aaa;padding:14px 4px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer}
-.tabs button.active{background:#a855f7;color:#fff}
-.page{display:none}.page.active{display:block}
-#create{display:block}
-.search{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:14px 16px;border-radius:14px;font-size:15px;outline:none;margin-bottom:12px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.chips button{background:#1a1a1a;border:1px solid #333;color:#fff;padding:7px 12px;border-radius:999px;font-size:12px;cursor:pointer}
-.chips button.active{background:#a855f7}
-.card{background:#111;border:1px solid #222;border-radius:20px;padding:16px;margin-bottom:12px}
-.card b{font-size:15px}.card p{color:#aaa;font-size:13px;margin:6px 0;line-height:1.5}
-.meta{font-size:11px;color:#888}
-.btn{width:100%;background:#a855f7;border:0;color:#fff;padding:13px;border-radius:999px;font-weight:800;margin-top:10px;cursor:pointer}
-.btn2{width:100%;background:#fff;color:#000;border:0;padding:13px;border-radius:999px;font-weight:800;margin-top:10px;cursor:pointer}
-textarea{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:14px;border-radius:14px;min-height:70px;margin:8px 0
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>POWRNET</title><style>*{margin:0;box-sizing:border-box;font-family:system-ui}body{background:#000;color:#fff;padding:16px}.top{font-size:22px;font-weight:900;text-align:center}.top span{color:#a855f7}h1{text-align:center;font-size:30px;margin:14px 0}h1 span{color:#a855f7}.sub{text-align:center;color:#999;font-size:13px;margin-bottom:14px}.tabs{display:flex;background:#111;border-radius:99px;padding:4px;gap:4px}.tabs button{flex:1;border:0;background:0;color:#aaa;padding:13px;border-radius:99px;font-weight:700}.tabs button.on{background:#a855f7;color:#fff}.box{background:#111;border:1px solid #222;border-radius:16px;padding:14px;margin:10px 0}.box b{font-size:15px}.box p{color:#aaa;font-size:13px;margin:6px 0}.btn{width:100%;background:#a855f7;border:0;color:#fff;padding:12px;border-radius:99px;font-weight:800;margin-top:8px}input,textarea{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px;border-radius:12px;margin:8px 0}</style></head><body>
+<div class="top">POWR<span>NET</span>.COM</div><h1>POWER YOUR<br><span>NETWORK.</span></h1><p class="sub">Create • Find Jobs • Learn AI 🇰🇪</p>
+<div class="tabs"><button id="t1" class="on" onclick="show('p1','t1')">✨ Create</button><button id="t2" onclick="show('p2','t2')">💼 Jobs</button><button id="t3" onclick="show('p3','t3')">🧠 Learn AI</button></div>
+<div id="p1"><textarea id="pr">Funny matatu driver dancing in Nairobi</textarea><button class="btn" onclick="alert('Video concept ready! Demo mode')">✨ GENERATE 30s VIDEO</button><div class="box"><b>🔥 Trending:</b><p>Matatu conductor singing in traffic — 120K views</p></div></div>
+<div id="p2" style="display:none"><input id="js" placeholder="Search job..." oninput="rj()"><div id="jl"></div></div>
+<div id="p3" style="display:none"><input id="ls" placeholder="Search course..." oninput="rl()"><div id="ll"></div></div>
+<p style="text-align:center;color:#555;font-size:12px;margin-top:20px">© 2026 POWRNET • Nairobi 🇰🇪</p>
+<script>
+function show(p,t){document.getElementById('p1').style.display='none';document.getElementById('p2').style.display='none';document.getElementById('p3').style.display='none';document.getElementById(p).style.display='block';document.getElementById('t1').className='';document.getElementById('t2').className='';document.getElementById('t3').className='';document.getElementById(t).className='on';}
+var J=[["AI Video Editor - Remote","Remote KSh 80K/mo","Edit AI videos for TikTok brands."],["Prompt Engineer Intern","Nairobi KSh 50K/mo","Write prompts for businesses."],["Social Media Manager","Westlands","Manage 5 Kenyan brands."],["Delivery Driver","Nairobi Daily Pay","Earn daily with motorbike."]];
+function rj(){var q=document.getElementById('js').value.toLowerCase();var h='';for(var i=0;i<J.length;i++){if(J[i][0].toLowerCase().indexOf(q)>-1){h+='<div class="box"><b>'+J[i][0]+'</b><p>'+J[i][2]+'</p><p>'+J[i][1]+'</p><button class="btn" onclick="alert(\'Applied!\')">Apply Now</button></div>';}}document.getElementById('jl').innerHTML=h||'<div class="box">No results</div>';}
+rj();
+var C=[["ChatGPT for Beginners","FREE 45 mins","Learn prompts, CVs, content."],["AI Video Mastery","KSh 500 2 hours","Prompt to viral video."],["Learn Python for AI","FREE 7 days","No coding needed."]];
+function rl(){var q=document.getElementById('ls').value.toLowerCase();var h='';for(var i=0;i<C.length;i++){if(C[i][0].toLowerCase().indexOf(q)>-1){h+='<div class="box"><b>'+C[i][0]+'</b><p>'+C[i][2]+'</p><p>'+C[i][1]+'</p><button class="btn" onclick="alert(\'Enrolled!\')">Start Learning</button></div>';}}document.getElementById('ll').innerHTML=h||'<div class="box">No results</div>';}
+rl();
+</script></body></html>
