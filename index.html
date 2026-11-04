@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET - Earn in Dollars</title>
+<title>POWRNET - Real Jobs in Dollars</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#0f172a;color:white;padding:15px;padding-bottom:110px}
@@ -19,211 +19,14 @@ textarea{height:80px}
 .emailBtn{background:#1e293b;color:white;border:1px solid #334155;padding:16px;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer;width:100%}
 .card{background:#1e293b;border-radius:15px;padding:15px;margin:11px 0;border-left:4px solid #22c55e}
 .card h3{font-size:15px}.card p{font-size:13px;color:#94a3b8;margin:6px 0;line-height:1.4}
-.card button{display:block;width:100%;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:9px;font-weight:bold;margin-top:9px;border:none;cursor:pointer;font-size:15px}
-.card button.done{background:#334155;color:#94a3b8}
+.card a{display:block;width:100%;background:#22c55e;color:#000;text-align:center;padding:12px;border-radius:9px;font-weight:bold;margin-top:9px;text-decoration:none;font-size:15px}
+.card a.done{background:#334155;color:#94a3b8}
 .pay{color:#4ade80!important;font-weight:bold;font-size:14px}
+.verified{color:#4ade80;font-size:12px;font-weight:bold}
 .balance{background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:15px;padding:18px;text-align:center;margin:12px 0}
 .balance b{font-size:30px;display:block}
 .tabs{position:fixed;bottom:0;left:0;right:0;background:#1e293b;display:flex;padding:10px;gap:8px;z-index:99}
 .tabs button{flex:1;padding:13px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;background:#334155;color:white}
 .tabs button.on{background:#22c55e;color:#000}
 .update{background:#1e293b;border-radius:12px;padding:13px;margin:10px 0;border-left:4px solid #facc15}
-.update small{color:#94a3b8}.update p{font-size:14px;margin:5px 0}
-.link{color:#25D366;display:block;text-align:center;margin:12px;text-decoration:none;font-weight:bold}
-.filter{display:flex;gap:7px;overflow-x:auto;padding:5px 0}
-.filter button{white-space:nowrap;padding:9px 14px;border-radius:20px;border:none;background:#334155;color:white;font-weight:bold;cursor:pointer}
-.filter button.on{background:#facc15;color:#000}
-.wa-box{background:#1e293b;border:1px solid #25D366;border-radius:12px;padding:13px;text-align:center;margin:15px 0}
-.wa-box p{font-size:13px;color:#cbd5e1}
-.divider{display:flex;align-items:center;gap:10px;color:#94a3b8;font-size:12px;margin:16px 0}
-.divider:before,.divider:after{content:"";flex:1;height:1px;background:#334155}
-.badge{background:#facc15;color:#000;font-size:11px;padding:3px 8px;border-radius:10px;font-weight:bold}
-</style>
-</head>
-<body>
-
-<!-- SIGNUP - GOOGLE OR EMAIL ONLY -->
-<div id="signup" class="page active">
-<div class="center" style="padding:35px 0 15px">
-<div style="font-size:55px">⚡</div>
-<h1>POWRNET</h1>
-<p class="sub">Earn in <b style="color:#4ade80">DOLLARS ($)</b> Online<br>AI Training • Freelancing • Writing<br><b style="color:#facc15">Join Free - No Experience Needed</b></p>
-</div>
-
-<button class="google" onclick="googleLogin()">🟢 &nbsp; Continue with Google</button>
-
-<div class="divider">OR</div>
-
-<input id="email" placeholder="Enter your Email e.g you@gmail.com">
-<button class="emailBtn" onclick="emailLogin()">✉️ Continue with Email →</button>
-
-<p class="center" style="font-size:12px;color:#94a3b8;margin-top:14px;line-height:1.5">No phone number • No password • No extra forms<br>Just Google or Email, then you are inside.</p>
-
-<div class="wa-box"><p>💬 Questions Only</p><a class="link" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20have%20a%20question" target="_blank">WhatsApp Us For Queries →</a></div>
-</div>
-
-<!-- DASHBOARD -->
-<div id="dashWrap" style="display:none">
-<div class="center"><h1>⚡ POWRNET</h1><p style="color:#cbd5e1;font-size:14px">Welcome, <b id="showName" style="color:#facc15">Friend</b> 👋<br><small id="showEmail" style="color:#94a3b8;font-size:12px"></small> <a href="#" onclick="logout()" style="color:#94a3b8;font-size:12px">Log out</a></p></div>
-<div class="balance"><small>💰 YOUR BALANCE</small><b>$<span id="bal">0.00</span></b><small>Paid in Dollars • <span id="appliedCount">0</span> Jobs Applied • Withdraw via PayPal / M-Pesa</small></div>
-
-<div id="tab-create" class="page">
-<h2>➕ CREATE NEW JOB</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Create a job. It appears in JOBS + UPDATES instantly.</p>
-<input id="cTitle" placeholder="Job Title e.g AI Trainer - Rate Responses">
-<input id="cPay" placeholder="Pay e.g $15 / Hour">
-<select id="cCat"><option>AI Training</option><option>Freelancing</option><option>Writing</option><option>Data / Annotation</option><option>Design</option><option>Surveys</option></select>
-<textarea id="cDesc" placeholder="Job Description - What should worker do?"></textarea>
-<button class="btn green" onclick="createJob()">✅ PUBLISH JOB NOW →</button>
-<button class="btn yellow" onclick="showTab('jobs')">See All Jobs →</button>
-</div>
-
-<div id="tab-jobs" class="page active">
-<h2>💼 ALL JOBS (<span id="jobCount">0</span>) - Paid in $</h2>
-<div class="filter">
-<button class="on" onclick="filterJobs('All',this)">All</button>
-<button onclick="filterJobs('AI',this)">🤖 AI Training</button>
-<button onclick="filterJobs('Freelancing',this)">💻 Freelancing</button>
-<button onclick="filterJobs('Writing',this)">✍️ Writing</button>
-<button onclick="filterJobs('Data',this)">🏷️ Data</button>
-</div>
-<div id="jobsList"></div>
-</div>
-
-<div id="tab-updates" class="page">
-<h2>📢 UPDATES</h2><p style="color:#94a3b8;font-size:13px;margin:6px 0">Post updates here. Members see them instantly.</p>
-<input id="uTitle" placeholder="Update Title e.g NEW: $20 AI Jobs Today!">
-<textarea id="uText" placeholder="Write your update..."></textarea>
-<button class="btn blue" onclick="postUpdate()">📢 POST UPDATE →</button>
-<button class="btn red" onclick="clearAll()" style="font-size:13px">🗑️ Clear My Custom Jobs / Updates</button>
-<div id="updatesList"></div>
-</div>
-
-<div class="wa-box"><p>💬 Need Help? WhatsApp is for <b>Queries Only</b></p><a class="link" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20have%20a%20question" target="_blank">💬 WhatsApp For Queries →</a><p style="font-size:12px">Do NOT apply via WhatsApp. Apply inside the app.</p></div>
-<div style="text-align:center;color:#64748b;font-size:12px">POWRNET © 2026 • Earn in Dollars • Made in Kenya 🇰🇪</div>
-</div>
-
-<div class="tabs" id="bottomTabs" style="display:none">
-<button id="btn-create" onclick="showTab('create')">➕ CREATE</button>
-<button id="btn-jobs" class="on" onclick="showTab('jobs')">💼 JOBS</button>
-<button id="btn-updates" onclick="showTab('updates')">📢 UPDATES</button>
-</div>
-
-<script>
-let defaultJobs=[
-// --- AI TRAINING - PAYING IN DOLLARS ---
-{t:"AI Trainer - Rate ChatGPT Responses",p:"$18 / Hour",c:"AI Training",d:"Read AI answers, rate which is better. No coding. Full training provided. Work on phone / laptop."},
-{t:"AI Trainer - Write Prompts for AI",p:"$15 / Hour",c:"AI Training",d:"Write good questions / prompts to train AI. English only. Beginners welcome."},
-{t:"AI Data Annotator - Label Images",p:"$12 / Hour",c:"AI Training",d:"Label images, cars, faces, objects for self-driving AI. Easy tasks."},
-{t:"AI Trainer - Math & Logic",p:"$20 / Hour",c:"AI Training",d:"Solve simple math, check AI math answers. High school math enough."},
-{t:"AI Trainer - Swahili Language Expert",p:"$22 / Hour",c:"AI Training",d:"Translate English to Swahili, rate Swahili AI answers. Swahili speakers needed URGENT."},
-{t:"AI Trainer - Code Review (Beginner)",p:"$25 / Hour",c:"AI Training",d:"Check simple Python / HTML code, say if it is correct. Basic coding OK."},
-{t:"AI Chat Evaluator - Talk to AI",p:"$14 / Hour",c:"AI Training",d:"Chat with AI for 20 mins, rate conversation. Like chatting with friend."},
-{t:"AI Video Annotator - Label Videos",p:"$13 / Hour",c:"AI Training",d:"Watch short videos, tag what happens. Easy, flexible hours."},
-{t:"AI Voice Trainer - Record Voice",p:"$16 / Hour",c:"AI Training",d:"Record your voice reading sentences to train voice AI. Mic + quiet room needed."},
-{t:"AI Red Teamer - Test AI Safety",p:"$19 / Hour",c:"AI Training",d:"Try to trick AI, report bad answers. Fun job, no experience needed."},
-{t:"Remotasks - AI Tasks",p:"$10 - $15 / Hour",c:"AI Training",d:"Official Remotasks - Lidar, image annotation, 3D tasks. Top payer for Kenyans."},
-{t:"DataAnnotation.tech - AI Trainer",p:"$20 / Hour",c:"AI Training",d:"Premium AI training platform. Apply with Gmail, get test, start earning in $."},
-// --- FREELANCING ---
-{t:"Freelancing - Virtual Assistant on Upwork",p:"$8 - $15 / Hour",c:"Freelancing",d:"Reply emails, manage calendar, data entry for US clients on Upwork."},
-{t:"Freelancing - Social Media Manager",p:"$200 / Month per Client",c:"Freelancing",d:"Manage Instagram / TikTok for small business. Post 1x daily, reply comments."},
-{t:"Freelancing - Logo Design on Fiverr",p:"$20 - $50 / Logo",c:"Freelancing",d:"Design logos on Canva, sell on Fiverr. Templates provided."},
-{t:"Freelancing - Video Editing on Upwork",p:"$15 / Video",c:"Freelancing",d:"Edit TikTok / YouTube Shorts with CapCut. Add captions + music."},
-{t:"Freelancing - Data Entry on Freelancer.com",p:"$10 / Hour",c:"Freelancing",d:"Copy data from PDF to Excel / Google Sheets. Fast typing only."},
-{t:"Freelancing - Website Tester",p:"$10 / Test",c:"Freelancing",d:"Test websites, record screen, say what is confusing. 10 mins per test."},
-{t:"Freelancing - Transcription on Rev",p:"$15 / Hour Audio",c:"Freelancing",d:"Listen to audio, type what you hear. English / Swahili."},
-{t:"Freelancing - Customer Support Chat",p:"$12 / Hour",c:"Freelancing",d:"Reply to customer chats for online shops. Training provided."},
-// --- WRITING ---
-{t:"Writing - Blog Articles (500 Words)",p:"$15 / Article",c:"Writing",d:"Write blogs about Health, Finance, Tech. 500 words, simple English."},
-{t:"Writing - SEO Articles (1000 Words)",p:"$30 / Article",c:"Writing",d:"Write SEO articles with keywords. We teach you SEO free."},
-{t:"Writing - Product Descriptions",p:"$10 / 10 Products",c:"Writing",d:"Write short descriptions for Amazon / Jumia products."},
-{t:"Writing - Copywriting - Sales Pages",p:"$50 / Page",c:"Writing",d:"Write sales page for digital product. High pay, high demand."},
-{t:"Writing - Ghostwriting Ebooks",p:"$100 / Ebook",c:"Writing",d:"Write 5000-word ebook for client. Outline provided, you expand."},
-{t:"Writing - Newsletter Writing",p:"$25 / Newsletter",c:"Writing",d:"Write weekly newsletter for businesses. 300 words."},
-{t:"Writing - Script Writing for YouTube",p:"$20 / Script",c:"Writing",d:"Write 1000-word YouTube scripts about Football, Money, Tech."},
-{t:"Writing - Resume / CV Writing",p:"$15 / CV",c:"Writing",d:"Write professional CVs for job seekers. Templates provided."},
-// --- DATA / SURVEYS ---
-{t:"Data - Image Labelling - Scale AI",p:"$11 / Hour",c:"Data",d:"Label images for Scale AI. Official partner, paid weekly in $."},
-{t:"Surveys - Attapoll + Prolific",p:"$5 - $20 / Day",c:"Data",d:"Do paid surveys on Prolific (highest paying). $10 per survey average."}
-];
-let defaultUpdates=[
-{title:"🎉 WELCOME - EARN IN DOLLARS ($)",text:"Sign in with Google or Email only. No phone needed. Apply inside app. All jobs pay in $ via PayPal / Payoneer to M-Pesa.",time:"Today"},
-{title:"🔥 30 JOBS LIVE - AI TRAINING $18/hr",text:"AI Training jobs are HOT now. Swahili speakers earn $22/hr. Apply fast - limited slots!",time:"Today"},
-{title:"💸 PAYMENT: EVERY FRIDAY IN $",text:"All jobs paid Friday in Dollars. Withdraw to PayPal, then to M-Pesa. Questions? WhatsApp queries only.",time:"Pinned"}
-];
-function getJobs(){let s=localStorage.getItem('powr_jobs_v7');return s?JSON.parse(s):defaultJobs;}
-function saveJobs(j){localStorage.setItem('powr_jobs_v7',JSON.stringify(j));}
-function getUpdates(){let s=localStorage.getItem('powr_updates_v7');return s?JSON.parse(s):defaultUpdates;}
-function saveUpdates(u){localStorage.setItem('powr_updates_v7',JSON.stringify(u));}
-function getApplied(){let s=localStorage.getItem('powr_applied_v7');return s?JSON.parse(s):[];}
-function saveApplied(a){localStorage.setItem('powr_applied_v7',JSON.stringify(a));}
-let currentFilter='All';
-function renderJobs(){
-let jobs=getJobs();let applied=getApplied();
-document.getElementById('jobCount').innerText=jobs.length;
-document.getElementById('appliedCount').innerText=applied.length;
-let html='';
-jobs.forEach((j,i)=>{
-if(currentFilter!=='All' && !j.c.toLowerCase().includes(currentFilter.toLowerCase()) && !(currentFilter==='AI'&&j.c.includes('AI'))) return;
-let isApplied=applied.includes(j.t);
-let icon=j.c.includes('AI')?'🤖':j.c==='Freelancing'?'💻':j.c==='Writing'?'✍️':j.c==='Data'?'🏷️':'📝';
-let tag=j.c.includes('AI')?'AI TRAINING':j.c.toUpperCase();
-html+=`<div class="card"><span class="badge">${tag}</span><h3 style="margin-top:6px">${icon} ${j.t}</h3><p>${j.d}</p><p class="pay">Pay: ${j.p} • Paid in Dollars ($)</p><button class="${isApplied?'done':''}" onclick="applyJob('${j.t.replace(/'/g,"")}')">${isApplied?'✅ APPLIED - Check UPDATES':'Apply Now →'}</button></div>`;
-});
-document.getElementById('jobsList').innerHTML=html;
-}
-function applyJob(title){
-let a=getApplied();
-if(a.includes(title)){alert('You already applied. Check UPDATES for next steps.');return;}
-a.push(title);saveApplied(a);
-alert('✅ Applied for: '+title+'\n\nCheck UPDATES tab for instructions. Paid in $.');
-renderJobs();
-}
-function renderUpdates(){
-let u=getUpdates();let html='';
-u.forEach(x=>{html+=`<div class="update"><small>📢 ${x.time}</small><h3>${x.title}</h3><p>${x.text}</p></div>`;});
-document.getElementById('updatesList').innerHTML=html;
-}
-function filterJobs(f,el){currentFilter=f;document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('on'));if(el)el.classList.add('on');renderJobs();}
-function showTab(tab){['create','jobs','updates'].forEach(t=>{document.getElementById('tab-'+t).classList.remove('active');document.getElementById('btn-'+t).classList.remove('on');});document.getElementById('tab-'+tab).classList.add('active');document.getElementById('btn-'+tab).classList.add('on');window.scrollTo(0,0);}
-function createJob(){
-let t=document.getElementById('cTitle').value;let p=document.getElementById('cPay').value||'$15 / Hour';let c=document.getElementById('cCat').value;let d=document.getElementById('cDesc').value||'Apply inside the app for details.';
-if(!t){alert('Please enter Job Title');return;}
-let jobs=getJobs();jobs.unshift({t:t,p:p,c:c,d:d});saveJobs(jobs);
-let ups=getUpdates();ups.unshift({title:'🆕 NEW JOB: '+t,text:d+' | Pay: '+p+' | Tap APPLY in JOBS tab.',time:'Just Now'});saveUpdates(ups);
-document.getElementById('cTitle').value='';document.getElementById('cDesc').value='';
-alert('✅ Job Published! Now in JOBS + UPDATES');renderJobs();renderUpdates();showTab('jobs');
-}
-function postUpdate(){
-let t=document.getElementById('uTitle').value;let x=document.getElementById('uText').value;
-if(!t||!x){alert('Please enter Title + Update');return;}
-let ups=getUpdates();ups.unshift({title:t,text:x,time:'Just Now'});saveUpdates(ups);
-document.getElementById('uTitle').value='';document.getElementById('uText').value='';alert('✅ Update Posted!');renderUpdates();showTab('updates');
-}
-function clearAll(){if(confirm('Clear all your custom jobs and updates?')){localStorage.removeItem('powr_jobs_v7');localStorage.removeItem('powr_updates_v7');localStorage.removeItem('powr_applied_v7');renderJobs();renderUpdates();alert('Cleared - Back to 30 default jobs');}}
-function googleLogin(){
-let email=prompt('Continue with Google\n\nEnter your Gmail:','');
-if(!email||!email.includes('@')){alert('Please enter a valid Gmail');return;}
-let name=email.split('@')[0].replace(/[._]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-let finalName=prompt('Confirm your Google Name:',name)||name;
-loginUser(finalName,email);
-}
-function emailLogin(){
-let e=document.getElementById('email').value;
-if(!e||!e.includes('@')){alert('Please enter your Email');return;}
-let name=e.split('@')[0].replace(/[._]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-loginUser(name,e);
-}
-function loginUser(n,e){
-localStorage.setItem('powr_name',n);localStorage.setItem('powr_email',e);
-document.getElementById('showName').innerText=n;
-document.getElementById('showEmail').innerText=e;
-openDash();
-}
-function openDash(){document.getElementById('signup').classList.remove('active');document.getElementById('dashWrap').style.display='block';document.getElementById('bottomTabs').style.display='flex';renderJobs();renderUpdates();}
-function logout(){localStorage.removeItem('powr_name');localStorage.removeItem('powr_email');document.getElementById('dashWrap').style.display='none';document.getElementById('bottomTabs').style.display='none';document.getElementById('signup').classList.add('active');}
-let saved=localStorage.getItem('powr_name');
-if(saved){document.getElementById('showName').innerText=saved;document.getElementById('showEmail').innerText=localStorage.getItem('powr_email')||'';openDash();}
-renderJobs();renderUpdates();
-</script>
-</body>
-</html>
+.update small{color:#94a3b8}.update p{font-size:14px;margin:5
