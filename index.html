@@ -7,10 +7,11 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#0f172a;color:white;padding:15px}
-.header{text-align:center;padding:20px 0}
+.header{text-align:center;padding:15px 0}
 .header h1{font-size:32px;color:#22c55e}
-.header p{color:#cbd5e1;margin-top:5px}
-.social{display:flex;gap:10px;justify-content:center;margin:15px 0}
+.header p{color:#cbd5e1;margin-top:5px;font-size:14px}
+.joinbtn{display:block;background:#facc15;color:#000;text-align:center;padding:14px;border-radius:10px;font-weight:bold;text-decoration:none;margin:12px 0;font-size:16px}
+.social{display:flex;gap:10px;justify-content:center;margin:10px 0}
 .social a{flex:1;text-align:center;padding:12px;border-radius:10px;text-decoration:none;color:white;font-weight:bold;font-size:14px}
 .wa{background:#25D366}.tk{background:#333;color:#aaa}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
@@ -20,69 +21,78 @@ body{background:#0f172a;color:white;padding:15px}
 .card a{display:block;margin-top:10px;background:#22c55e;color:#000;padding:10px;border-radius:8px;text-decoration:none;font-weight:bold}
 .card.coming a{background:#475569;color:white}
 .badge{background:#facc15;color:#000;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:bold}
-.footer{text-align:center;margin:25px 0;color:#64748b;font-size:12px}
+.footer{text-align:center;margin:20px 0;color:#64748b;font-size:12px}
+.page{display:none}
+.page.active{display:block}
+input,select{width:100%;padding:14px;margin:8px 0;border-radius:10px;border:none;font-size:16px}
+.bigbtn{width:100%;padding:15px;background:#25D366;color:white;border:none;border-radius:10px;font-weight:bold;font-size:17px;cursor:pointer}
+.job{background:#1e293b;padding:15px;border-radius:15px;margin:12px 0}
+.job h3{font-size:16px}.job p{font-size:13px;color:#94a3b8;margin:6px 0}
+.job a{display:block;background:#22c55e;color:#000;text-align:center;padding:11px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:8px}
+.pay{color:#facc15!important;font-weight:bold}
+.back{color:#facc15;display:block;text-align:center;margin:12px;text-decoration:none}
+.nav{display:flex;gap:8px;margin:10px 0}
+.nav button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:bold;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="header">
-<h1>⚡ POWRNET</h1>
-<p>Earn Online in Kenya - No Experience Needed</p>
+
+<!-- TOP NAV -->
+<div class="nav">
+<button onclick="show('home')" style="background:#22c55e">🏠 Home</button>
+<button onclick="show('signup')" style="background:#facc15">🚀 Join Free</button>
+<button onclick="show('jobs')" style="background:#38bdf8">💼 Jobs</button>
 </div>
 
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+<div class="header"><h1>⚡ POWRNET</h1><p>Earn Online in Kenya<br>No Experience Needed</p></div>
+<a class="joinbtn" onclick="show('signup')">🚀 JOIN FREE - Sign Up Now</a>
 <div class="social">
 <a class="wa" href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20to%20earn" target="_blank">💬 WhatsApp Me</a>
 <a class="tk" href="#" onclick="return false;">🎵 TikTok - Soon</a>
 </div>
-
 <p style="text-align:center;font-size:13px;color:#facc15">👇 Pick One & Start Today - All Free To Join</p>
-
 <div class="grid">
-<div class="card coming">
-<span class="badge">COMING SOON</span>
-<h3>💼 Fiverr Freelancing</h3>
-<p>Writing, Design, Video Editing. Earn $5 - $100 per job.</p>
-<a href="#">Soon - Wait For Approval</a>
+<div class="card coming"><span class="badge">COMING SOON</span><h3>💼 Fiverr Freelancing</h3><p>Writing, Design, Video Editing. Earn $5 - $100 per job.</p><a href="#" onclick="show('signup');return false;">Join Waitlist</a></div>
+<div class="card"><span class="badge">EASY • KSH 500/DAY</span><h3>📝 Remotasks</h3><p>Do small tasks online. No skill needed.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
+<div class="card"><span class="badge">PASSIVE</span><h3>📶 Pawns.app</h3><p>Earn by sharing your internet. Works in Kenya.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
+<div class="card"><span class="badge">SURVEYS</span><h3>📊 Attapoll</h3><p>Answer surveys, get paid to M-Pesa via PayPal.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
+<div class="card"><span class="badge">BEGINNER</span><h3>🎮 Swagbucks</h3><p>Watch videos, play games, earn points.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
+<div class="card"><span class="badge">NEW</span><h3>✍️ Writing Jobs</h3><p>Get paid to write articles for blogs.</p><a href="#" onclick="show('jobs');return false;">See Job →</a></div>
+</div>
+<div class="footer">POWRNET © 2026 • Made in Kenya 🇰🇪<br>WhatsApp: 0112072729 for daily new jobs!</div>
 </div>
 
-<div class="card">
-<span class="badge">EASY • KSH 500/DAY</span>
-<h3>📝 Remotasks</h3>
-<p>Do small tasks online. No skill needed.</p>
-<a href="https://www.remotasks.com" target="_blank">Start Tasks →</a>
+<!-- SIGNUP PAGE -->
+<div id="signup" class="page">
+<h1 style="text-align:center;color:#22c55e">⚡ JOIN POWRNET</h1>
+<p style="text-align:center;color:#cbd5e1;margin:10px 0">Free To Join • Get Daily Jobs On WhatsApp</p>
+<input id="name" placeholder="Your Full Name">
+<input id="phone" placeholder="Your WhatsApp Number e.g 0112072729">
+<select id="skill"><option>What can you do?</option><option>📝 Easy Tasks - No Skill</option><option>✍️ Writing</option><option>📊 Surveys</option><option>🎨 Design / Video</option></select>
+<select id="pay"><option>How to get paid?</option><option>M-Pesa</option><option>PayPal</option></select>
+<button class="bigbtn" onclick="join()">✅ JOIN FREE VIA WHATSAPP →</button>
+<a class="back" onclick="show('jobs')">Skip - See Jobs First →</a>
+<a class="back" onclick="show('home')">← Back Home</a>
 </div>
 
-<div class="card">
-<span class="badge">PASSIVE</span>
-<h3>📶 Pawns.app</h3>
-<p>Earn by sharing your internet. Works in Kenya.</p>
-<a href="https://pawns.app/?r=powrnet" target="_blank">Earn Passive →</a>
+<!-- JOBS PAGE -->
+<div id="jobs" class="page">
+<h1 style="text-align:center;color:#22c55e">⚡ POWRNET JOBS</h1>
+<p style="text-align:center;color:#cbd5e1;font-size:13px">New Jobs Daily • Tap Apply To Get Job</p>
+<div class="job"><h3>📝 Job #1: Do 20 Remotasks</h3><p>Easy tasks, no skill. Use your phone.</p><p class="pay">Pay: KSH 500 / Day</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%231%20Remotasks" target="_blank">Apply Now →</a></div>
+<div class="job"><h3>📊 Job #2: Answer 10 Surveys</h3><p>Attapoll surveys, 5 mins each.</p><p class="pay">Pay: KSH 150 - 300</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%232%20Surveys" target="_blank">Apply Now →</a></div>
+<div class="job"><h3>✍️ Job #3: Write 300 Words Article</h3><p>Write about Nairobi / Football / Phones.</p><p class="pay">Pay: KSH 250 Per Article</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%233%20Writing" target="_blank">Apply Now →</a></div>
+<div class="job"><h3>📶 Job #4: Install Pawns.app</h3><p>Share internet, earn passive.</p><p class="pay">Pay: Passive - Daily</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%234%20Pawns" target="_blank">Apply Now →</a></div>
+<div class="job"><h3>🎮 Job #5: Play Games on Swagbucks</h3><p>Play + watch videos.</p><p class="pay">Pay: KSH 200 / Day</p><a href="https://wa.me/254112072729?text=Hi%20POWRNET%20I%20want%20Job%20%235%20Swagbucks" target="_blank">Apply Now →</a></div>
+<a class="back" onclick="show('home')">← Back Home</a>
+<a class="back" onclick="show('signup')">🚀 Join Free First</a>
 </div>
 
-<div class="card">
-<span class="badge">SURVEYS</span>
-<h3>📊 Attapoll</h3>
-<p>Answer surveys, get paid to M-Pesa via PayPal.</p>
-<a href="https://attapoll.app" target="_blank">Take Surveys →</a>
-</div>
-
-<div class="card">
-<span class="badge">BEGINNER</span>
-<h3>🎮 Swagbucks</h3>
-<p>Watch videos, play games, earn points.</p>
-<a href="https://www.swagbucks.com" target="_blank">Start Earning →</a>
-</div>
-
-<div class="card">
-<span class="badge">NEW</span>
-<h3>✍️ Writing Jobs</h3>
-<p>Get paid to write articles for blogs.</p>
-<a href="https://www.remotasks.com" target="_blank">Apply Now →</a>
-</div>
-</div>
-
-<div class="footer">
-POWRNET © 2026 • Made in Kenya 🇰🇪<br>
-WhatsApp: 0112072729 for daily new jobs!
-</div>
+<script>
+function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
+function join(){let n=document.getElementById('name').value;let p=document.getElementById('phone').value;let s=document.getElementById('skill').value;let pay=document.getElementById('pay').value;if(!n||!p){alert('Please enter Name + WhatsApp');return;}let msg="Hi POWRNET! I want to JOIN%0AName: "+n+"%0APhone: "+p+"%0ASkill: "+s+"%0APayment: "+pay;window.open("https://wa.me/254112072729?text="+msg,"_blank");}
+</script>
 </body>
 </html>
