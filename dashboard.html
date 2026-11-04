@@ -13,6 +13,9 @@ body{background:#0a0a12;color:#fff;font-family:system-ui;margin:0;padding:0 14px
 .topbtns button{padding:11px 20px;border-radius:30px;border:0;font-weight:800;cursor:pointer;font-size:15px}
 .logout{background:rgba(255,255,255,.2);color:#fff}
 .createbtn{background:#fff;color:#7c3aed}
+.money{background:#fef3c7;color:#92400e;padding:12px;border-radius:16px;margin:12px 0;text-align:center;font-weight:800;font-size:14px;line-height:1.5}
+.money button{background:#f59e0b;border:0;padding:10px 16px;border-radius:20px;font-weight:900;margin:6px 4px;cursor:pointer}
+.vipbtn{background:#25D366!important;color:#fff!important}
 .stats{display:flex;gap:10px;margin:14px 0}
 .stat{flex:1;background:#1a1a26;border:1px solid #2a2a3a;padding:12px;border-radius:16px;text-align:center}
 .stat b{font-size:20px;color:#fde68a} .stat span{font-size:12px;color:#aaa;display:block}
@@ -29,6 +32,7 @@ h3{margin:0 0 8px} .sub{color:#a855f7;font-weight:700;margin:0 0 12px}
 textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;border-radius:14px;padding:13px}
 .big{background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;border:0;width:100%;padding:15px;border-radius:30px;font-weight:800;margin-top:10px;font-size:16px;cursor:pointer}
 .small{background:#2a2a3a;color:#fff;border:0;padding:9px 14px;border-radius:20px;font-weight:700;cursor:pointer;margin-top:6px}
+.ad{background:#f59e0b;color:#000;padding:10px;border-radius:14px;text-align:center;font-weight:900;margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -40,6 +44,13 @@ textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;borde
 <button class="logout" onclick="window.location.href='index.html'">Logout</button>
 <button class="createbtn" onclick="showTab('create')">+ Create</button>
 </div>
+</div>
+
+<div class="money">
+💰 WANT MORE JOBS DAILY?<br>
+<span style="font-weight:400;font-size:13px">Join 500+ Kenyans in our VIP WhatsApp</span><br>
+<button class="vipbtn" onclick="window.open('https://wa.me/254700000000?text=Hi%20POWRNET!%20I%20want%20to%20join%20VIP%20Ksh%20100','_blank')">Join VIP - Ksh 100 💬</button>
+<button onclick="window.open('https://wa.me/254700000000?text=Hi%20POWRNET!%20I%20want%20to%20Advertise%20for%20Ksh%20500','_blank')">Advertise Here - Ksh 500 📢</button>
 </div>
 
 <div class="stats">
@@ -93,11 +104,12 @@ textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;borde
 
 <div id="sites" class="card">
 <h3>🔥 Real Sites - 32 Ways To Earn</h3>
-<p class="sub">Tap Open to visit. All are real & trusted.</p>
+<p class="sub">Tap Open to visit. ⭐ = Partner - we may earn a small commission, no extra cost to you.</p>
+<div class="ad">📢 YOUR BUSINESS HERE - Reach 1000s of Kenyans - Only Ksh 500/month! <button class="small" style="background:#000;color:#fff" onclick="window.open('https://wa.me/254700000000?text=I%20want%20to%20advertise%20on%20POWRNET','_blank')">Advertise →</button></div>
 
 <h3 style="color:#4ade80;margin-top:10px">💼 Freelance - Sell Your Skill</h3>
-<div class="job"><b>1. Upwork.com</b><p>Writing, editing, design, coding for the world.</p><button class="small" onclick="window.open('https://www.upwork.com','_blank')">Open →</button></div>
-<div class="job"><b>2. Fiverr.com</b><p>Sell any skill from $5. Start with what you know.</p><button class="small" onclick="window.open('https://www.fiverr.com','_blank')">Open →</button></div>
+<div class="job"><b>1. Upwork.com ⭐</b><p>Writing, editing, design, coding for the world.</p><button class="small" onclick="window.open('https://www.upwork.com','_blank')">Open →</button></div>
+<div class="job"><b>2. Fiverr.com ⭐</b><p>Sell any skill from $5. Start with what you know.</p><button class="small" onclick="window.open('https://www.fiverr.com','_blank')">Open →</button></div>
 <div class="job"><b>3. Freelancer.com</b><p>Bid on jobs, get paid per project.</p><button class="small" onclick="window.open('https://www.freelancer.com','_blank')">Open →</button></div>
 <div class="job"><b>4. PeoplePerHour.com</b><p>Freelance for small businesses in UK & US.</p><button class="small" onclick="window.open('https://www.peopleperhour.com','_blank')">Open →</button></div>
 <div class="job"><b>5. Guru.com</b><p>Find long-term freelance clients.</p><button class="small" onclick="window.open('https://www.guru.com','_blank')">Open →</button></div>
@@ -122,7 +134,7 @@ textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;borde
 <div class="job"><b>20. UserTesting.com</b><p>Test websites, get $10 per test.</p><button class="small" onclick="window.open('https://www.usertesting.com','_blank')">Open →</button></div>
 
 <h3 style="color:#f472b6;margin-top:16px">🛒 Sell Stuff Online</h3>
-<div class="job"><b>21. Jumia.co.ke</b><p>Sell products in Kenya.</p><button class="small" onclick="window.open('https://www.jumia.co.ke','_blank')">Open →</button></div>
+<div class="job"><b>21. Jumia.co.ke ⭐</b><p>Sell products in Kenya. Best for beginners!</p><button class="small" onclick="window.open('https://www.jumia.co.ke','_blank')">Open →</button></div>
 <div class="job"><b>22. Jiji.co.ke</b><p>Kenya's biggest marketplace - free to post.</p><button class="small" onclick="window.open('https://jiji.co.ke','_blank')">Open →</button></div>
 <div class="job"><b>23. Facebook Marketplace</b><p>Sell to people near you, no fees.</p><button class="small" onclick="window.open('https://www.facebook.com/marketplace','_blank')">Open →</button></div>
 <div class="job"><b>24. Etsy.com</b><p>Sell handmade, crafts, digital art.</p><button class="small" onclick="window.open('https://www.etsy.com','_blank')">Open →</button></div>
@@ -131,8 +143,8 @@ textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;borde
 
 <h3 style="color:#a78bfa;margin-top:16px">🎓 Learn FREE & Earn More</h3>
 <div class="job"><b>27. Ajira Digital Kenya</b><p>FREE government training for online work in Kenya.</p><button class="small" onclick="window.open('https://ajiradigital.go.ke','_blank')">Open →</button></div>
-<div class="job"><b>28. Coursera.org</b><p>Free courses from Google, Meta, top universities.</p><button class="small" onclick="window.open('https://www.coursera.org','_blank')">Open →</button></div>
-<div class="job"><b>29. Udemy.com</b><p>Cheap courses - learn editing, AI, business.</p><button class="small" onclick="window.open('https://www.udemy.com','_blank')">Open →</button></div>
+<div class="job"><b>28. Coursera.org ⭐</b><p>Free courses from Google, Meta, top universities.</p><button class="small" onclick="window.open('https://www.coursera.org','_blank')">Open →</button></div>
+<div class="job"><b>29. Udemy.com ⭐</b><p>Cheap courses - learn editing, AI, business.</p><button class="small" onclick="window.open('https://www.udemy.com','_blank')">Open →</button></div>
 <div class="job"><b>30. Canva.com</b><p>Make posters for clients, FREE design tool.</p><button class="small" onclick="window.open('https://www.canva.com','_blank')">Open →</button></div>
 <div class="job"><b>31. ChatGPT.com</b><p>Use AI to write, plan business, make scripts.</p><button class="small" onclick="window.open('https://chatgpt.com','_blank')">Open →</button></div>
 <div class="job"><b>32. Google Skills - Grow With Google</b><p>Free certificates in digital marketing & AI.</p><button class="small" onclick="window.open('https://grow.google','_blank')">Open →</button></div>
@@ -148,4 +160,4 @@ function showTab(name){
 }
 </script>
 </body>
-  </html>
+</html>
