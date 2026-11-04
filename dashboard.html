@@ -4,30 +4,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dashboard - POWRNET</title>
 <style>
-body{background:#000;color:#fff;font-family:system-ui;margin:0;padding:16px}
-.top{text-align:center}
-.logo{font-size:28px;font-weight:900} .logo span{color:#a855f7}
-.btns{display:flex;gap:10px;justify-content:center;margin:12px 0}
-.btns button{padding:10px 18px;border-radius:20px;border:0;font-weight:bold;cursor:pointer}
-.welcome{background:#1a1a1a;padding:12px;border-radius:12px;text-align:center}
-.tabs{display:flex;gap:8px;background:#1a1a1a;padding:8px;border-radius:30px;margin:16px 0;overflow-x:auto}
-.tabs button{background:transparent;color:#fff;border:0;padding:10px 16px;border-radius:20px;white-space:nowrap;cursor:pointer;font-weight:bold}
-.tabs button.active{background:#a855f7}
-.card{background:#111;border:1px solid #333;padding:16px;border-radius:16px;margin-bottom:12px;display:none}
+*{box-sizing:border-box}
+body{background:#0a0a12;color:#fff;font-family:system-ui;margin:0;padding:0 14px 30px}
+.top{background:linear-gradient(135deg,#7c3aed,#db2777);padding:22px 16px 18px;border-radius:0 0 24px 24px;text-align:center}
+.logo{font-size:30px;font-weight:900;letter-spacing:1px} .logo span{color:#fde68a}
+.top p{margin:6px 0 12px;opacity:.9}
+.topbtns{display:flex;gap:10px;justify-content:center}
+.topbtns button{padding:11px 20px;border-radius:30px;border:0;font-weight:800;cursor:pointer;font-size:15px}
+.logout{background:rgba(255,255,255,.2);color:#fff}
+.createbtn{background:#fff;color:#7c3aed}
+.stats{display:flex;gap:10px;margin:14px 0}
+.stat{flex:1;background:#1a1a26;border:1px solid #2a2a3a;padding:12px;border-radius:16px;text-align:center}
+.stat b{font-size:20px;color:#fde68a} .stat span{font-size:12px;color:#aaa;display:block}
+.tabs{display:flex;gap:8px;background:#1a1a26;padding:6px;border-radius:30px;margin:10px 0;overflow-x:auto}
+.tabs button{background:transparent;color:#ccc;border:0;padding:11px 14px;border-radius:22px;white-space:nowrap;cursor:pointer;font-weight:700}
+.tabs button.active{background:#7c3aed;color:#fff}
+.card{background:#15151f;border:1px solid #2a2a3a;padding:16px;border-radius:20px;margin-bottom:12px;display:none}
 .card.active{display:block}
-textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;border-radius:12px;padding:12px;box-sizing:border-box}
-.big{background:#a855f7;color:#fff;border:0;width:100%;padding:14px;border-radius:30px;font-weight:bold;margin-top:10px;font-size:16px}
-.logout{background:#333;color:#fff}
+h3{margin:0 0 8px} .sub{color:#a855f7;font-weight:700;margin:0 0 12px}
+.job,.lesson{background:#1f1f2e;border:1px solid #2e2e42;padding:13px;border-radius:16px;margin-bottom:10px}
+.job b,.lesson b{font-size:16px} .job p,.lesson p{color:#bbb;margin:6px 0;font-size:14px;line-height:1.5}
+.tag{display:inline-block;background:#2e1065;color:#ddd;font-size:11px;padding:4px 9px;border-radius:20px;margin-right:5px}
+.pay{color:#4ade80;font-weight:800}
+textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;border-radius:14px;padding:13px}
+.big{background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;border:0;width:100%;padding:15px;border-radius:30px;font-weight:800;margin-top:10px;font-size:16px;cursor:pointer}
+.small{background:#2a2a3a;color:#fff;border:0;padding:9px 14px;border-radius:20px;font-weight:700;cursor:pointer;margin-top:6px}
 </style>
 </head>
 <body>
+
 <div class="top">
 <div class="logo">POWR<span>NET</span>.COM</div>
-<p>Welcome Back! 👋 You are logged in</p>
-<div class="btns">
+<p>Welcome Back! 👋 Your money journey continues</p>
+<div class="topbtns">
 <button class="logout" onclick="window.location.href='index.html'">Logout</button>
-<button style="background:#a855f7;color:#fff" onclick="showTab('create')">+ Create</button>
+<button class="createbtn" onclick="showTab('create')">+ Create</button>
 </div>
+</div>
+
+<div class="stats">
+<div class="stat"><b>12</b><span>Job Ideas</span></div>
+<div class="stat"><b>6</b><span>AI Lessons</span></div>
+<div class="stat"><b>5</b><span>Real Sites</span></div>
 </div>
 
 <div class="tabs">
@@ -38,29 +56,49 @@ textarea,input{width:100%;background:#222;color:#fff;border:1px solid #444;borde
 </div>
 
 <div id="create" class="card active">
-<h3>✨ Create a Post / Video Idea</h3>
-<p style="color:#a855f7">Get trending ideas for TikTok, YouTube & Facebook</p>
+<h3>✨ Create a Viral Idea</h3>
+<p class="sub">Trending in Kenya right now</p>
 <textarea placeholder="e.g. matatu life in Nairobi..."></textarea>
-<button class="big" onclick="alert('Idea Generated! Try: A day with a boda rider in Nairobi')">Generate Idea →</button>
-<p>💡 Video Ideas<br>• A day with a boda rider in Nairobi<br>• Nairobi vs Mombasa - who wins?<br>• Landlord vs Tenant in Kenya 😂</p>
+<button class="big" onclick="alert('🔥 Your Idea: A day with a boda rider in Nairobi - Film his morning, his customers, his struggles. People LOVE real stories!')">Generate Idea →</button>
+<div style="margin-top:14px">
+<div class="job">🔥 <b>A day with a boda rider</b><p>Real life, real emotions. Easy to film on phone.</p></div>
+<div class="job">😂 <b>Landlord vs Tenant in Kenya</b><p>Comedy skit - everyone relates!</p></div>
+<div class="job">🇰🇪 <b>Nairobi vs Mombasa - Who Wins?</b><p>Debate video, ask people on street.</p></div>
+</div>
 </div>
 
 <div id="jobs" class="card">
-<h3>💼 Job Ideas</h3>
-<p>• Become a TikTok Creator - Post daily<br>• Freelance Video Editing - Ksh 500-2000 per video<br>• Sell on Jumia / Facebook Marketplace<br>• AI Content Writer - Use ChatGPT<br>• Boda / Delivery with Apps</p>
-<button class="big" onclick="alert('More jobs coming soon!')">See More Jobs</button>
+<h3>💼 Job Ideas - Start Today</h3>
+<p class="sub">No capital needed, just your phone</p>
+<div class="job"><b>1. TikTok Creator</b> <span class="tag">Easy</span><p>Post 1 video daily about Kenya life. <span class="pay">Ksh 5k - 50k / month</span></p><button class="small" onclick="showTab('create')">Get Ideas →</button></div>
+<div class="job"><b>2. Video Editor</b> <span class="tag">Skill</span><p>Edit for YouTubers using CapCut. <span class="pay">Ksh 500 - 2000 / video</span></p></div>
+<div class="job"><b>3. Facebook Marketplace Seller</b> <span class="tag">Business</span><p>Buy cheap clothes in Gikomba, sell online. <span class="pay">Ksh 1000+ / day</span></p></div>
+<div class="job"><b>4. AI Content Writer</b> <span class="tag">AI</span><p>Write posts for businesses using ChatGPT. <span class="pay">Ksh 800 - 3000 / article</span></p><button class="small" onclick="showTab('ai')">Learn AI →</button></div>
+<div class="job"><b>5. Delivery Rider (Bolt / Glovo)</b> <span class="tag">Fast Cash</span><p>Use bike/boda, work when you want. <span class="pay">Ksh 1500 - 3000 / day</span></p></div>
+<div class="job"><b>6. Online Tutor</b> <span class="tag">Education</span><p>Teach KCSE / English on WhatsApp / Zoom. <span class="pay">Ksh 500 / hour</span></p></div>
+<div class="job"><b>7. Social Media Manager</b> <span class="tag">Trending</span><p>Manage Instagram for small shops. <span class="pay">Ksh 10k - 30k / month per client</span></p></div>
+<div class="job"><b>8. Voice-Over Artist</b> <span class="tag">Fun</span><p>Record ads / TikTok voiceovers. <span class="pay">Ksh 1000 - 5000 / job</span></p></div>
 </div>
 
 <div id="ai" class="card">
-<h3>🧠 Learn AI</h3>
-<p>• Lesson 1: What is ChatGPT?<br>• Lesson 2: How to write good prompts<br>• Lesson 3: Make money with AI<br>• Lesson 4: Create videos with AI</p>
-<button class="big" onclick="alert('AI Lesson 1: Ask ChatGPT - Write me 5 video ideas about Nairobi life')">Start Lesson 1 →</button>
+<h3>🧠 Learn AI - From Zero to Pro</h3>
+<p class="sub">6 lessons, 5 minutes each</p>
+<div class="lesson"><b>Lesson 1: What is AI?</b><p>AI = computer that thinks like human. ChatGPT is the most famous. You can ask it ANYTHING.</p><button class="small" onclick="alert('Try this: Go to chatgpt.com and type: Give me 5 business ideas in Nairobi with no money')">Try It →</button></div>
+<div class="lesson"><b>Lesson 2: How to Write Good Prompts</b><p>Bad: Write a story. Good: Write a funny 30-sec TikTok script about a Kenyan matatu driver, in Sheng.</p></div>
+<div class="lesson"><b>Lesson 3: Make Money With AI</b><p>Use AI to write CVs, business posts, video scripts for clients and charge.</p></div>
+<div class="lesson"><b>Lesson 4: Create Videos With AI</b><p>Use CapCut + ChatGPT to make faceless videos for YouTube.</p></div>
+<div class="lesson"><b>Lesson 5: AI for Business</b><p>Use AI to reply to customers, make price lists, make posters.</p></div>
+<div class="lesson"><b>Lesson 6: AI Tools You Must Know</b><p>ChatGPT - Writing • CapCut - Editing • Canva AI - Posters • ElevenLabs - Voice</p></div>
 </div>
 
 <div id="sites" class="card">
 <h3>🔥 Real Sites - Earn Real Money</h3>
-<p>• <b>Upwork.com</b> - Freelance work<br>• <b>Fiverr.com</b> - Sell skills<br>• <b>YouTube.com</b> - Post videos<br>• <b>Remotasks.com</b> - Small tasks<br>• <b>Ajira Digital Kenya</b> - Free training</p>
-<button class="big" onclick="window.open('https://www.upwork.com','_blank')">Open Upwork →</button>
+<p class="sub">These are real, trusted websites</p>
+<div class="job"><b>Upwork.com</b><p>Freelance work for the world. Writing, editing, design.</p><button class="small" onclick="window.open('https://www.upwork.com','_blank')">Open →</button></div>
+<div class="job"><b>Fiverr.com</b><p>Sell any skill from $5. Start with what you know.</p><button class="small" onclick="window.open('https://www.fiverr.com','_blank')">Open →</button></div>
+<div class="job"><b>YouTube.com</b><p>Post videos, get paid from ads after 1000 subscribers.</p><button class="small" onclick="window.open('https://www.youtube.com','_blank')">Open →</button></div>
+<div class="job"><b>Remotasks.com</b><p>Small tasks: label images, check data. Easy start.</p><button class="small" onclick="window.open('https://www.remotasks.com','_blank')">Open →</button></div>
+<div class="job"><b>Ajira Digital Kenya</b><p>FREE government training for online work in Kenya.</p><button class="small" onclick="window.open('https://ajiradigital.go.ke','_blank')">Open →</button></div>
 </div>
 
 <script>
@@ -69,6 +107,7 @@ function showTab(name){
   document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
   document.getElementById(name).classList.add('active');
   document.getElementById('t-'+name).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>
