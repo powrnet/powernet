@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GlobalRemote - Find verified remote jobs, AI training jobs, data annotation, freelance writing and microtasks open to anyone, anywhere.">
     <meta name="google-adsense-account" content="ca-pub-8250686975479089">
     <title>GlobalRemote - Verified Remote Jobs & Microtasks</title>
 
@@ -109,4 +110,326 @@
         }
         .stat-num {
             font-weight: bold;
-            color:
+            color: #0f172a;
+            font-size: 1.1rem;
+        }
+        .stat-lbl {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .filter-section {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        .tab-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            white-space: nowrap;
+            color: #334155;
+            transition: all 0.2s;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background: #10b981;
+            color: #fff;
+            border-color: #10b981;
+        }
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .job-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+        .job-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .job-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .job-pay {
+            font-weight: 700;
+            color: #059669;
+            font-size: 0.9rem;
+        }
+        .job-title {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        .job-company {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+        .job-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+        }
+        .tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        .apply-btn {
+            background: #0f172a;
+            color: #fff;
+            text-align: center;
+            padding: 0.65rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: block;
+            transition: background 0.2s;
+        }
+        .apply-btn:hover {
+            background: #10b981;
+        }
+        .load-more-container {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .load-more-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+        }
+        .load-more-btn:hover {
+            background: #059669;
+        }
+        .content-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .content-card h3 {
+            color: #0f172a;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.5rem;
+        }
+        .content-card p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 3rem;
+        }
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">GR</div>
+            <h1>Global<span>Remote</span></h1>
+        </div>
+        <nav>
+            <a href="#jobs">Jobs</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#privacy">Privacy</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <span class="hero-badge">Verified Remote Job Board • powrnet.github.io</span>
+        <h2>Find Verified Remote Jobs Open to Anyone, Anywhere</h2>
+        <p>Explore high-value remote openings in AI training, data annotation, specialized freelance writing, and microtasks with zero location barriers.</p>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-num">260+</div>
+                <div class="stat-lbl">Active Listings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">5</div>
+                <div class="stat-lbl">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">100%</div>
+                <div class="stat-lbl">Verified Portals</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <!-- SEARCH & FILTER TABS -->
+        <div id="jobs" class="filter-section">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search job title, skills, or platform (e.g. DataAnnotation, Writer, Python)..." onkeyup="filterJobs()">
+            
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="filterCategory('all', this)">All Openings (260+)</button>
+                <button class="tab-btn" onclick="filterCategory('ai', this)">AI Training (160+)</button>
+                <button class="tab-btn" onclick="filterCategory('annotation', this)">Data Annotation (100+)</button>
+                <button class="tab-btn" onclick="filterCategory('writing', this)">Freelance Writing</button>
+                <button class="tab-btn" onclick="filterCategory('microtask', this)">Microtasks & Audit</button>
+                <button class="tab-btn" onclick="filterCategory('support', this)">Support & Tech</button>
+            </div>
+        </div>
+
+        <!-- JOB GRID -->
+        <div class="job-grid" id="jobGrid">
+            <!-- Job 1 -->
+            <div class="job-card" data-category="ai">
+                <div>
+                    <div class="job-header">
+                        <span class="job-badge">AI Training</span>
+                        <span class="job-pay">$20 - $45 / hr</span>
+                    </div>
+                    <div class="job-title">LLM Prompt Engineer & Evaluator</div>
+                    <div class="job-company">DataAnnotation.tech • Remote</div>
+                    <div class="job-desc">Evaluate and rank AI model responses for logic, tone, safety, and coding correctness. Flexible hours.</div>
+                    <div class="tag-list">
+                        <span class="tag">AI Training</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Writing</span>
+                    </div>
+                </div>
+                <a href="https://dataannotation.tech" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-card" data-category="ai">
+                <div>
+                    <div class="job-header">
+                        <span class="job-badge">AI Training</span>
+                        <span class="job-pay">$25 - $50 / hr</span>
+                    </div>
+                    <div class="job-title">Expert Domain AI Trainer (STEM & Coding)</div>
+                    <div class="job-company">Outlier (Scale AI) • Global</div>
+                    <div class="job-desc">Craft complex coding and mathematical reasoning prompts to train frontier generative models.</div>
+                    <div class="tag-list">
+                        <span class="tag">Mathematics</span>
+                        <span class="tag">Coding</span>
+                        <span class="tag">RLHF</span>
+                    </div>
+                </div>
+                <a href="https://outlier.ai" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-card" data-category="annotation">
+                <div>
+                    <div class="job-header">
+                        <span class="job-badge">Data Annotation</span>
+                        <span class="job-pay">$15 - $25 / hr</span>
+                    </div>
+                    <div class="job-title">Computer Vision & Bounding Box Annotator</div>
+                    <div class="job-company">Appen CrowdGen • Remote</div>
+                    <div class="job-desc">Label image and video datasets for autonomous systems and machine perception models.</div>
+                    <div class="tag-list">
+                        <span class="tag">Image Labeling</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                </div>
+                <a href="https://crowdgen.appen.com" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="job-card" data-category="ai">
+                <div>
+                    <div class="job-header">
+                        <span class="job-badge">AI Training</span>
+                        <span class="job-pay">$18 - $30 / hr</span>
+                    </div>
+                    <div class="job-title">Multilingual AI Content Reviewer</div>
+                    <div class="job-company">Surge AI • Worldwide</div>
+                    <div class="job-desc">Assess multilingual datasets, cultural idioms, and machine translations to improve AI accuracy.</div>
+                    <div class="tag-list">
+                        <span class="tag">Multilingual</span>
+                        <span class="tag">Translation</span>
+                    </div>
+                </div>
+                <a href="https://www.surgehq.ai" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
+            </div>
+
+            <!-- Job 5 -->
+            <div class="job-card" data-category="writing">
+                <div>
+                    <div class="job-header">
+                        <span class="job-badge">Freelance Writing</span>
+                        <span class="job-pay">$22 - $40 / hr</span>
+                    </div>
+                    <div class="job-title">Technical Copywriter & Documentation Specialist</div>
+                    <div class="
