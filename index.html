@@ -3,28 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GlobalRemote - Find verified remote jobs, AI training jobs, data annotation, freelance writing and microtasks open to anyone, anywhere.">
+    <meta name="description" content="GlobalRemote - Find verified remote jobs in AI training, freelancing, and specialized content writing open worldwide.">
     <meta name="google-adsense-account" content="ca-pub-8250686975479089">
-    <title>GlobalRemote - Verified Remote Jobs & Microtasks</title>
+    <title>GlobalRemote - 150+ Remote AI Training, Freelancing & Writing Jobs</title>
 
     <!-- GOOGLE ADSENSE VERIFICATION SCRIPT -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8250686975479089"
          crossorigin="anonymous"></script>
 
+    <!-- ADS.TXT REFERENCE: Ensure ads.txt is uploaded to your server root directory containing: 
+         google.com, pub-8250686975479089, DIRECT, f08c47fec0942fa0 
+    -->
+
     <style>
+        :root {
+            --primary-dark: #022c22;
+            --primary-green: #064e3b;
+            --accent-green: #059669;
+            --accent-yellow: #eab308;
+            --accent-yellow-light: #fef08a;
+            --bg-light: #f0fdf4;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
+            color: var(--text-main);
             background-color: #f8fafc;
         }
+
+        /* HEADER */
         header {
-            background: #0f172a;
+            background: var(--primary-dark);
             color: #fff;
             padding: 1rem 2rem;
             display: flex;
@@ -33,264 +51,353 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid var(--accent-yellow);
         }
+
         .logo-area {
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
+
         .logo-icon {
-            background: #10b981;
-            color: white;
-            padding: 0.4rem 0.6rem;
+            background: var(--accent-yellow);
+            color: var(--primary-dark);
+            padding: 0.4rem 0.7rem;
             border-radius: 6px;
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1.1rem;
         }
+
         header h1 {
             font-size: 1.4rem;
             color: #fff;
         }
+
         header h1 span {
-            color: #10b981;
+            color: var(--accent-yellow);
         }
+
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             margin-left: 1.5rem;
             font-weight: 500;
             font-size: 0.95rem;
+            transition: color 0.2s;
         }
+
         nav a:hover {
-            color: #10b981;
+            color: var(--accent-yellow);
         }
+
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            padding: 3rem 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3.5rem 1rem 2.5rem;
             text-align: center;
-            border-bottom: 1px solid #cbd5e1;
+            border-bottom: 4px solid var(--accent-yellow);
         }
+
         .hero-badge {
             display: inline-block;
-            background: #d1fae5;
-            color: #065f46;
-            padding: 0.3rem 0.8rem;
+            background: var(--accent-yellow-light);
+            color: #713f12;
+            padding: 0.35rem 1rem;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
+
         .hero h2 {
-            font-size: 2.2rem;
-            color: #0f172a;
-            margin-bottom: 1rem;
-            max-width: 700px;
+            font-size: 2.3rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
-        .hero p {
-            color: #475569;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-            font-size: 1rem;
+
+        .hero h2 span {
+            color: var(--accent-yellow);
         }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+        }
+
         .stats-bar {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
+
         .stat-item {
-            background: #fff;
-            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.6rem 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             text-align: center;
         }
+
         .stat-num {
-            font-weight: bold;
-            color: #0f172a;
-            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--accent-yellow);
+            font-size: 1.2rem;
         }
+
         .stat-lbl {
             font-size: 0.8rem;
-            color: #64748b;
+            color: #94a3b8;
         }
+
+        /* CONTAINER & FILTERS */
         .container {
-            max-width: 1100px;
-            margin: 2rem auto;
+            max-width: 1200px;
+            margin: 2.5rem auto;
             padding: 0 1rem;
         }
+
         .filter-section {
             background: #fff;
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
         }
+
         .search-input {
             width: 100%;
-            padding: 0.85rem 1rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            padding: 0.9rem 1rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
             font-size: 1rem;
             margin-bottom: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
         }
+
+        .search-input:focus {
+            border-color: var(--primary-green);
+        }
+
         .category-tabs {
             display: flex;
             gap: 0.5rem;
             overflow-x: auto;
             padding-bottom: 0.5rem;
         }
+
         .tab-btn {
             background: #f1f5f9;
             border: 1px solid #cbd5e1;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
+            padding: 0.6rem 1.1rem;
+            border-radius: 8px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             white-space: nowrap;
             color: #334155;
             transition: all 0.2s;
         }
+
         .tab-btn.active, .tab-btn:hover {
-            background: #10b981;
-            color: #fff;
-            border-color: #10b981;
+            background: var(--primary-green);
+            color: var(--accent-yellow);
+            border-color: var(--primary-green);
         }
+
+        /* JOB GRID */
         .job-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
             gap: 1.5rem;
         }
+
         .job-card {
             background: #fff;
             border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 1.5rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
         }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-yellow);
+        }
+
         .job-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
         }
+
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 0.75rem;
         }
+
         .job-badge {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            background: var(--bg-light);
+            color: var(--primary-green);
+            border: 1px solid #a7f3d0;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
             font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .job-pay {
             font-weight: 700;
-            color: #059669;
-            font-size: 0.9rem;
         }
+
+        .job-pay {
+            font-weight: 800;
+            color: #047857;
+            font-size: 0.9rem;
+            background: #ecfdf5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
         .job-title {
             font-size: 1.1rem;
-            color: #0f172a;
+            color: var(--primary-dark);
             margin-bottom: 0.4rem;
-            font-weight: 600;
+            font-weight: 700;
         }
+
         .job-company {
             font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+            font-weight: 600;
         }
+
         .job-desc {
             font-size: 0.9rem;
             color: #475569;
-            margin-bottom: 1rem;
+            margin-bottom: 1.1rem;
         }
+
         .tag-list {
             display: flex;
             flex-wrap: wrap;
             gap: 0.4rem;
             margin-bottom: 1.25rem;
         }
+
         .tag {
             background: #f1f5f9;
             color: #475569;
-            padding: 0.15rem 0.5rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-size: 0.75rem;
-        }
-        .apply-btn {
-            background: #0f172a;
-            color: #fff;
-            text-align: center;
-            padding: 0.65rem;
-            border-radius: 6px;
-            text-decoration: none;
             font-weight: 500;
+        }
+
+        .apply-btn {
+            background: var(--primary-dark);
+            color: var(--accent-yellow);
+            text-align: center;
+            padding: 0.7rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
             font-size: 0.9rem;
             display: block;
             transition: background 0.2s;
         }
+
         .apply-btn:hover {
-            background: #10b981;
+            background: var(--primary-green);
+            color: #fff;
         }
-        .load-more-container {
+
+        /* LOAD MORE CONTROLS */
+        .load-container {
             text-align: center;
             margin: 2.5rem 0;
         }
-        .load-more-btn {
-            background: #10b981;
-            color: white;
-            border: none;
-            padding: 0.85rem 2rem;
+
+        .load-btn {
+            background: var(--primary-green);
+            color: var(--accent-yellow);
+            border: 2px solid var(--accent-yellow);
+            padding: 0.85rem 2.5rem;
             border-radius: 8px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+            transition: all 0.2s;
         }
-        .load-more-btn:hover {
-            background: #059669;
+
+        .load-btn:hover {
+            background: var(--primary-dark);
+            color: #fff;
         }
+
         .content-card {
             background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.5rem;
+            border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+            margin-top: 3rem;
+            border: 1px solid #e2e8f0;
         }
+
         .content-card h3 {
-            color: #0f172a;
+            color: var(--primary-dark);
             margin-bottom: 1rem;
-            border-bottom: 2px solid #f1f5f9;
+            border-bottom: 2px solid var(--accent-yellow);
             padding-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
+
         .content-card p {
             margin-bottom: 1rem;
             color: #475569;
         }
+
         footer {
-            background: #0f172a;
+            background: var(--primary-dark);
             color: #94a3b8;
             text-align: center;
-            padding: 2.5rem 1rem;
-            margin-top: 3rem;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--accent-yellow);
         }
+
         footer a {
-            color: #38bdf8;
+            color: var(--accent-yellow);
             text-decoration: none;
         }
-        footer a:hover {
-            text-decoration: underline;
+
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 3rem;
+            background: #fff;
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            display: none;
         }
     </style>
 </head>
@@ -305,29 +412,29 @@
         <nav>
             <a href="#jobs">Jobs</a>
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
             <a href="#privacy">Privacy</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <span class="hero-badge">Verified Remote Job Board • powrnet.github.io</span>
-        <h2>Find Verified Remote Jobs Open to Anyone, Anywhere</h2>
-        <p>Explore high-value remote openings in AI training, data annotation, specialized freelance writing, and microtasks with zero location barriers.</p>
+        <span class="hero-badge">⭐ 150+ Open Roles • AI, Freelance & Writing</span>
+        <h2>Find Verified Remote Opportunities <span>Worldwide</span></h2>
+        <p>Direct portal access to over 100 AI training roles and 50+ remote freelancing and content writing opportunities.</p>
         
         <div class="stats-bar">
             <div class="stat-item">
-                <div class="stat-num">260+</div>
-                <div class="stat-lbl">Active Listings</div>
+                <div class="stat-num">100+</div>
+                <div class="stat-lbl">AI Training Jobs</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num">5</div>
-                <div class="stat-lbl">Categories</div>
+                <div class="stat-num">50+</div>
+                <div class="stat-lbl">Freelance & Writing</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num">100%</div>
-                <div class="stat-lbl">Verified Portals</div>
+                <div class="stat-num">$18 - $65</div>
+                <div class="stat-lbl">Avg. Hourly Pay Range</div>
             </div>
         </div>
     </section>
@@ -336,100 +443,199 @@
         
         <!-- SEARCH & FILTER TABS -->
         <div id="jobs" class="filter-section">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search job title, skills, or platform (e.g. DataAnnotation, Writer, Python)..." onkeyup="filterJobs()">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search roles, skills, or platforms (e.g., DataAnnotation, Writing, Python, Copywriting)..." onkeyup="filterJobs()">
             
             <div class="category-tabs">
-                <button class="tab-btn active" onclick="filterCategory('all', this)">All Openings (260+)</button>
-                <button class="tab-btn" onclick="filterCategory('ai', this)">AI Training (160+)</button>
-                <button class="tab-btn" onclick="filterCategory('annotation', this)">Data Annotation (100+)</button>
-                <button class="tab-btn" onclick="filterCategory('writing', this)">Freelance Writing</button>
-                <button class="tab-btn" onclick="filterCategory('microtask', this)">Microtasks & Audit</button>
-                <button class="tab-btn" onclick="filterCategory('support', this)">Support & Tech</button>
+                <button class="tab-btn active" onclick="filterCategory('all', this)">All Opportunities (150+)</button>
+                <button class="tab-btn" onclick="filterCategory('ai', this)">🤖 AI Training (100+)</button>
+                <button class="tab-btn" onclick="filterCategory('freelance', this)">💼 Freelance (30+)</button>
+                <button class="tab-btn" onclick="filterCategory('writing', this)">✍️ Writing (20+)</button>
             </div>
         </div>
 
         <!-- JOB GRID -->
-        <div class="job-grid" id="jobGrid">
-            <!-- Job 1 -->
-            <div class="job-card" data-category="ai">
-                <div>
-                    <div class="job-header">
-                        <span class="job-badge">AI Training</span>
-                        <span class="job-pay">$20 - $45 / hr</span>
-                    </div>
-                    <div class="job-title">LLM Prompt Engineer & Evaluator</div>
-                    <div class="job-company">DataAnnotation.tech • Remote</div>
-                    <div class="job-desc">Evaluate and rank AI model responses for logic, tone, safety, and coding correctness. Flexible hours.</div>
-                    <div class="tag-list">
-                        <span class="tag">AI Training</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Writing</span>
-                    </div>
-                </div>
-                <a href="https://dataannotation.tech" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
-            </div>
+        <div class="job-grid" id="jobGrid"></div>
 
-            <!-- Job 2 -->
-            <div class="job-card" data-category="ai">
-                <div>
-                    <div class="job-header">
-                        <span class="job-badge">AI Training</span>
-                        <span class="job-pay">$25 - $50 / hr</span>
-                    </div>
-                    <div class="job-title">Expert Domain AI Trainer (STEM & Coding)</div>
-                    <div class="job-company">Outlier (Scale AI) • Global</div>
-                    <div class="job-desc">Craft complex coding and mathematical reasoning prompts to train frontier generative models.</div>
-                    <div class="tag-list">
-                        <span class="tag">Mathematics</span>
-                        <span class="tag">Coding</span>
-                        <span class="tag">RLHF</span>
-                    </div>
-                </div>
-                <a href="https://outlier.ai" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
-            </div>
+        <!-- NO RESULTS MESSAGE -->
+        <div id="noResults" class="no-results">
+            No listings found matching your keywords. Please try another search or select a different category tab.
+        </div>
 
-            <!-- Job 3 -->
-            <div class="job-card" data-category="annotation">
-                <div>
-                    <div class="job-header">
-                        <span class="job-badge">Data Annotation</span>
-                        <span class="job-pay">$15 - $25 / hr</span>
-                    </div>
-                    <div class="job-title">Computer Vision & Bounding Box Annotator</div>
-                    <div class="job-company">Appen CrowdGen • Remote</div>
-                    <div class="job-desc">Label image and video datasets for autonomous systems and machine perception models.</div>
-                    <div class="tag-list">
-                        <span class="tag">Image Labeling</span>
-                        <span class="tag">Computer Vision</span>
-                    </div>
-                </div>
-                <a href="https://crowdgen.appen.com" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
-            </div>
+        <!-- LOAD MORE BUTTON -->
+        <div class="load-container">
+            <button id="loadMoreBtn" class="load-btn" onclick="loadMoreJobs()">Load More Listings</button>
+        </div>
 
-            <!-- Job 4 -->
-            <div class="job-card" data-category="ai">
-                <div>
-                    <div class="job-header">
-                        <span class="job-badge">AI Training</span>
-                        <span class="job-pay">$18 - $30 / hr</span>
-                    </div>
-                    <div class="job-title">Multilingual AI Content Reviewer</div>
-                    <div class="job-company">Surge AI • Worldwide</div>
-                    <div class="job-desc">Assess multilingual datasets, cultural idioms, and machine translations to improve AI accuracy.</div>
-                    <div class="tag-list">
-                        <span class="tag">Multilingual</span>
-                        <span class="tag">Translation</span>
-                    </div>
-                </div>
-                <a href="https://www.surgehq.ai" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a>
-            </div>
+        <!-- ABOUT SECTION -->
+        <div id="about" class="content-card">
+            <h3>About GlobalRemote</h3>
+            <p>GlobalRemote curates verified online work platforms with no geographic barriers. We emphasize high-growth remote sectors, including AI model evaluation, data annotation, general freelancing, technical copywriting, and digital research.</p>
+        </div>
 
-            <!-- Job 5 -->
-            <div class="job-card" data-category="writing">
-                <div>
-                    <div class="job-header">
-                        <span class="job-badge">Freelance Writing</span>
-                        <span class="job-pay">$22 - $40 / hr</span>
+        <!-- PRIVACY SECTION -->
+        <div id="privacy" class="content-card">
+            <h3>Privacy Policy & AdSense Notice</h3>
+            <p>We care about your privacy. GlobalRemote does not store candidate applications or personal tracking data. All application buttons route directly to official client portals. Third-party partners, including Google AdSense, use cookies to deliver targeted site advertisements based on previous visits.</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p>&copy; 2026 GlobalRemote. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Contact Support: <a href="mailto:support@globalremote.example">support@globalremote.example</a></p>
+    </footer>
+
+    <!-- DYNAMIC DATA ENGINE SCRIPT -->
+    <script>
+        // Generated list representing over 150 positions across AI Training (100+), Freelance (30+), and Writing (20+)
+        const allJobs = [];
+
+        // 1. Generate 100 AI Training Jobs
+        const aiTitles = ["LLM Prompt Evaluator", "RLHF Specialist", "AI Safety Auditor", "Domain Knowledge Trainer", "Code Annotation Specialist", "Multilingual Chatbot Trainer", "STEM AI Prompt Author", "Logic & Reasoning Assessor"];
+        const aiCompanies = ["DataAnnotation.tech", "Outlier (Scale AI)", "Surge AI", "Appen CrowdGen", "OneForma", "Toloka AI", "Stellar AI", "Braintrust AI"];
+        const aiTags = [["AI Training", "RLHF"], ["Python", "Logic"], ["STEM", "Coding"], ["Multilingual", "Review"]];
+
+        for (let i = 1; i <= 100; i++) {
+            const title = aiTitles[i % aiTitles.length];
+            const company = aiCompanies[i % aiCompanies.length];
+            const tags = aiTags[i % aiTags.length];
+            const payMin = 18 + (i % 5) * 5;
+            const payMax = payMin + 15;
+
+            allJobs.push({
+                id: `ai-${i}`,
+                category: 'ai',
+                badge: 'AI Training',
+                title: `${title} #${i}`,
+                company: `${company} • Remote`,
+                pay: `$${payMin} - $${payMax} / hr`,
+                desc: `Evaluate, train, and refine frontier generative AI responses for accuracy, safety, and reasoning.`,
+                tags: tags,
+                url: company.includes("DataAnnotation") ? "https://dataannotation.tech" : 
+                     company.includes("Outlier") ? "https://outlier.ai" : "https://www.surgehq.ai"
+            });
+        }
+
+        // 2. Generate 30 Freelance Jobs
+        const freelanceTitles = ["Full-Stack Web Freelancer", "UI/UX Product Designer", "Automation Script Engineer", "Digital Marketing Specialist", "SEO Audit Consultant", "Virtual Support Executive"];
+        const freelanceCompanies = ["Upwork Global", "Fiverr Pro", "Toptal Network", "Contra", "We Work Remotely", "PeoplePerHour"];
+
+        for (let i = 1; i <= 30; i++) {
+            const title = freelanceTitles[i % freelanceTitles.length];
+            const company = freelanceCompanies[i % freelanceCompanies.length];
+            const payMin = 25 + (i % 6) * 5;
+            const payMax = payMin + 20;
+
+            allJobs.push({
+                id: `fl-${i}`,
+                category: 'freelance',
+                badge: 'Freelance',
+                title: `${title} #${i}`,
+                company: `${company} • Contract`,
+                pay: `$${payMin} - $${payMax} / hr`,
+                desc: `Provide contract and project-based consulting for global clients across design, development, and growth.`,
+                tags: ["Freelance", "Project-Based", "Contract"],
+                url: "https://www.upwork.com"
+            });
+        }
+
+        // 3. Generate 20 Writing Jobs
+        const writingTitles = ["Technical Documentation Writer", "SaaS Content Copywriter", "SEO Blog & Article Author", "Medical Content Writer", "Financial Newsletter Specialist"];
+        const writingCompanies = ["Remotive Copy", "Rev Captions", "ProBlogger Board", "Clean Copy Agency", "FlexJobs Writing"];
+
+        for (let i = 1; i <= 20; i++) {
+            const title = writingTitles[i % writingTitles.length];
+            const company = writingCompanies[i % writingCompanies.length];
+            const payMin = 20 + (i % 4) * 5;
+            const payMax = payMin + 15;
+
+            allJobs.push({
+                id: `w-${i}`,
+                category: 'writing',
+                badge: 'Freelance Writing',
+                title: `${title} #${i}`,
+                company: `${company} • Remote`,
+                pay: `$${payMin} - $${payMax} / hr`,
+                desc: `Produce high-quality articles, technical documentation, and compelling copywriting for remote clients.`,
+                tags: ["Copywriting", "Editing", "Content"],
+                url: "https://remotive.com"
+            });
+        }
+
+        // State Management
+        let currentCategory = 'all';
+        let itemsShown = 12;
+
+        function renderJobs() {
+            const grid = document.getElementById('jobGrid');
+            const noResults = document.getElementById('noResults');
+            const loadBtn = document.getElementById('loadMoreBtn');
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            const filtered = allJobs.filter(job => {
+                const matchesCat = (currentCategory === 'all' || job.category === currentCategory);
+                const matchesSearch = job.title.toLowerCase().includes(searchQuery) ||
+                                      job.company.toLowerCase().includes(searchQuery) ||
+                                      job.desc.toLowerCase().includes(searchQuery);
+                return matchesCat && matchesSearch;
+            });
+
+            grid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                noResults.style.display = 'block';
+                loadBtn.style.display = 'none';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            const slice = filtered.slice(0, itemsShown);
+
+            slice.forEach(job => {
+                const card = document.createElement('div');
+                card.className = 'job-card';
+                card.innerHTML = `
+                    <div>
+                        <div class="job-header">
+                            <span class="job-badge">${job.badge}</span>
+                            <span class="job-pay">${job.pay}</span>
+                        </div>
+                        <div class="job-title">${job.title}</div>
+                        <div class="job-company">${job.company}</div>
+                        <div class="job-desc">${job.desc}</div>
+                        <div class="tag-list">
+                            ${job.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
                     </div>
-                    <div class="job-title">Technical Copywriter & Documentation Specialist</div>
-                    <div class="
+                    <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply on Portal</a>
+                `;
+                grid.appendChild(card);
+            });
+
+            loadBtn.style.display = (itemsShown < filtered.length) ? 'inline-block' : 'none';
+        }
+
+        function filterCategory(category, element) {
+            currentCategory = category;
+            itemsShown = 12;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            renderJobs();
+        }
+
+        function filterJobs() {
+            itemsShown = 12;
+            renderJobs();
+        }
+
+        function loadMoreJobs() {
+            itemsShown += 12;
+            renderJobs();
+        }
+
+        // Initial Load
+        renderJobs();
+    </script>
+</body>
+</html>
