@@ -15,7 +15,7 @@
     body {
       background-color: #f7f9fc;
       color: #111827;
-      padding-bottom: 70px;
+      padding-bottom: 80px;
     }
 
     /* --- Top Navigation --- */
@@ -174,7 +174,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .job-card {
@@ -183,6 +183,10 @@
       border-radius: 14px;
       padding: 16px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .job-card.hidden-job {
+      display: none;
     }
 
     .job-header {
@@ -266,6 +270,29 @@
       text-decoration: none;
     }
 
+    /* --- Load More Button --- */
+    .load-more-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .btn-load-more {
+      background-color: #ffffff;
+      color: #111827;
+      border: 1px solid #d1d5db;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: background-color 0.2s;
+    }
+
+    .btn-load-more:hover {
+      background-color: #f3f4f6;
+    }
+
     /* --- Views / Sections --- */
     .view-section {
       display: none;
@@ -284,7 +311,7 @@
       margin-top: 16px;
     }
 
-    /* --- Disclaimer & Footer --- */
+    /* --- Footer --- */
     footer {
       text-align: center;
       padding: 20px;
@@ -376,9 +403,9 @@
       </div>
 
       <!-- Jobs List -->
-      <div class="jobs-list">
+      <div class="jobs-list" id="jobsListContainer">
 
-        <!-- Job Card 1 -->
+        <!-- Initial Visible Job 1 -->
         <div class="job-card" data-category="ai-training writing">
           <div class="job-header">
             <span class="company-name">Remotasks / Outlier AI</span>
@@ -395,11 +422,11 @@
               <span class="tag">LLM Writing</span>
               <span class="tag">Prompt Design</span>
             </div>
-            <a href="[https://outlier.ai](https://outlier.ai)" target="_blank" class="btn-apply">Apply Now →</a>
+            <a href="https://outlier.ai" target="_blank" class="btn-apply">Apply Now →</a>
           </div>
         </div>
 
-        <!-- Job Card 2 -->
+        <!-- Initial Visible Job 2 -->
         <div class="job-card" data-category="annotation ai-training">
           <div class="job-header">
             <span class="company-name">OneForma / Centific</span>
@@ -416,11 +443,11 @@
               <span class="tag">Swahili</span>
               <span class="tag">Localization</span>
             </div>
-            <a href="[https://www.oneforma.com](https://www.oneforma.com)" target="_blank" class="btn-apply">Apply Now →</a>
+            <a href="https://www.oneforma.com" target="_blank" class="btn-apply">Apply Now →</a>
           </div>
         </div>
 
-        <!-- Job Card 3 -->
+        <!-- Initial Visible Job 3 -->
         <div class="job-card" data-category="writing freelancing">
           <div class="job-header">
             <span class="company-name">Draft.dev</span>
@@ -437,12 +464,12 @@
               <span class="tag">Technical</span>
               <span class="tag">Software</span>
             </div>
-            <a href="[https://draft.dev](https://draft.dev)" target="_blank" class="btn-apply">Apply Now →</a>
+            <a href="https://draft.dev" target="_blank" class="btn-apply">Apply Now →</a>
           </div>
         </div>
 
-        <!-- Job Card 4 -->
-        <div class="job-card" data-category="annotation">
+        <!-- Hidden Job 4 (Loaded via Load More) -->
+        <div class="job-card hidden-job" data-category="annotation">
           <div class="job-header">
             <span class="company-name">Scale AI</span>
             <span class="job-pay">$14 - $20/hr</span>
@@ -458,12 +485,12 @@
               <span class="tag">Bounding Box</span>
               <span class="tag">Data Labeling</span>
             </div>
-            <a href="[https://scale.com](https://scale.com)" target="_blank" class="btn-apply">Apply Now →</a>
+            <a href="https://scale.com" target="_blank" class="btn-apply">Apply Now →</a>
           </div>
         </div>
 
-        <!-- Job Card 5 -->
-        <div class="job-card" data-category="freelancing">
+        <!-- Hidden Job 5 (Loaded via Load More) -->
+        <div class="job-card hidden-job" data-category="freelancing">
           <div class="job-header">
             <span class="company-name">Upwork Global</span>
             <span class="job-pay">$25 - $50/hr</span>
@@ -479,10 +506,15 @@
               <span class="tag">Admin</span>
               <span class="tag">Customer Support</span>
             </div>
-            <a href="[https://www.upwork.com](https://www.upwork.com)" target="_blank" class="btn-apply">Apply Now →</a>
+            <a href="https://www.upwork.com" target="_blank" class="btn-apply">Apply Now →</a>
           </div>
         </div>
 
+      </div>
+
+      <!-- Load More Button Container -->
+      <div class="load-more-container" id="loadMoreContainer">
+        <button class="btn-load-more" onclick="loadMoreJobs()">Load More Jobs ↓</button>
       </div>
     </div>
 
@@ -530,24 +562,38 @@
   </div>
 
   <script>
+    let currentCategory = 'all';
+
     // Tab filtering for categories
     function filterCategory(category, el) {
+      currentCategory = category;
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       el.classList.add('active');
 
       const cards = document.querySelectorAll('.job-card');
       cards.forEach(card => {
-        if (category === 'all') {
+        const matchesCategory = (category === 'all' || card.getAttribute('data-category').includes(category));
+        
+        // If "Load More" was already clicked, show matching cards. Otherwise respect hidden status for initial view.
+        if (matchesCategory) {
           card.style.display = 'block';
         } else {
-          const categories = card.getAttribute('data-category');
-          if (categories && categories.includes(category)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
+          card.style.display = 'none';
         }
       });
+
+      // Hide load more button when filtering specific categories
+      document.getElementById('loadMoreContainer').style.display = (category === 'all') ? 'block' : 'none';
+    }
+
+    // Load More functionality
+    function loadMoreJobs() {
+      const hiddenCards = document.querySelectorAll('.job-card.hidden-job');
+      hiddenCards.forEach(card => {
+        card.classList.remove('hidden-job');
+        card.style.display = 'block';
+      });
+      document.getElementById('loadMoreContainer').style.display = 'none';
     }
 
     // Bottom Bar View Switcher
