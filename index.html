@@ -3,88 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET | Learn AI, Find Jobs, Earn in Dollars ($)</title>
-<meta name="description" content="Learn AI Training, Annotation, Freelancing & Writing. Real jobs from real companies. Earn in Dollars.">
+<title>POWRNET | Learn AI. Find Jobs. Earn in Dollars ($)</title>
+<meta name="description" content="Learn AI. Find Real Jobs. Earn in Dollars. AI Training, Annotation, Freelancing, Writing.">
+<meta property="og:title" content="POWRNET | Learn AI. Find Jobs. Earn in Dollars ($)">
+<meta property="og:description" content="Learn AI. Find Real Jobs. Earn in Dollars. AI Training, Annotation, Freelancing, Writing.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="POWRNET | Learn AI, Find Jobs, Earn in Dollars ($)">
-<meta property="og:description" content="Learn AI Training, Annotation, Freelancing & Writing. Real jobs from real companies.">
 <meta property="og:url" content="https://powrnet.github.io/powernet/">
 <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712107.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="POWRNET | Learn AI, Find Jobs, Earn in Dollars ($)">
-<meta name="twitter:description" content="Learn AI Training, Annotation, Freelancing & Writing. Real jobs from real companies.">
-<meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712107.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f1f5f9;color:#0f172a;padding-bottom:95px}
+body{background:#f8fafc;color:#0f172a;padding-bottom:95px}
 .topbar{background:#0f172a;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:sticky;top:0;z-index:10}
 .topbar b{font-size:24px}.topbar b span{color:#facc15}
-.topbar a{background:#facc15;color:#000;padding:9px 14px;border-radius:20px;font-weight:bold;text-decoration:none;font-size:14px}
-.hero{background:linear-gradient(135deg,#7c3aed,#2563eb 55%,#06b6d4);color:#fff;text-align:center;padding:34px 16px 30px;border-radius:0 0 28px 28px}
-.hero h1{font-size:34px;line-height:1.2}.hero h1 span{color:#fde047}
-.hero p{margin:14px 0 16px;font-size:14px;line-height:1.6;opacity:.95}
+.postbtn{background:#facc15;color:#000;border:none;padding:9px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
+.hero{background:linear-gradient(135deg,#7c3aed,#2563eb,#06b6d4);color:#fff;text-align:center;padding:30px 16px 28px;border-radius:0 0 28px 28px}
+.hero h1{font-size:32px;line-height:1.2}.hero h1 span{color:#fde047}
+.hero p{margin:12px 0 16px;color:#e0e7ff;font-size:14px;line-height:1.5}
 .pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.pills span{background:rgba(255,255,255,.22);padding:9px 14px;border-radius:20px;font-size:13px;font-weight:bold}
+.pills span{background:rgba(255,255,255,.25);padding:8px 13px;border-radius:20px;font-size:13px;font-weight:bold}
 .wrap{padding:16px}
 .page{display:none}.page.active{display:block}
-h2{font-size:26px}.sub{color:#64748b;font-size:13px;margin:4px 0 12px}
-.filter{display:flex;gap:8px;overflow-x:auto;padding:6px 0 12px;scrollbar-width:none}
-.filter button{white-space:nowrap;border:none;background:#fff;padding:11px 16px;border-radius:25px;font-weight:bold;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+h2{font-size:24px}.sub{color:#64748b;font-size:13px;margin:4px 0 12px}
+.filter{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
+.filter button{white-space:nowrap;border:1px solid #e2e8f0;background:#fff;padding:10px 16px;border-radius:25px;font-weight:bold;cursor:pointer}
 .filter button.on{background:#0f172a;color:#fff}
-.card{background:#fff;border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.top{display:flex;gap:12px;align-items:center}
-.icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card .row{display:flex;gap:10px;align-items:center}
+.ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0}
 .purple{background:#7c3aed}.orange{background:#f59e0b}.cyan{background:#06b6d4}.pink{background:#ec4899}.green{background:#16a34a}.blue{background:#2563eb}
-.top b{font-size:15px;display:block}.top small{color:#64748b;font-size:12px}
-.title{color:#2563eb;font-size:18px;font-weight:bold;margin:11px 0 6px;display:block;text-decoration:none;line-height:1.35}
-.desc{color:#475569;font-size:14px;line-height:1.55}
-.tags{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
-.tags span{background:#dcfce7;color:#166534;padding:7px 11px;border-radius:20px;font-size:12px;font-weight:bold}
-.tags span:last-child{background:#fef3c7;color:#92400e}
-.apply{display:block;background:#16a34a;color:#fff;text-align:center;padding:13px;border-radius:12px;font-weight:bold;margin-top:11px;text-decoration:none}
-.apply.blue{background:#2563eb}
-.lesson{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:11px;margin:8px 0}
-.lesson b{font-size:14px}.lesson p{font-size:13px;color:#475569;margin-top:4px;line-height:1.5}
-input,select,textarea{width:100%;padding:13px;border:1px solid #e2e8f0;border-radius:12px;margin-bottom:10px;font-size:14px;background:#f8fafc}
-label{font-size:13px;font-weight:bold;display:block;margin:6px 0 4px}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;padding:10px;gap:8px;border-top:1px solid #e2e8f0;z-index:10}
+.card b{font-size:15px}.card small{color:#64748b;font-size:12px;display:block}
+.card .title{color:#2563eb;font-size:17px;font-weight:bold;margin:10px 0 6px;display:block;text-decoration:none;line-height:1.4}
+.card p{font-size:14px;color:#475569;line-height:1.5}
+.tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.tags span{background:#fef3c7;padding:6px 11px;border-radius:20px;font-size:12px;font-weight:bold}
+.tags span:first-child{background:#dcfce7}
+.apply{display:block;background:#16a34a;color:#fff;text-align:center;padding:13px;border-radius:11px;font-weight:bold;margin-top:12px;text-decoration:none}
+.lesson{background:#f1f5f9;border-radius:11px;padding:11px;margin-top:8px}
+.lesson b{font-size:14px}.lesson p{font-size:13px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #e2e8f0;border-radius:11px;margin-bottom:10px;font-size:14px}
+.tabs{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;gap:8px;padding:10px;border-top:1px solid #e2e8f0;z-index:20}
 .tabs button{flex:1;padding:13px;border:none;border-radius:14px;font-weight:bold;cursor:pointer;background:#f1f5f9}
 .tabs button.on{background:#0f172a;color:#fff}
-.note{font-size:12px;color:#94a3b8;text-align:center;line-height:1.5;margin-top:10px}
-.count{font-size:13px;font-weight:bold;color:#16a34a;margin:0 0 10px}
+.count{font-size:13px;color:#64748b;margin-bottom:10px}
+.note{font-size:12px;color:#94a3b8;text-align:center;line-height:1.6;margin-top:14px}
 </style>
 </head>
 <body>
-<div class="topbar"><b>⚡ POWR<span>NET</span></b><a href="#" onclick="showTab('post');return false">+ Post a Job</a></div>
+<div class="topbar"><b>⚡ POWR<span>NET</span></b><button class="postbtn" onclick="showTab('post')">+ Post a Job</button></div>
 <div class="hero"><h1>Learn AI.<br>Find Jobs. <span>Earn in Dollars ($)</span></h1><p>AI Training • Annotation • Freelancing • Writing<br>Real jobs from real companies.</p><div class="pills"><span>🎓 12 Courses</span><span>💼 160+ Jobs</span><span>💰 Up to $35/hr</span></div></div>
 
 <div class="wrap">
 <!-- JOBS -->
 <div id="tab-jobs" class="page active">
 <h2>💼 Latest Jobs</h2><p class="sub">Tap Apply → Goes to official site.</p>
-<div class="filter">
-<button class="on" onclick="filterJobs('All',this)">All Jobs</button>
-<button onclick="filterJobs('AI Training',this)">AI Training</button>
-<button onclick="filterJobs('Annotation',this)">Annotation</button>
-<button onclick="filterJobs('Freelancing',this)">Freelancing</button>
-<button onclick="filterJobs('Writing',this)">Writing</button>
+<div class="filter" id="filters">
+<button class="on" onclick="setFilter('All',this)">All Jobs</button>
+<button onclick="setFilter('AI Training',this)">AI Training</button>
+<button onclick="setFilter('Annotation',this)">Annotation</button>
+<button onclick="setFilter('Freelancing',this)">Freelancing</button>
+<button onclick="setFilter('Writing',this)">Writing</button>
 </div>
-<p class="count" id="countLabel"></p>
+<div class="count" id="count"></div>
 <div id="jobsList"></div>
 </div>
 
 <!-- LEARN -->
 <div id="tab-learn" class="page">
-<h2>🎓 Learn AI — Free</h2><p class="sub">Learn first (10 mins), then apply. Even if you know nothing.</p>
-<div class="card"><div class="top"><div class="icon purple">🤖</div><div><b>POWRNET Academy</b><small>AI Training • Beginner</small></div></div><a class="title" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank">What is AI Training? Learn AI & Earn $20/hr</a><p class="desc">AI Training = You teach AI. Rate AI answers, write prompts, label images. Companies pay $15-$35/hr. No coding needed.</p><div class="lesson"><b>📖 Lesson 1: What is AI?</b><p>AI learns from humans. You are the teacher. Rate: Good vs Bad answer.</p></div><div class="lesson"><b>📖 Lesson 2: What is Annotation?</b><p>Annotation = Labelling. Draw box around a car. AI learns: This is a car.</p></div><div class="lesson"><b>📖 Lesson 3: How to Pass Tests</b><p>Read slowly. Be consistent. Never rush. Use good English.</p></div><div class="tags"><span>💰 $20/hr</span><span>⏱️ 10 Mins</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=what+is+ai+training+job+for+beginners" target="_blank">▶️ Watch Free Lesson</a></div>
-<div class="card"><div class="top"><div class="icon orange">🏷️</div><div><b>POWRNET Academy</b><small>Annotation • Beginner</small></div></div><a class="title" href="https://www.remotasks.com" target="_blank">Learn Annotation — Label Images & Text for AI</a><p class="desc">Easiest AI job. Label Car, Person, Dog. Text: Positive / Negative. Practice free.</p><div class="lesson"><b>📖 How to label:</b><p>1. Look at image 2. Draw box 3. Choose label 4. Submit. Be accurate.</p></div><div class="tags"><span>💰 $15/hr</span><span>⏱️ Easy Start</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=how+to+do+data+annotation+remotasks+tutorial" target="_blank">▶️ Watch Annotation Tutorial</a></div>
-<div class="card"><div class="top"><div class="icon cyan">💻</div><div><b>POWRNET Academy</b><small>Freelancing • Beginner</small></div></div><a class="title" href="https://www.upwork.com" target="_blank">Learn Freelancing — Upwork & Fiverr for Beginners</a><p class="desc">Sell your skill to US/UK clients. VA, Design, Data Entry. Create profile → Apply 10 jobs daily → Reply fast.</p><div class="lesson"><b>📖 First Client Formula:</b><p>Good photo + Clear title + 3 samples + Apply daily. Reply in under 10 mins.</p></div><div class="tags"><span>💰 $15/hr</span><span>⏱️ First Client in 7 Days</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=how+to+get+first+job+on+upwork+beginner" target="_blank">▶️ Watch Upwork Tutorial</a></div>
-<div class="card"><div class="top"><div class="icon pink">✍️</div><div><b>POWRNET Academy</b><small>Writing • Beginner</small></div></div><a class="title" href="https://www.textbroker.com" target="_blank">Learn Writing — Blog & SEO Writing $15 Per Article</a><p class="desc">Write 500-word articles for $15. Title + Intro + 3 Headings + Conclusion. Simple English.</p><div class="lesson"><b>📖 Article Structure:</b><p>Title → Intro (3 lines) → Heading 1 → Heading 2 → Heading 3 → Conclusion.</p></div><div class="tags"><span>💰 $15/Article</span><span>⏱️ No Experience</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=how+to+write+blog+article+for+beginners+earn+money" target="_blank">▶️ Watch Writing Tutorial</a></div>
-<div class="card"><div class="top"><div class="icon green">🧠</div><div><b>POWRNET Academy</b><small>Prompt Engineering</small></div></div><a class="title" href="https://learnprompting.org" target="_blank">Learn Prompt Engineering — Write Better Prompts, Earn More</a><p class="desc">Learn how to talk to ChatGPT, Claude, Gemini to get perfect answers. Most wanted skill in 2026.</p><div class="tags"><span>💰 $25/hr</span><span>⏱️ Free Course</span></div><a class="apply blue" href="https://learnprompting.org" target="_blank">▶️ Start Free Course</a></div>
-<div class="card"><div class="top"><div class="icon blue">🌍</div><div><b>POWRNET Academy</b><small>Swahili AI Jobs</small></div></div><a class="title" href="https://mercor.com" target="_blank">Swahili Speakers: How to Get AI Jobs Paying $22/hr</a><p class="desc">Companies need Swahili speakers to train AI. Translate, rate, and correct AI answers in Swahili + English.</p><div class="tags"><span>💰 $22/hr</span><span>🇰🇪 Kenya Friendly</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=mercor+swahili+ai+job" target="_blank">▶️ Watch Tutorial</a></div>
+<h2>🎓 Learn AI — Free</h2><p class="sub">Learn first (10 mins), then apply.</p>
+<div id="learnList"></div>
 </div>
 
-<!-- POST A JOB -->
+<!-- POST -->
 <div id="tab-post" class="page">
-<h2>📝 Post a Job</h2><p class="sub">Are you a company? Post your job. Job seekers will apply on your site.</p>
-<div class
+<h2>📝 Post a Job</h2><p class="sub">Fill this form. We will review and add it.</p>
+<div class="card">
+<input id="pCompany" placeholder="Company Name *">
+<input id="pTitle" placeholder="Job Title * e.g. AI Trainer - Swahili">
+<select id="pCat"><option>AI Training</option><option>Annotation</option><option>Freelancing</option><option>Writing</option></select>
+<input id="pPay" placeholder="Pay e.g. $20/hr">
+<input id="pLink" placeholder="Official Apply Link * https://...">
+<textarea id="pDesc" rows="3" placeholder="Job description..."></textarea>
+<a class="apply" href="#" onclick="postJob(event)">Post Job → Send to POWRNET</a>
+<p class="note">Your job will appear below after you post it on this device.</p>
+</div>
+<div id="postedList"></div>
+</div>
+<p class="note">POWRNET links to official sites. We don't hire. Those companies pay you via PayPal / Payoneer.<br>POWRNET 2026 • Made in Kenya 🇰🇪</p>
+</div>
+
+<div class="tabs">
+<button id="btn-jobs" class="on" onclick="showTab('jobs')">💼 JOBS</button>
+<button id="btn-learn" onclick="showTab('learn')">🎓 LEARN AI</button>
+<button id="btn-post" onclick="showTab('post')">📝 POST A JOB</button>
+</div>
+
+<script>
+// [Company, Category, Title, Pay, Link, Description]
+var JOBS=[
+["DataAnnotation","AI Training","AI Trainer - Generalist","$20/hr","https://www.dataannotation.tech","Rate AI answers, write prompts, improve AI. Top paying trainer site."],
+["DataAnnotation","AI Training","AI Trainer - Coding","$25/hr","https://www.dataannotation.tech","Review AI code, fix bugs, explain solutions in Python / JS."],
+["DataAnnotation","AI Training","AI Trainer - Math","$22/hr","https://www.dataannotation.tech","Solve math problems, check AI step-by-step reasoning."],
+["DataAnnotation","AI Training","AI Trainer - Science","$22/hr","https://www.dataannotation.tech","Biology, Chemistry, Physics questions for AI training."],
+["DataAnnotation","AI Training","AI Trainer - Creative Writing","$20/hr","https://www.dataannotation.tech","Write stories, rate AI creativity and style."],
+["Outlier AI","AI Training","AI Trainer - Writing","$25/hr","https://outlier.ai","Write and rate AI responses. Flexible hours, weekly pay."],
+["Outlier AI","AI Training","AI Trainer - Math Expert","$30/hr","https://outlier.ai","Advanced math, calculus, statistics for AI."],
+["Outlier AI","AI Training","AI Trainer - Coding","$30/hr","https://outlier.ai","Python, Java, C++ code review for AI models."],
+["Outlier AI","AI Training","AI Trainer - Swahili","$22/hr","https://outlier.ai","Swahili translation and rating for AI."],
+["Outlier AI","AI Training","AI Trainer - Law","$28/hr","https://outlier.ai","Legal reasoning, contracts, law questions."],
+["Mercor","AI Training","AI Trainer - Swahili Speaker","$22/hr","https://mercor.com","Swahili speakers needed to train AI. Translate + rate."],
+["Mercor","AI Training","AI Expert - Finance","$35/hr","https://mercor.com","Finance experts to train AI on accounting, investing."],
+["Mercor","AI Training","AI Expert - Medicine","$35/hr","https://mercor.com","Doctors / nurses to train medical AI."],
+["Mercor","AI Training","AI Expert - Engineering","$32/hr","https://mercor.com","Engineers to train AI on technical problems."],
+["Mercor","AI Training","AI Trainer - General","$25/hr","https://mercor.com","General knowledge tasks, vetting via interview."],
+["Alignerr","AI Training","AI Trainer - General","$15/hr","https://alignerr
