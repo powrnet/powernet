@@ -2,306 +2,510 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>POWRNET | Real Jobs, AI Training & Learn AI</title>
+  <title>POWRNET | Jobs, AI Training & Learn AI</title>
 
-<meta name="description" content="Discover online jobs, AI training opportunities, free AI courses and practical artificial intelligence learning resources on POWRNET.">
-<meta name="keywords" content="online jobs, AI jobs, AI training, learn artificial intelligence, remote jobs, free AI courses">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#071b15">
+  <meta name="description" content="Discover real job opportunities, AI training programs, and free resources to learn artificial intelligence with POWRNET.">
+  <meta name="keywords" content="jobs in Kenya, online jobs, AI training, learn AI, remote jobs, artificial intelligence">
+  <meta name="author" content="POWRNET">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#071b17">
 
-<link rel="canonical" href="https://powrnet.github.io/">
+  <link rel="canonical" href="https://powrnet.github.io/">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
- font-family:Arial,sans-serif;
- background:#071b15;color:white;
- line-height:1.6;
-}
-header{
- padding:18px 7%;
- display:flex;justify-content:space-between;
- align-items:center;background:#0c281e;
- position:sticky;top:0;z-index:10;
-}
-.logo{font-size:25px;font-weight:bold;color:#42d69b}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:#42d69b}
-.hero{
- text-align:center;padding:75px 20px 55px;
- background:linear-gradient(135deg,#103c2c,#071b15);
-}
-.hero h1{font-size:42px;margin-bottom:15px}
-.hero h1 span{color:#42d69b}
-.hero p{color:#c6d9d0;max-width:650px;margin:auto}
-.search{
- margin:25px auto;max-width:600px;
- display:flex;gap:8px;
-}
-.search input{
- flex:1;padding:15px;border:0;border-radius:8px;
- outline:none;min-width:0;
-}
-button,.btn{
- background:#32c98e;color:#062016;
- border:0;padding:13px 18px;border-radius:7px;
- font-weight:bold;cursor:pointer;text-decoration:none;
-}
-section{padding:50px 7%}
-.heading{text-align:center;margin-bottom:30px}
-.heading h2{font-size:29px;color:#42d69b}
-.heading p{color:#b5c8bf}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
- gap:20px;
-}
-.card{
- background:#103126;padding:23px;
- border:1px solid #245341;border-radius:12px;
-}
-.card h3{margin-bottom:10px}
-.card p{color:#c2d4cb;font-size:14px;margin-bottom:17px}
-.card a{display:inline-block;margin-top:5px}
-.tag{color:#42d69b;font-size:12px;font-weight:bold}
-.jobs{background:#0a241b}
-.learn{background:#0d2c20}
-footer{
- background:#06150f;text-align:center;
- padding:30px;color:#9eb5a9;font-size:13px;
-}
-input:focus{outline:2px solid #42d69b}
-@media(max-width:650px){
- header{align-items:flex-start;gap:12px;flex-direction:column}
- nav{gap:12px}
- .hero h1{font-size:32px}
- .search{flex-direction:column}
-}
-</style>
+  <meta property="og:title" content="POWRNET | Jobs & AI Learning">
+  <meta property="og:description" content="Find opportunities, develop AI skills and discover your next career move.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://powrnet.github.io/">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #071b17;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0b241e;
+      border-bottom: 1px solid #1b4035;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      color: #35e6a0;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #d5e8df;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #35e6a0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 70px;
+      background: radial-gradient(circle at top, #164b3b, #071b17 70%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid #35e6a0;
+      border-radius: 30px;
+      color: #35e6a0;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 6vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #35e6a0;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #b8cdc4;
+      font-size: 17px;
+    }
+
+    .search-box {
+      max-width: 620px;
+      margin: 30px auto 0;
+      display: flex;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 5px;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px;
+      font-size: 15px;
+      min-width: 0;
+    }
+
+    .search-box button {
+      background: #24c987;
+      color: #061b13;
+      border: none;
+      padding: 0 22px;
+      border-radius: 7px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 65px 7%;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #9eb9ad;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #102b23;
+      border: 1px solid #20483a;
+      padding: 25px;
+      border-radius: 13px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #35e6a0;
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #abc2b7;
+      font-size: 14px;
+      min-height: 65px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 18px;
+      background: #25c987;
+      color: #061b13;
+      padding: 10px 17px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background: #54e9ad;
+    }
+
+    .notice {
+      background: #102b23;
+      border-left: 4px solid #35e6a0;
+      padding: 18px;
+      border-radius: 8px;
+      color: #c1d7cd;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 65px 20px;
+      background: #10372b;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #c0d9cd;
+      margin-bottom: 22px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #35e6a0;
+      color: #062016;
+      padding: 13px 24px;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      background: #061510;
+      color: #8ca69a;
+      font-size: 13px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media(max-width: 650px) {
+      header {
+        padding: 17px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 65px 17px;
+      }
+
+      .section {
+        padding: 50px 5%;
+      }
+
+      .search-box button {
+        padding: 0 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
- <div class="logo">POWRNET</div>
- <nav>
-  <a href="#home">Home</a>
-  <a href="#jobs">Find Jobs</a>
-  <a href="#training">AI Training</a>
-  <a href="#learn">Learn AI</a>
-  <a href="#resources">AI Resources</a>
- </nav>
+  <a href="#" class="logo">POWRNET.</a>
+
+  <nav>
+    <a href="#jobs">Jobs</a>
+    <a href="#training">AI Training</a>
+    <a href="#learn">Learn AI</a>
+  </nav>
 </header>
 
-<div class="hero" id="home">
- <h1>Discover Opportunities.<br><span>Learn AI. Build Your Future.</span></h1>
- <p>
- Your destination for discovering genuine online opportunities,
- AI training programmes and artificial intelligence education.
- </p>
+<section class="hero">
+  <div class="hero-tag">YOUR FUTURE STARTS HERE</div>
 
- <div class="search">
-  <input id="searchInput" placeholder="Search jobs, training or AI courses...">
-  <button onclick="searchSite()">Search</button>
- </div>
-</div>
+  <h1>Discover Opportunities.<br>
+    <span>Learn. Grow. Succeed.</span>
+  </h1>
 
-<section class="jobs" id="jobs">
- <div class="heading">
-  <h2>Find Real Jobs</h2>
-  <p>Explore job opportunities and visit original application websites.</p>
- </div>
+  <p>
+    Find real job opportunities, discover AI training programs
+    and develop the skills you need for the digital future.
+  </p>
 
- <div class="grid searchable">
-
-  <div class="card">
-   <span class="tag">REMOTE WORK</span>
-   <h3>Remote Jobs</h3>
-   <p>Explore remote job vacancies across different industries.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.google.com/search?q=remote+jobs+apply">Find Jobs</a>
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search jobs, AI training or learning..."
+      aria-label="Search website resources"
+    >
+    <button onclick="searchResources()">Search</button>
   </div>
-
-  <div class="card">
-   <span class="tag">TECHNOLOGY</span>
-   <h3>Technology Jobs</h3>
-   <p>Discover software, IT support and technology opportunities.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.google.com/search?q=technology+jobs+careers">Explore</a>
-  </div>
-
-  <div class="card">
-   <span class="tag">AI OPPORTUNITIES</span>
-   <h3>AI Related Jobs</h3>
-   <p>Explore artificial intelligence and data-related vacancies.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.google.com/search?q=AI+jobs+careers+apply">Explore</a>
-  </div>
-
-  <div class="card">
-   <span class="tag">FREELANCE</span>
-   <h3>Freelance Work</h3>
-   <p>Find independent projects and freelance opportunities.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.upwork.com/">Visit Upwork</a>
-  </div>
-
-  <div class="card">
-   <span class="tag">GLOBAL</span>
-   <h3>Indeed Jobs</h3>
-   <p>Search job opportunities in different countries.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.indeed.com/">Find Opportunities</a>
-  </div>
-
-  <div class="card">
-   <span class="tag">PROFESSIONAL</span>
-   <h3>LinkedIn Jobs</h3>
-   <p>Discover professional opportunities and vacancies.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.linkedin.com/jobs/">Explore Jobs</a>
-  </div>
-
- </div>
 </section>
 
-<section id="training">
- <div class="heading">
-  <h2>AI Training Opportunities</h2>
-  <p>Discover real artificial intelligence learning programmes.</p>
- </div>
-
- <div class="grid searchable">
-
-  <div class="card">
-   <h3>Google AI Learning</h3>
-   <p>Explore AI courses and practical learning resources.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://grow.google/ai/">Start Learning</a>
+<section class="section" id="jobs">
+  <div class="section-heading">
+    <h2>Find Real Jobs</h2>
+    <p>Explore job opportunities from established recruitment platforms.</p>
   </div>
 
-  <div class="card">
-   <h3>IBM SkillsBuild</h3>
-   <p>Explore AI, technology and professional skills training.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://skillsbuild.org/">Explore Training</a>
-  </div>
+  <div class="cards">
 
-  <div class="card">
-   <h3>Microsoft Learn</h3>
-   <p>Learn AI, cloud computing and technical skills.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://learn.microsoft.com/training/">Start Training</a>
-  </div>
+    <div class="card resource">
+      <div class="card-icon">💼</div>
+      <h3>BrighterMonday Kenya</h3>
+      <p>Explore job vacancies and career opportunities in Kenya.</p>
+      <a href="https://www.brightermonday.co.ke/" target="_blank" rel="noopener noreferrer">Explore Jobs ↗</a>
+    </div>
 
-  <div class="card">
-   <h3>Elements of AI</h3>
-   <p>Discover an introductory artificial intelligence course.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.elementsofai.com/">Take the Course</a>
-  </div>
+    <div class="card resource">
+      <div class="card-icon">🌍</div>
+      <h3>LinkedIn Jobs</h3>
+      <p>Discover professional, remote and international job opportunities.</p>
+      <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer">Find Jobs ↗</a>
+    </div>
 
- </div>
+    <div class="card resource">
+      <div class="card-icon">🔎</div>
+      <h3>Indeed</h3>
+      <p>Search vacancies across different industries and locations.</p>
+      <a href="https://www.indeed.com/" target="_blank" rel="noopener noreferrer">Search Jobs ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">🇰🇪</div>
+      <h3>Fuzu</h3>
+      <p>Discover career opportunities and professional development resources.</p>
+      <a href="https://www.fuzu.com/" target="_blank" rel="noopener noreferrer">Visit Fuzu ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">🏠</div>
+      <h3>Remote OK</h3>
+      <p>Explore remote vacancies from companies around the world.</p>
+      <a href="https://remoteok.com/" target="_blank" rel="noopener noreferrer">Remote Jobs ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">🔍</div>
+      <h3>Google Job Search</h3>
+      <p>Search Google for job opportunities in your preferred location.</p>
+      <a href="https://www.google.com/search?q=jobs+in+Kenya" target="_blank" rel="noopener noreferrer">Search Google ↗</a>
+    </div>
+
+  </div>
 </section>
 
-<section class="learn" id="learn">
- <div class="heading">
-  <h2>Learn Artificial Intelligence</h2>
-  <p>Build your knowledge from beginner to advanced levels.</p>
- </div>
-
- <div class="grid searchable">
-
-  <div class="card">
-   <h3>Introduction to AI</h3>
-   <p>Understand artificial intelligence and how it works.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.ibm.com/think/topics/artificial-intelligence">Learn More</a>
+<section class="section" id="training">
+  <div class="section-heading">
+    <h2>AI Training Opportunities</h2>
+    <p>Explore training programs and build practical artificial intelligence skills.</p>
   </div>
 
-  <div class="card">
-   <h3>Prompt Engineering</h3>
-   <p>Learn how to communicate effectively with AI systems.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.promptingguide.ai/">Start Learning</a>
-  </div>
+  <div class="cards">
 
-  <div class="card">
-   <h3>Machine Learning</h3>
-   <p>Understand how machines learn from data.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://developers.google.com/machine-learning">Learn More</a>
-  </div>
+    <div class="card resource">
+      <div class="card-icon">🤖</div>
+      <h3>Google AI Training</h3>
+      <p>Explore AI courses and training resources from Google.</p>
+      <a href="https://grow.google/ai/" target="_blank" rel="noopener noreferrer">Start Training ↗</a>
+    </div>
 
-  <div class="card">
-   <h3>Generative AI</h3>
-   <p>Discover how AI generates text, images and other content.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://www.cloudskillsboost.google/">Explore</a>
-  </div>
+    <div class="card resource">
+      <div class="card-icon">💻</div>
+      <h3>Microsoft Learn AI</h3>
+      <p>Develop AI knowledge through Microsoft learning modules.</p>
+      <a href="https://learn.microsoft.com/en-us/training/browse/?terms=AI" target="_blank" rel="noopener noreferrer">Explore Training ↗</a>
+    </div>
 
- </div>
+    <div class="card resource">
+      <div class="card-icon">🧠</div>
+      <h3>IBM SkillsBuild</h3>
+      <p>Access technology and AI learning resources and credentials.</p>
+      <a href="https://skillsbuild.org/" target="_blank" rel="noopener noreferrer">Join Learning ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">🎓</div>
+      <h3>DeepLearning.AI</h3>
+      <p>Explore artificial intelligence and machine learning courses.</p>
+      <a href="https://www.deeplearning.ai/" target="_blank" rel="noopener noreferrer">View Courses ↗</a>
+    </div>
+
+  </div>
 </section>
 
-<section id="resources">
- <div class="heading">
-  <h2>AI Resources</h2>
-  <p>Discover useful tools and educational platforms.</p>
- </div>
-
- <div class="grid searchable">
-
-  <div class="card">
-   <h3>ChatGPT</h3>
-   <p>Explore AI assistance, research and productivity.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://chatgpt.com/">Visit Website</a>
+<section class="section" id="learn">
+  <div class="section-heading">
+    <h2>Learn Artificial Intelligence</h2>
+    <p>Start learning AI, even if you are a complete beginner.</p>
   </div>
 
-  <div class="card">
-   <h3>Google Gemini</h3>
-   <p>Explore Google's AI assistant.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://gemini.google.com/">Visit Website</a>
+  <div class="cards">
+
+    <div class="card resource">
+      <div class="card-icon">📚</div>
+      <h3>Elements of AI</h3>
+      <p>A beginner-friendly introduction to artificial intelligence.</p>
+      <a href="https://www.elementsofai.com/" target="_blank" rel="noopener noreferrer">Start Learning ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">📊</div>
+      <h3>Kaggle Learn</h3>
+      <p>Learn Python, machine learning and data science with practical lessons.</p>
+      <a href="https://www.kaggle.com/learn" target="_blank" rel="noopener noreferrer">Learn Now ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">🌐</div>
+      <h3>Google AI</h3>
+      <p>Discover AI concepts, tools and educational resources.</p>
+      <a href="https://ai.google/" target="_blank" rel="noopener noreferrer">Explore AI ↗</a>
+    </div>
+
+    <div class="card resource">
+      <div class="card-icon">⚡</div>
+      <h3>OpenAI Academy</h3>
+      <p>Explore resources to understand and use artificial intelligence.</p>
+      <a href="https://academy.openai.com/" target="_blank" rel="noopener noreferrer">Explore Academy ↗</a>
+    </div>
+
   </div>
 
-  <div class="card">
-   <h3>Hugging Face</h3>
-   <p>Explore AI models, datasets and community projects.</p>
-   <a class="btn" target="_blank" rel="noopener"
-   href="https://huggingface.co/">Explore</a>
+  <div class="notice">
+    <strong>Important:</strong> POWRNET is an opportunity discovery website.
+    External platforms have their own application, admission and eligibility
+    requirements. Always verify opportunities before sharing personal
+    information or paying any fees.
   </div>
+</section>
 
- </div>
+<section class="cta">
+  <h2>Build Your Future with AI</h2>
+  <p>Discover opportunities and keep developing your skills.</p>
+  <a href="#jobs">Explore Opportunities</a>
 </section>
 
 <footer>
- <h2 style="color:#42d69b">POWRNET</h2>
- <p>Discover Jobs. Learn AI. Build Your Future.</p>
- <p>Always verify job requirements and eligibility before applying.
- Never pay someone to guarantee you a job.</p>
- <p>© 2026 POWRNET. All rights reserved.</p>
+  <div class="logo">POWRNET.</div>
+  <p>Jobs. AI Training. Learning.</p>
+  <p>© <span id="year"></span> POWRNET. All rights reserved.</p>
+  <p>POWRNET is an independent resource directory and is not affiliated with the external platforms listed.</p>
 </footer>
 
 <script>
-function searchSite(){
- const query=document.getElementById("searchInput").value.toLowerCase().trim();
- const cards=document.querySelectorAll(".searchable .card");
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
- cards.forEach(card=>{
-  card.style.display=card.innerText.toLowerCase().includes(query)
-   ? "block":"none";
- });
+  function searchResources() {
+    const input = document.getElementById("searchInput");
+    const query = input.value.trim().toLowerCase();
+    const cards = document.querySelectorAll(".resource");
+    let matches = 0;
 
- if(!query){
-  cards.forEach(card=>card.style.display="block");
- }
-}
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const found = text.includes(query);
 
-document.getElementById("searchInput").addEventListener("input",searchSite);
+      card.classList.toggle("hidden", query !== "" && !found);
+
+      if (query === "" || found) matches++;
+    });
+
+    const firstVisible = document.querySelector(".resource:not(.hidden)");
+
+    if (firstVisible) {
+      firstVisible.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    } else {
+      alert("No matching resources found. Try another search.");
+    }
+  }
+
+  document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      searchResources();
+    }
+  });
 </script>
 
 </body>
