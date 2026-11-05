@@ -1,618 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>POWRNET - Learn AI, Find Jobs, Earn in Dollars</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalRemote - Find Verified Remote Jobs Open to Anyone, Anywhere</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    body {
-      background-color: #f7f9fc;
-      color: #111827;
-      padding-bottom: 80px;
-    }
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            padding-bottom: 80px;
+        }
 
-    /* --- Top Navigation --- */
-    header {
-      background-color: #0b0f19;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        /* --- Colors --- */
+        :root {
+            --primary-green: #22a751; /* Match green from image */
+            --light-green: #e9f7ef;
+            --dark-text: #0b2216; /* Dark, slightly green text */
+            --gray-text: #6b7280;
+            --border-color: #e5e7eb;
+            --input-bg: #f7f9fc;
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: 0.5px;
-    }
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    .brand-icon {
-      color: #facc15;
-      font-size: 1.4rem;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
 
-    .btn-post-top {
-      background-color: #facc15;
-      color: #0b0f19;
-      padding: 8px 16px;
-      border-radius: 9999px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      border: none;
-      cursor: pointer;
-    }
+        .brand-icon {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
 
-    /* --- Hero Section --- */
-    .hero-container {
-      padding: 16px;
-    }
+        .hamburger {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            cursor: pointer;
+        }
 
-    .hero-card {
-      background: linear-gradient(135deg, #4f46e5 0%, #2563eb 45%, #06b6d4 100%);
-      border-radius: 20px;
-      padding: 32px 20px 24px 20px;
-      color: #ffffff;
-      text-align: center;
-      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
-    }
+        /* --- Hero Section --- */
+        .hero {
+            padding: 24px 16px;
+            background: radial-gradient(circle at top right, #f2fff9 0%, #ffffff 50%); /* Subtle radial gradient */
+        }
 
-    .hero-title {
-      font-size: 1.75rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 12px;
-    }
+        .opening-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--light-green);
+            color: var(--primary-green);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-    .hero-title span {
-      color: #facc15;
-    }
+        .status-dot {
+            height: 6px;
+            width: 6px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+        }
 
-    .hero-subtitle {
-      font-size: 0.85rem;
-      color: #e0e7ff;
-      margin-bottom: 6px;
-    }
+        .hero-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+        }
 
-    .hero-note {
-      font-size: 0.8rem;
-      color: #c7d2fe;
-      margin-bottom: 20px;
-    }
+        .hero-title span {
+            color: var(--primary-green);
+        }
 
-    .badges-row {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            max-width: 90%;
+        }
 
-    .badge {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(8px);
-      padding: 6px 12px;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
+        /* --- Main CTA Buttons --- */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
 
-    /* --- Main Section --- */
-    .content-container {
-      padding: 0 16px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        .btn-large {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background 0.2s;
+        }
 
-    .section-header {
-      margin-top: 20px;
-      margin-bottom: 12px;
-    }
+        .btn-green {
+            background-color: var(--primary-green);
+            color: #ffffff;
+        }
 
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .btn-white {
+            background-color: #ffffff;
+            color: var(--dark-text);
+            border-color: var(--border-color);
+        }
 
-    .section-subtitle {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-top: 2px;
-    }
+        /* --- Stats Panel --- */
+        .stats-panel {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
 
-    /* --- Category Tabs --- */
-    .tabs-wrapper {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 4px 0 14px 0;
-      scrollbar-width: none;
-    }
+        .stat-item {
+            text-align: center;
+        }
 
-    .tabs-wrapper::-webkit-scrollbar {
-      display: none;
-    }
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 4px;
+        }
 
-    .tab-btn {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      padding: 8px 16px;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #374151;
-      white-space: nowrap;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            line-height: 1.3;
+        }
 
-    .tab-btn.active {
-      background-color: #0b0f19;
-      color: #ffffff;
-      border-color: #0b0f19;
-    }
+        /* --- Filter Controls --- */
+        .filter-section {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 24px;
+        }
 
-    /* --- Job Cards --- */
-    .jobs-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
 
-    .job-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 16px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
+        .input-control {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--input-bg);
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            appearance: none; /* remove native dropdown arrow */
+            position: relative;
+        }
 
-    .job-card.hidden-job {
-      display: none;
-    }
+        .search-control {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236b7280" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: 14px center;
+            padding-left: 40px;
+        }
 
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 4px;
-    }
+        /* Dropdown custom arrows */
+        .select-control::after {
+            content: '▼';
+            font-size: 0.7rem;
+            color: var(--gray-text);
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
 
-    .company-name {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #9ca3af;
-      letter-spacing: 0.5px;
-    }
+        .reset-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            color: var(--gray-text);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-    .job-pay {
-      background: #ecfdf5;
-      color: #059669;
-      font-weight: 700;
-      font-size: 0.75rem;
-      padding: 4px 8px;
-      border-radius: 6px;
-    }
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 16px;
+            z-index: 200;
+        }
 
-    .job-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 6px;
-    }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 10px 0;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gray-text);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
 
-    .job-desc {
-      font-size: 0.8rem;
-      color: #4b5563;
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
+        .nav-icon {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
 
-    .job-meta {
-      font-size: 0.75rem;
-      color: #6b7280;
-      margin-bottom: 12px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .job-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 10px;
-      border-top: 1px solid #f3f4f6;
-    }
-
-    .tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      background: #f3f4f6;
-      color: #4b5563;
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .btn-apply {
-      background: #0b0f19;
-      color: #ffffff;
-      border: none;
-      padding: 7px 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.75rem;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    /* --- Load More Button --- */
-    .load-more-container {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .btn-load-more {
-      background-color: #ffffff;
-      color: #111827;
-      border: 1px solid #d1d5db;
-      padding: 10px 24px;
-      border-radius: 9999px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: background-color 0.2s;
-    }
-
-    .btn-load-more:hover {
-      background-color: #f3f4f6;
-    }
-
-    /* --- Views / Sections --- */
-    .view-section {
-      display: none;
-    }
-
-    .view-section.active {
-      display: block;
-    }
-
-    .placeholder-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 24px;
-      text-align: center;
-      margin-top: 16px;
-    }
-
-    /* --- Footer --- */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.75rem;
-      color: #9ca3af;
-      line-height: 1.5;
-    }
-
-    /* --- Bottom Navigation --- */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      border-top: 1px solid #e5e7eb;
-      display: flex;
-      justify-content: space-around;
-      padding: 8px 12px;
-      z-index: 200;
-    }
-
-    .nav-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex: 1;
-      padding: 10px 0;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #4b5563;
-      background: #f3f4f6;
-      text-decoration: none;
-      cursor: pointer;
-      margin: 0 4px;
-      border: none;
-    }
-
-    .nav-item.active {
-      background: #0b0f19;
-      color: #ffffff;
-    }
-  </style>
+        .nav-item.active {
+            color: var(--primary-green);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
-  <header>
-    <a href="#" class="brand">
-      <span class="brand-icon">⚡</span> POWRNET
-    </a>
-    <button class="btn-post-top" onclick="switchMainView('post-job')">+ Post a Job</button>
-  </header>
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="brand">
+            <span class="brand-icon">🌐</span> GlobalRemote
+        </a>
+        <div class="hamburger">☰</div>
+    </header>
 
-  <!-- Content Section -->
-  <div class="content-container">
-
-    <!-- JOBS VIEW -->
-    <div id="jobs-view" class="view-section active">
-      <!-- Hero Section -->
-      <div class="hero-container">
-        <div class="hero-card">
-          <h1 class="hero-title">Learn AI.<br>Find Jobs. <span>Earn in Dollars ($)</span></h1>
-          <p class="hero-subtitle">AI Training • Annotation • Freelancing • Writing</p>
-          <p class="hero-note">Real jobs from real companies.</p>
-          <div class="badges-row">
-            <div class="badge">🎓 12 Courses</div>
-            <div class="badge">💼 160+ Jobs</div>
-            <div class="badge">💰 Up to $35/hr</div>
-          </div>
+    <!-- Main Content Area -->
+    <main class="hero">
+        <div class="opening-badge">
+            <span class="status-dot"></span> Over 60+ Active Global & Regional Openings
         </div>
-      </div>
-
-      <!-- Section Title -->
-      <div class="section-header">
-        <h2 class="section-title">💼 Latest Jobs</h2>
-        <p class="section-subtitle">Tap Apply → Goes to official site.</p>
-      </div>
-
-      <!-- Category Filter Tabs -->
-      <div class="tabs-wrapper">
-        <button class="tab-btn active" onclick="filterCategory('all', this)">All Jobs</button>
-        <button class="tab-btn" onclick="filterCategory('ai-training', this)">AI Training</button>
-        <button class="tab-btn" onclick="filterCategory('annotation', this)">Annotation</button>
-        <button class="tab-btn" onclick="filterCategory('freelancing', this)">Freelancing</button>
-        <button class="tab-btn" onclick="filterCategory('writing', this)">Writing</button>
-      </div>
-
-      <!-- Jobs List -->
-      <div class="jobs-list" id="jobsListContainer">
-
-        <!-- Initial Visible Job 1 -->
-        <div class="job-card" data-category="ai-training writing">
-          <div class="job-header">
-            <span class="company-name">Remotasks / Outlier AI</span>
-            <span class="job-pay">$18 - $24/hr</span>
-          </div>
-          <h3 class="job-title">AI Content Writer</h3>
-          <p class="job-desc">Write clear, high-quality prompts and evaluate draft model answers for accuracy, tone, and formatting.</p>
-          <div class="job-meta">
-            <span>📍 Remote • Hourly</span>
-            <span>💳 PayPal / AirTM</span>
-          </div>
-          <div class="job-footer">
-            <div class="tags">
-              <span class="tag">LLM Writing</span>
-              <span class="tag">Prompt Design</span>
-            </div>
-            <a href="https://outlier.ai" target="_blank" class="btn-apply">Apply Now →</a>
-          </div>
-        </div>
-
-        <!-- Initial Visible Job 2 -->
-        <div class="job-card" data-category="annotation ai-training">
-          <div class="job-header">
-            <span class="company-name">OneForma / Centific</span>
-            <span class="job-pay">$15 - $22/hr</span>
-          </div>
-          <h3 class="job-title">Swahili Translator & Linguist</h3>
-          <p class="job-desc">Translate complex English texts into natural Swahili and assess grammatical accuracy for machine learning models.</p>
-          <div class="job-meta">
-            <span>📍 Remote • Flexible</span>
-            <span>💳 Payoneer / PayPal</span>
-          </div>
-          <div class="job-footer">
-            <div class="tags">
-              <span class="tag">Swahili</span>
-              <span class="tag">Localization</span>
-            </div>
-            <a href="https://www.oneforma.com" target="_blank" class="btn-apply">Apply Now →</a>
-          </div>
-        </div>
-
-        <!-- Initial Visible Job 3 -->
-        <div class="job-card" data-category="writing freelancing">
-          <div class="job-header">
-            <span class="company-name">Draft.dev</span>
-            <span class="job-pay">$300 - $450/article</span>
-          </div>
-          <h3 class="job-title">Technical Writer & Reviewer</h3>
-          <p class="job-desc">Create in-depth technical tutorials and documentation on software development topics for developer audiences.</p>
-          <div class="job-meta">
-            <span>📍 Remote • Per Project</span>
-            <span>💳 Wise / PayPal</span>
-          </div>
-          <div class="job-footer">
-            <div class="tags">
-              <span class="tag">Technical</span>
-              <span class="tag">Software</span>
-            </div>
-            <a href="https://draft.dev" target="_blank" class="btn-apply">Apply Now →</a>
-          </div>
-        </div>
-
-        <!-- Hidden Job 4 (Loaded via Load More) -->
-        <div class="job-card hidden-job" data-category="annotation">
-          <div class="job-header">
-            <span class="company-name">Scale AI</span>
-            <span class="job-pay">$14 - $20/hr</span>
-          </div>
-          <h3 class="job-title">Data Annotation Specialist</h3>
-          <p class="job-desc">Label image, video, and text data to train computer vision models for leading technology companies.</p>
-          <div class="job-meta">
-            <span>📍 Remote • Hourly</span>
-            <span>💳 PayPal</span>
-          </div>
-          <div class="job-footer">
-            <div class="tags">
-              <span class="tag">Bounding Box</span>
-              <span class="tag">Data Labeling</span>
-            </div>
-            <a href="https://scale.com" target="_blank" class="btn-apply">Apply Now →</a>
-          </div>
-        </div>
-
-        <!-- Hidden Job 5 (Loaded via Load More) -->
-        <div class="job-card hidden-job" data-category="freelancing">
-          <div class="job-header">
-            <span class="company-name">Upwork Global</span>
-            <span class="job-pay">$25 - $50/hr</span>
-          </div>
-          <h3 class="job-title">Virtual Assistant & Admin Specialist</h3>
-          <p class="job-desc">Provide administrative support, handle data entry tasks, manage schedules, and coordinate emails for global clients.</p>
-          <div class="job-meta">
-            <span>📍 Remote • Part-Time</span>
-            <span>💳 Payoneer / Wire</span>
-          </div>
-          <div class="job-footer">
-            <div class="tags">
-              <span class="tag">Admin</span>
-              <span class="tag">Customer Support</span>
-            </div>
-            <a href="https://www.upwork.com" target="_blank" class="btn-apply">Apply Now →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Load More Button Container -->
-      <div class="load-more-container" id="loadMoreContainer">
-        <button class="btn-load-more" onclick="loadMoreJobs()">Load More Jobs ↓</button>
-      </div>
-    </div>
-
-    <!-- LEARN AI VIEW -->
-    <div id="learn-view" class="view-section">
-      <div class="section-header">
-        <h2 class="section-title">🎓 Learn AI Courses</h2>
-        <p class="section-subtitle">Upgrade your skills to earn higher rates.</p>
-      </div>
-      <div class="placeholder-card">
-        <h3>Featured Courses Coming Soon</h3>
-        <p style="font-size:0.85rem; color:#6b7280; margin-top:8px;">
-          Learn Prompt Engineering, LLM Fine-Tuning, and Professional Data Annotation.
-        </p>
-      </div>
-    </div>
-
-    <!-- POST A JOB VIEW -->
-    <div id="post-job-view" class="view-section">
-      <div class="section-header">
-        <h2 class="section-title">📝 Post a Job</h2>
-        <p class="section-subtitle">Reach thousands of global AI talents.</p>
-      </div>
-      <div class="placeholder-card">
-        <h3>Submit Your Listing</h3>
-        <p style="font-size:0.85rem; color:#6b7280; margin-top:8px;">
-          To post an official job listing on POWRNET, contact us at <strong>jobs@powrnet.com</strong>.
-        </p>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      POWRNET links to official sites. We don't hire. Those companies pay you via PayPal / Payoneer.<br />
-      POWRNET 2026 • Made in Kenya 🇰🇪
-    </footer>
-
-  </div>
-
-  <!-- Bottom Navigation Bar -->
-  <div class="bottom-nav">
-    <button class="nav-item active" onclick="switchMainView('jobs')">💼 JOBS</button>
-    <button class="nav-item" onclick="switchMainView('learn')">🎓 LEARN AI</button>
-    <button class="nav-item" onclick="switchMainView('post-job')">📝 POST A JOB</button>
-  </div>
-
-  <script>
-    let currentCategory = 'all';
-
-    // Tab filtering for categories
-    function filterCategory(category, el) {
-      currentCategory = category;
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      el.classList.add('active');
-
-      const cards = document.querySelectorAll('.job-card');
-      cards.forEach(card => {
-        const matchesCategory = (category === 'all' || card.getAttribute('data-category').includes(category));
         
-        // If "Load More" was already clicked, show matching cards. Otherwise respect hidden status for initial view.
-        if (matchesCategory) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+        <h1 class="hero-title">
+            Find Verified Remote Jobs<br>
+            <span>Open to Anyone,<br> Anywhere.</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+            Curated, 100% legitimate online opportunities with zero location restrictions. Search tech, AI annotation, writing, customer support, and more.
+        </p>
 
-      // Hide load more button when filtering specific categories
-      document.getElementById('loadMoreContainer').style.display = (category === 'all') ? 'block' : 'none';
-    }
+        <!-- CTA Buttons -->
+        <div class="cta-group">
+            <a href="#" class="btn-large btn-green">Browse 60+ Jobs Now</a>
+            <a href="#" class="btn-large btn-white">Get Daily Alerts</a>
+        </div>
 
-    // Load More functionality
-    function loadMoreJobs() {
-      const hiddenCards = document.querySelectorAll('.job-card.hidden-job');
-      hiddenCards.forEach(card => {
-        card.classList.remove('hidden-job');
-        card.style.display = 'block';
-      });
-      document.getElementById('loadMoreContainer').style.display = 'none';
-    }
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-item">
+                <div class="stat-value">60+</div>
+                <div class="stat-label">Curated Openings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">10</div>
+                <div class="stat-label">Job Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Scam-Free & Verified</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">$0</div>
+                <div class="stat-label">Cost For Applicants</div>
+            </div>
+        </div>
 
-    // Bottom Bar View Switcher
-    function switchMainView(viewName) {
-      document.querySelectorAll('.view-section').forEach(view => view.classList.remove('active'));
-      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+        <!-- Filter / Search Section -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <input type="text" class="input-control search-control" placeholder="Job title, skills, or company...">
+                
+                <div style="position: relative;">
+                    <select class="input-control select-control">
+                        <option value="all">📁 All Categories</option>
+                    </select>
+                </div>
+                
+                <div style="position: relative;">
+                    <select class="input-control select-control">
+                        <option value="all">🕒 All Job Types</option>
+                    </select>
+                </div>
+            </div>
+            <button class="reset-btn">🔄 Reset</button>
+        </div>
 
-      if (viewName === 'jobs') {
-        document.getElementById('jobs-view').classList.add('active');
-        document.querySelectorAll('.nav-item')[0].classList.add('active');
-      } else if (viewName === 'learn') {
-        document.getElementById('learn-view').classList.add('active');
-        document.querySelectorAll('.nav-item')[1].classList.add('active');
-      } else if (viewName === 'post-job') {
-        document.getElementById('post-job-view').classList.add('active');
-        document.querySelectorAll('.nav-item')[2].classList.add('active');
-      }
-      window.scrollTo(0, 0);
-    }
-  </script>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <button class="nav-item active">
+            <div class="nav-icon">💼</div>
+            JOBS
+        </button>
+        <button class="nav-item">
+            <div class="nav-icon">🔔</div>
+            ALERTS
+        </button>
+        <button class="nav-item">
+            <div class="nav-icon">📊</div>
+            RESOURCES
+        </button>
+    </div>
+
 </body>
 </html>
