@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +34,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -52,6 +57,7 @@
             top: 0;
             z-index: 1000;
             border-bottom: 3px solid var(--accent-yellow);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .logo-area {
@@ -67,6 +73,7 @@
             border-radius: 6px;
             font-weight: 800;
             font-size: 1.1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         header h1 {
@@ -78,12 +85,17 @@
             color: var(--accent-yellow);
         }
 
+        nav {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
         nav a {
             color: #cbd5e1;
             text-decoration: none;
-            margin-left: 1.5rem;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
@@ -353,12 +365,13 @@
             color: #fff;
         }
 
+        /* CONTENT & LEGAL CARDS */
         .content-card {
             background: #fff;
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            margin-top: 3rem;
+            margin-top: 2rem;
             border: 1px solid #e2e8f0;
         }
 
@@ -371,6 +384,12 @@
         }
 
         .content-card p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        .content-card ul {
+            margin-left: 1.5rem;
             margin-bottom: 1rem;
             color: #475569;
         }
@@ -399,6 +418,20 @@
             font-size: 1.1rem;
             display: none;
         }
+
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1rem;
+            }
+            .hero h2 {
+                font-size: 1.75rem;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -413,6 +446,8 @@
             <a href="#jobs">Jobs</a>
             <a href="#about">About</a>
             <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#disclaimer">Disclaimer</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -469,13 +504,33 @@
         <!-- ABOUT SECTION -->
         <div id="about" class="content-card">
             <h3>About GlobalRemote</h3>
-            <p>GlobalRemote curates verified online work platforms with no geographic barriers. We emphasize high-growth remote sectors, including AI model evaluation, data labeling, crowdsourced micro-tasks (Toloka, Clickworker, Populi, Claru), general freelancing, and specialized technical writing.</p>
+            <p>GlobalRemote is an independent global job discovery directory dedicated to aggregating verified remote work platforms with zero geographic barriers. We emphasize high-growth digital sectors, including machine learning model evaluation, RLHF prompt writing, data annotation, micro-task crowdsourcing (Toloka, Clickworker, Populi, Claru), general software freelancing, technical copywriting, and digital research.</p>
+            <p>Our editorial team reviews international hiring platforms daily to index entry-level micro-tasks and specialized contract opportunities, connecting global job seekers with verified hiring portals.</p>
         </div>
 
-        <!-- PRIVACY SECTION -->
+        <!-- PRIVACY POLICY SECTION -->
         <div id="privacy" class="content-card">
             <h3>Privacy Policy & AdSense Notice</h3>
-            <p>We care about your privacy. GlobalRemote does not store candidate applications or personal tracking data. All application buttons route directly to official client portals. Third-party partners, including Google AdSense, use cookies to deliver targeted site advertisements based on previous visits.</p>
+            <p>We respect your online privacy. GlobalRemote operates strictly as an informational index and does not store user applications, candidate resume files, or sensitive financial data. Clicking any job listing routes you directly to the official recruitment portal of the destination employer.</p>
+            <p>GlobalRemote partners with Google AdSense to serve programmatic advertising. Third-party vendors, including Google, use cookies to serve ads based on users' prior visits to this website or other websites. You may opt out of personalized advertising by visiting Google's Ad Settings portal.</p>
+        </div>
+
+        <!-- TERMS OF SERVICE SECTION -->
+        <div id="terms" class="content-card">
+            <h3>Terms of Service</h3>
+            <p>By using GlobalRemote, you agree to comply with our Terms of Service. GlobalRemote provides free access to curated job directory links for personal, non-commercial job discovery.</p>
+            <ul>
+                <li>Users are responsible for verifying employment terms directly with third-party platforms before submitting personal data.</li>
+                <li>GlobalRemote does not act as an employer, recruiter, or hiring agency.</li>
+                <li>Scraping or automated harvesting of listings from this directory without written consent is strictly prohibited.</li>
+            </ul>
+        </div>
+
+        <!-- DISCLAIMER SECTION -->
+        <div id="disclaimer" class="content-card">
+            <h3>Affiliation & Earnings Disclaimer</h3>
+            <p>GlobalRemote is an independent resource and is not directly affiliated, partnered, or endorsed by Toloka, Clickworker, Populi, Claru, DataAnnotation.tech, Scale AI (Outlier), Upwork, Fiverr, or any other trademarked platform featured on this site.</p>
+            <p>All brand logos, platform names, and trademarks belong to their respective owners. Outbound links are provided solely for user convenience. GlobalRemote never charges job seekers fees for accessing job listings or external application links.</p>
         </div>
 
     </div>
@@ -491,8 +546,17 @@
         // Generated list representing over 150 positions across AI & Crowdsourcing, Freelance, and Writing
         const allJobs = [];
 
-        // 1. Generate 90 AI Training & Crowdsourcing Micro-task Jobs (Including Toloka, Clickworker, Populi, Claru, etc.)
-        const aiTitles = ["Crowdsourced Data Evaluator", "Micro-task AI Annotator", "Multilingual Search Relevance Rater", "Image Labeling Specialist", "LLM Prompt & Response Reviewer", "Audio Transcription Annotator", "Categorization & Tagging Tasker", "AI Safety & Content Auditor"];
+        // 1. Generate 90 AI Training & Crowdsourcing Micro-task Jobs
+        const aiTitles = [
+            "Crowdsourced Data Evaluator", 
+            "Micro-task AI Annotator", 
+            "Multilingual Search Relevance Rater", 
+            "Image Labeling Specialist", 
+            "LLM Prompt & Response Reviewer", 
+            "Audio Transcription Annotator", 
+            "Categorization & Tagging Tasker", 
+            "AI Safety & Content Auditor"
+        ];
         const aiPlatforms = [
             { name: "Toloka AI", url: "https://toloka.ai" },
             { name: "Clickworker", url: "https://www.clickworker.com" },
@@ -647,3 +711,4 @@
     </script>
 </body>
 </html>
+```
