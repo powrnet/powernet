@@ -1,118 +1,511 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET | Learn AI. Find Jobs. Earn in Dollars ($)</title>
-<meta name="description" content="Learn AI. Find Real Jobs. Earn in Dollars. AI Training, Annotation, Freelancing, Writing.">
-<meta property="og:title" content="POWRNET | Learn AI. Find Jobs. Earn in Dollars ($)">
-<meta property="og:description" content="Learn AI. Find Real Jobs. Earn in Dollars. AI Training, Annotation, Freelancing, Writing.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://powrnet.github.io/powernet/">
-<meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712107.png">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f8fafc;color:#0f172a;padding-bottom:95px}
-.topbar{background:#0f172a;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:sticky;top:0;z-index:10}
-.topbar b{font-size:24px}.topbar b span{color:#facc15}
-.postbtn{background:#facc15;color:#000;border:none;padding:9px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
-.hero{background:linear-gradient(135deg,#7c3aed,#2563eb,#06b6d4);color:#fff;text-align:center;padding:30px 16px 28px;border-radius:0 0 28px 28px}
-.hero h1{font-size:32px;line-height:1.2}.hero h1 span{color:#fde047}
-.hero p{margin:12px 0 16px;color:#e0e7ff;font-size:14px;line-height:1.5}
-.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.pills span{background:rgba(255,255,255,.25);padding:8px 13px;border-radius:20px;font-size:13px;font-weight:bold}
-.wrap{padding:16px}
-.page{display:none}.page.active{display:block}
-h2{font-size:24px}.sub{color:#64748b;font-size:13px;margin:4px 0 12px}
-.filter{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
-.filter button{white-space:nowrap;border:1px solid #e2e8f0;background:#fff;padding:10px 16px;border-radius:25px;font-weight:bold;cursor:pointer}
-.filter button.on{background:#0f172a;color:#fff}
-.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.card .row{display:flex;gap:10px;align-items:center}
-.ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0}
-.purple{background:#7c3aed}.orange{background:#f59e0b}.cyan{background:#06b6d4}.pink{background:#ec4899}.green{background:#16a34a}.blue{background:#2563eb}
-.card b{font-size:15px}.card small{color:#64748b;font-size:12px;display:block}
-.card .title{color:#2563eb;font-size:17px;font-weight:bold;margin:10px 0 6px;display:block;text-decoration:none;line-height:1.4}
-.card p{font-size:14px;color:#475569;line-height:1.5}
-.tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.tags span{background:#fef3c7;padding:6px 11px;border-radius:20px;font-size:12px;font-weight:bold}
-.tags span:first-child{background:#dcfce7}
-.apply{display:block;background:#16a34a;color:#fff;text-align:center;padding:13px;border-radius:11px;font-weight:bold;margin-top:12px;text-decoration:none}
-.lesson{background:#f1f5f9;border-radius:11px;padding:11px;margin-top:8px}
-.lesson b{font-size:14px}.lesson p{font-size:13px}
-input,select,textarea{width:100%;padding:13px;border:1px solid #e2e8f0;border-radius:11px;margin-bottom:10px;font-size:14px}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;gap:8px;padding:10px;border-top:1px solid #e2e8f0;z-index:20}
-.tabs button{flex:1;padding:13px;border:none;border-radius:14px;font-weight:bold;cursor:pointer;background:#f1f5f9}
-.tabs button.on{background:#0f172a;color:#fff}
-.count{font-size:13px;color:#64748b;margin-bottom:10px}
-.note{font-size:12px;color:#94a3b8;text-align:center;line-height:1.6;margin-top:14px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWRNET - Learn AI, Find Jobs, Earn in Dollars</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0B0F19',
+                        brandYellow: '#ffcc00',
+                        brandYellowHover: '#e6b800',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar hiding for horizontal tabs on mobile */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
-<body>
-<div class="topbar"><b>⚡ POWR<span>NET</span></b><button class="postbtn" onclick="showTab('post')">+ Post a Job</button></div>
-<div class="hero"><h1>Learn AI.<br>Find Jobs. <span>Earn in Dollars ($)</span></h1><p>AI Training • Annotation • Freelancing • Writing<br>Real jobs from real companies.</p><div class="pills"><span>🎓 12 Courses</span><span>💼 160+ Jobs</span><span>💰 Up to $35/hr</span></div></div>
+<body class="bg-gray-50 text-gray-900 font-sans pb-24 antialiased min-h-screen flex flex-col">
 
-<div class="wrap">
-<!-- JOBS -->
-<div id="tab-jobs" class="page active">
-<h2>💼 Latest Jobs</h2><p class="sub">Tap Apply → Goes to official site.</p>
-<div class="filter" id="filters">
-<button class="on" onclick="setFilter('All',this)">All Jobs</button>
-<button onclick="setFilter('AI Training',this)">AI Training</button>
-<button onclick="setFilter('Annotation',this)">Annotation</button>
-<button onclick="setFilter('Freelancing',this)">Freelancing</button>
-<button onclick="setFilter('Writing',this)">Writing</button>
-</div>
-<div class="count" id="count"></div>
-<div id="jobsList"></div>
-</div>
+    <!-- 1. Top Navbar -->
+    <header class="bg-[#0B0F19] text-white sticky top-0 z-40 px-4 py-3 shadow-md">
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchNav('jobs')" class="flex items-center gap-1.5 text-xl font-black tracking-tight hover:opacity-90 transition-opacity">
+                <span class="text-[#ffcc00] text-2xl">⚡</span>
+                <span class="tracking-wider">POWRNET</span>
+            </a>
+            <!-- Header Action Button -->
+            <button onclick="switchNav('post')" class="bg-[#ffcc00] hover:bg-brandYellowHover text-black text-sm font-bold px-4 py-2 rounded-full transition-all transform active:scale-95 shadow-sm">
+                + Post a Job
+            </button>
+        </div>
+    </header>
 
-<!-- LEARN -->
-<div id="tab-learn" class="page">
-<h2>🎓 Learn AI — Free</h2><p class="sub">Learn first (10 mins), then apply.</p>
-<div id="learnList"></div>
-</div>
+    <!-- 2 & 3 & 4 & 5. Main Jobs View -->
+    <main id="main-content" class="max-w-md mx-auto w-full px-3 pt-3 flex-1">
+        
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-400 text-white rounded-3xl p-6 text-center shadow-lg mb-6">
+            <h1 class="text-3xl font-extrabold tracking-tight mb-2 leading-tight">
+                Learn AI.<br>Find Jobs. <span class="text-[#ffcc00]">Earn in Dollars ($)</span>
+            </h1>
+            <p class="text-xs sm:text-sm text-blue-100 font-medium mb-5 leading-relaxed opacity-95">
+                AI Training • Annotation • Freelancing • Writing<br>
+                <span class="opacity-80">Real jobs from real companies.</span>
+            </p>
+            
+            <!-- Hero Stat Badges -->
+            <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-semibold">
+                <span class="bg-white/20 backdrop-blur-md text-white px-3.5 py-2 rounded-full flex items-center gap-1.5 border border-white/20 shadow-sm">
+                    🎓 12 Courses
+                </span>
+                <span class="bg-white/20 backdrop-blur-md text-white px-3.5 py-2 rounded-full flex items-center gap-1.5 border border-white/20 shadow-sm">
+                    💼 160+ Jobs
+                </span>
+                <span class="bg-white/20 backdrop-blur-md text-white px-3.5 py-2 rounded-full flex items-center gap-1.5 border border-white/20 shadow-sm">
+                    💰 Up to $35/hr
+                </span>
+            </div>
+        </section>
 
-<!-- POST -->
-<div id="tab-post" class="page">
-<h2>📝 Post a Job</h2><p class="sub">Fill this form. We will review and add it.</p>
-<div class="card">
-<input id="pCompany" placeholder="Company Name *">
-<input id="pTitle" placeholder="Job Title * e.g. AI Trainer - Swahili">
-<select id="pCat"><option>AI Training</option><option>Annotation</option><option>Freelancing</option><option>Writing</option></select>
-<input id="pPay" placeholder="Pay e.g. $20/hr">
-<input id="pLink" placeholder="Official Apply Link * https://...">
-<textarea id="pDesc" rows="3" placeholder="Job description..."></textarea>
-<a class="apply" href="#" onclick="postJob(event)">Post Job → Send to POWRNET</a>
-<p class="note">Your job will appear below after you post it on this device.</p>
-</div>
-<div id="postedList"></div>
-</div>
-<p class="note">POWRNET links to official sites. We don't hire. Those companies pay you via PayPal / Payoneer.<br>POWRNET 2026 • Made in Kenya 🇰🇪</p>
-</div>
+        <!-- Section Title -->
+        <div class="mb-4 px-1">
+            <h2 class="text-2xl font-black text-gray-900 flex items-center gap-2">
+                💼 Latest Jobs
+            </h2>
+            <p class="text-xs text-gray-500 mt-0.5 font-medium">
+                Tap Apply &rarr; Goes to official site.
+            </p>
+        </div>
 
-<div class="tabs">
-<button id="btn-jobs" class="on" onclick="showTab('jobs')">💼 JOBS</button>
-<button id="btn-learn" onclick="showTab('learn')">🎓 LEARN AI</button>
-<button id="btn-post" onclick="showTab('post')">📝 POST A JOB</button>
-</div>
+        <!-- 4. Category Tabs (Horizontal Scrollable) -->
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-4 -mx-3 px-3">
+            <button onclick="filterJobs('all')" id="tab-all" class="tab-btn bg-[#0B0F19] text-white px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm border border-[#0B0F19] transition-all">
+                All Jobs
+            </button>
+            <button onclick="filterJobs('ai-training')" id="tab-ai-training" class="tab-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">
+                AI Training
+            </button>
+            <button onclick="filterJobs('annotation')" id="tab-annotation" class="tab-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">
+                Annotation
+            </button>
+            <button onclick="filterJobs('freelancing')" id="tab-freelancing" class="tab-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">
+                Freelancing
+            </button>
+            <button onclick="filterJobs('writing')" id="tab-writing" class="tab-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">
+                Writing
+            </button>
+        </div>
 
-<script>
-// [Company, Category, Title, Pay, Link, Description]
-var JOBS=[
-["DataAnnotation","AI Training","AI Trainer - Generalist","$20/hr","https://www.dataannotation.tech","Rate AI answers, write prompts, improve AI. Top paying trainer site."],
-["DataAnnotation","AI Training","AI Trainer - Coding","$25/hr","https://www.dataannotation.tech","Review AI code, fix bugs, explain solutions in Python / JS."],
-["DataAnnotation","AI Training","AI Trainer - Math","$22/hr","https://www.dataannotation.tech","Solve math problems, check AI step-by-step reasoning."],
-["DataAnnotation","AI Training","AI Trainer - Science","$22/hr","https://www.dataannotation.tech","Biology, Chemistry, Physics questions for AI training."],
-["DataAnnotation","AI Training","AI Trainer - Creative Writing","$20/hr","https://www.dataannotation.tech","Write stories, rate AI creativity and style."],
-["Outlier AI","AI Training","AI Trainer - Writing","$25/hr","https://outlier.ai","Write and rate AI responses. Flexible hours, weekly pay."],
-["Outlier AI","AI Training","AI Trainer - Math Expert","$30/hr","https://outlier.ai","Advanced math, calculus, statistics for AI."],
-["Outlier AI","AI Training","AI Trainer - Coding","$30/hr","https://outlier.ai","Python, Java, C++ code review for AI models."],
-["Outlier AI","AI Training","AI Trainer - Swahili","$22/hr","https://outlier.ai","Swahili translation and rating for AI."],
-["Outlier AI","AI Training","AI Trainer - Law","$28/hr","https://outlier.ai","Legal reasoning, contracts, law questions."],
-["Mercor","AI Training","AI Trainer - Swahili Speaker","$22/hr","https://mercor.com","Swahili speakers needed to train AI. Translate + rate."],
-["Mercor","AI Training","AI Expert - Finance","$35/hr","https://mercor.com","Finance experts to train AI on accounting, investing."],
-["Mercor","AI Training","AI Expert - Medicine","$35/hr","https://mercor.com","Doctors / nurses to train medical AI."],
-["Mercor","AI Training","AI Expert - Engineering","$32/hr","https://mercor.com","Engineers to train AI on technical problems."],
-["Mercor","AI Training","AI Trainer - General","$25/hr","https://mercor.com","General knowledge tasks, vetting via interview."],
-["Alignerr","AI Training","AI Trainer - General","$15/hr","https://alignerr
+        <!-- 5. Dynamic Job Cards Container -->
+        <div id="job-list" class="space-y-3.5">
+            <!-- Rendered by JavaScript -->
+        </div>
+
+        <!-- Dynamic Empty State -->
+        <div id="no-jobs" class="hidden text-center py-10 px-4 bg-white rounded-2xl border border-gray-200 shadow-sm my-4">
+            <p class="text-4xl mb-2">🔍</p>
+            <p class="text-gray-700 font-bold">No jobs found in this category.</p>
+            <p class="text-xs text-gray-500 mt-1">Check back later or browse all available listings.</p>
+        </div>
+
+        <!-- 7. Footer Text -->
+        <footer class="mt-8 text-center text-xs text-gray-400 leading-relaxed px-4 py-4 border-t border-gray-200/80">
+            <p class="mb-1">
+                POWRNET links to official sites. We don't hire. Those companies pay you via PayPal / Payoneer.
+            </p>
+            <p class="font-medium text-gray-500">
+                POWRNET 2026 • Made in Kenya 🇰🇪
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Alternative View: Learn AI -->
+    <main id="learn-content" class="hidden max-w-md mx-auto w-full px-3 pt-3 flex-1">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-200">
+            <h2 class="text-2xl font-black mb-2 flex items-center gap-2">🎓 AI Courses & Guides</h2>
+            <p class="text-xs text-gray-500 mb-6">Master in-demand AI skills to qualify for top USD-paying remote jobs.</p>
+            <div class="space-y-4">
+                <div class="p-4 rounded-2xl bg-blue-50 border border-blue-100">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Free Course</span>
+                    <h3 class="font-bold text-gray-900 mt-1">RLHF Prompt Engineering 101</h3>
+                    <p class="text-xs text-gray-600 mt-1">Learn how to evaluate and improve AI responses for Outlier & Remotasks benchmark tests.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-purple-50 border border-purple-100">
+                    <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Masterclass</span>
+                    <h3 class="font-bold text-gray-900 mt-1">Data Annotation & Bounding Boxes</h3>
+                    <p class="text-xs text-gray-600 mt-1">Hands-on practice for image segmentation and speech data tagging.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Payment Guide</span>
+                    <h3 class="font-bold text-gray-900 mt-1">PayPal & Payoneer Setup in Kenya</h3>
+                    <p class="text-xs text-gray-600 mt-1">Link your USD accounts and withdraw earnings directly to M-Pesa with low fees.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Alternative View: Post a Job Form -->
+    <main id="post-content" class="hidden max-w-md mx-auto w-full px-3 pt-3 flex-1">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-200">
+            <h2 class="text-2xl font-black mb-1 flex items-center gap-2">📝 Post a Remote Job</h2>
+            <p class="text-xs text-gray-500 mb-6">Connect with skilled remote talent across AI training, writing, and dev.</p>
+            <form onsubmit="handlePostJob(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">Company / Organization Name</label>
+                    <input type="text" required placeholder="e.g. Outlier AI" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandDark">
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">Job Title</label>
+                    <input type="text" required placeholder="e.g. Swahili AI Trainer" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandDark">
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">Category</label>
+                    <select id="post-category" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandDark bg-white">
+                        <option value="ai-training">AI Training</option>
+                        <option value="annotation">Annotation</option>
+                        <option value="freelancing">Freelancing</option>
+                        <option value="writing">Writing</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">Pay Rate ($)</label>
+                    <input type="text" required placeholder="e.g. $15 - $25 / hr" class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandDark">
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">Official Job Link (URL)</label>
+                    <input type="url" required placeholder="https://..." class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandDark">
+                </div>
+                <button type="submit" class="w-full bg-[#0B0F19] text-white py-3.5 rounded-xl font-bold text-sm shadow-md hover:bg-gray-800 transition-all">
+                    Submit Job Listing
+                </button>
+            </form>
+            <div id="post-success-msg" class="hidden mt-4 p-3 bg-green-50 text-green-700 rounded-xl text-center text-xs font-bold">
+                ✓ Job listing submitted successfully! Pending verification.
+            </div>
+        </div>
+    </main>
+
+    <!-- 8. Fixed Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200/80 px-2 py-2 z-50 shadow-lg">
+        <div class="max-w-md mx-auto grid grid-cols-3 gap-2">
+            <!-- Jobs Tab (Active by Default) -->
+            <button onclick="switchNav('jobs')" id="nav-jobs" class="nav-btn bg-[#0B0F19] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
+                <span>💼</span> JOBS
+            </button>
+            <!-- Learn AI Tab -->
+            <button onclick="switchNav('learn')" id="nav-learn" class="nav-btn bg-gray-100 text-gray-700 hover:bg-gray-200 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
+                <span>🎓</span> LEARN AI
+            </button>
+            <!-- Post a Job Tab -->
+            <button onclick="switchNav('post')" id="nav-post" class="nav-btn bg-gray-100 text-gray-700 hover:bg-gray-200 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
+                <span>📝</span> POST A JOB
+            </button>
+        </div>
+    </nav>
+
+    <!-- 6. Dynamic JavaScript Tab Filter & Data Logic -->
+    <script>
+        // Specific Job Datasets organized by exact categories requested
+        const jobsData = [
+            // WRITING
+            {
+                id: 1,
+                title: "AI Content Writer",
+                company: "Remotasks / Outlier AI",
+                category: "writing",
+                pay: "$18 - $24/hr",
+                type: "Remote • Hourly",
+                paymentMethod: "PayPal / AirTM",
+                description: "Write clear, high-quality prompts and evaluate draft model answers for accuracy, tone, and formatting.",
+                tags: ["LLM Writing", "Prompt Design", "English"],
+                url: "https://outlier.ai"
+            },
+            {
+                id: 2,
+                title: "Swahili Translator & Linguist",
+                company: "OneForma / Centific",
+                category: "writing",
+                pay: "$15 - $22/hr",
+                type: "Remote • Flexible",
+                paymentMethod: "Payoneer / PayPal",
+                description: "Translate complex English texts into natural Swahili and assess grammatical accuracy for machine translation models.",
+                tags: ["Swahili", "Translation", "Localization"],
+                url: "https://www.oneforma.com"
+            },
+            {
+                id: 3,
+                title: "Technical Writer & Reviewer",
+                company: "Draft.dev",
+                category: "writing",
+                pay: "$300 - $450/article",
+                type: "Freelance • Per Article",
+                paymentMethod: "PayPal / Payoneer",
+                description: "Create in-depth technical tutorials and documentation on software engineering topics for developer blogs.",
+                tags: ["Articles", "Documentation", "Tech"],
+                url: "https://draft.dev"
+            },
+
+            // FREELANCING
+            {
+                id: 4,
+                title: "Virtual Assistant (Admin & Social)",
+                company: "Fancy Hands / Upwork",
+                category: "freelancing",
+                pay: "$12 - $16/hr",
+                type: "Remote • Part-time",
+                paymentMethod: "PayPal",
+                description: "Manage client email inboxes, calendar scheduling, web research, and basic social media customer support.",
+                tags: ["Admin Support", "Scheduling", "Entry-level"],
+                url: "https://www.upwork.com"
+            },
+            {
+                id: 5,
+                title: "Full-Stack Web Developer",
+                company: "Toptal Freelance",
+                category: "freelancing",
+                pay: "$30 - $35/hr",
+                type: "Contract • Full-time",
+                paymentMethod: "Payoneer / Wire",
+                description: "Build clean, mobile-responsive web platforms using HTML, Tailwind CSS, JavaScript, and React.",
+                tags: ["Tailwind", "JavaScript", "React"],
+                url: "https://www.toptal.com"
+            },
+            {
+                id: 6,
+                title: "Graphic & UI Designer",
+                company: "Fiverr Pro Clients",
+                category: "freelancing",
+                pay: "$200 - $400/project",
+                type: "Gig Work",
+                paymentMethod: "PayPal / Payoneer",
+                description: "Design social media kits, modern brand logos, and mobile App interfaces using Figma and Photoshop.",
+                tags: ["Figma", "UI/UX", "Graphics"],
+                url: "https://www.fiverr.com"
+            },
+
+            // AI TRAINING
+            {
+                id: 7,
+                title: "RLHF AI Model Trainer",
+                company: "Scale AI / Outlier",
+                category: "ai-training",
+                pay: "$20 - $28/hr",
+                type: "Remote • Flexible",
+                paymentMethod: "PayPal / Direct",
+                description: "Review model responses, rank output quality, and perform Reinforcement Learning from Human Feedback (RLHF).",
+                tags: ["RLHF", "Model Ranking", "Logic"],
+                url: "https://scale.com"
+            },
+            {
+                id: 8,
+                title: "Kiswahili AI Specialist",
+                company: "Aligner AI",
+                category: "ai-training",
+                pay: "$16 - $20/hr",
+                type: "Remote • Part-time",
+                paymentMethod: "Payoneer",
+                description: "Train conversational AI chatbots to accurately understand East African cultural contexts and Swahili idioms.",
+                tags: ["Kiswahili", "NLP", "Culture AI"],
+                url: "https://aligner.ai"
+            },
+            {
+                id: 9,
+                title: "Math & Logic AI Evaluator",
+                company: "DataAnnotation.tech",
+                category: "ai-training",
+                pay: "$25 - $35/hr",
+                type: "Remote • Hourly",
+                paymentMethod: "PayPal",
+                description: "Verify mathematical derivations and coding solution steps submitted by reasoning AI models.",
+                tags: ["Mathematics", "Problem Solving", "Logic"],
+                url: "https://www.dataannotation.tech"
+            },
+
+            // ANNOTATION
+            {
+                id: 10,
+                title: "Data Annotator & Tagging Specialist",
+                company: "CloudFactory Kenya",
+                category: "annotation",
+                pay: "$10 - $14/hr",
+                type: "Remote • Full-time",
+                paymentMethod: "PayPal / Bank",
+                description: "Categorize text datasets, audit metadata tags, and maintain high accuracy standards for machine learning pipelines.",
+                tags: ["Text Tagging", "Data Entry", "Quality"],
+                url: "https://www.cloudfactory.com"
+            },
+            {
+                id: 11,
+                title: "Computer Vision Image Labeler",
+                company: "Remotasks / Scale",
+                category: "annotation",
+                pay: "$12 - $17/hr",
+                type: "Remote • Task-based",
+                paymentMethod: "AirTM / PayPal",
+                description: "Draw bounding boxes, polygons, and semantic segmentation masks around vehicles and pedestrians for autonomous systems.",
+                tags: ["Bounding Box", "Computer Vision", "Labeling"],
+                url: "https://www.remotasks.com"
+            },
+            {
+                id: 12,
+                title: "Audio Transcriber & Speech Tagging",
+                company: "Appen Global",
+                category: "annotation",
+                pay: "$11 - $15/hr",
+                type: "Remote • Flexible",
+                paymentMethod: "Payoneer",
+                description: "Listen to short audio clips, transcribe spoken dialogue verbatim, and label background noise artifacts.",
+                tags: ["Transcription", "Audio Tagging", "Listening"],
+                url: "https://appen.com"
+            }
+        ];
+
+        let activeCategory = 'all';
+
+        // Render Cards based on selected category
+        function renderJobs(category = 'all') {
+            const container = document.getElementById('job-list');
+            const noJobsEl = document.getElementById('no-jobs');
+            
+            const filtered = category === 'all' 
+                ? jobsData 
+                : jobsData.filter(job => job.category === category);
+
+            if (filtered.length === 0) {
+                container.innerHTML = '';
+                noJobsEl.classList.remove('hidden');
+                return;
+            }
+
+            noJobsEl.classList.add('hidden');
+
+            container.innerHTML = filtered.map(job => `
+                <div class="bg-white p-4.5 p-4 rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-md transition-all">
+                    <!-- Card Top Row -->
+                    <div class="flex items-start justify-between gap-2 mb-1.5">
+                        <div>
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">${escapeHtml(job.company)}</span>
+                            <h3 class="text-base font-extrabold text-gray-900 leading-snug">${escapeHtml(job.title)}</h3>
+                        </div>
+                        <span class="bg-emerald-50 text-emerald-700 text-xs font-black px-2.5 py-1 rounded-lg border border-emerald-100 whitespace-nowrap shrink-0">
+                            ${escapeHtml(job.pay)}
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xs text-gray-600 mb-2.5 leading-relaxed">
+                        ${escapeHtml(job.description)}
+                    </p>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-2 text-[11px] text-gray-500 mb-3">
+                        <span>📍 ${escapeHtml(job.type)}</span>
+                        <span>•</span>
+                        <span>💳 ${escapeHtml(job.paymentMethod)}</span>
+                    </div>
+
+                    <!-- Card Footer & Action -->
+                    <div class="flex items-center justify-between gap-2 pt-2.5 border-t border-gray-100">
+                        <div class="flex flex-wrap gap-1">
+                            ${job.tags.map(tag => `<span class="bg-gray-100 text-gray-600 text-[10px] font-medium px-2 py-0.5 rounded-md">${escapeHtml(tag)}</span>`).join('')}
+                        </div>
+                        <a href="${escapeHtml(job.url)}" target="_blank" rel="noopener noreferrer" 
+                           class="bg-[#0B0F19] hover:bg-black text-white text-xs font-bold px-4 py-1.5 rounded-xl transition-all flex items-center gap-1 shadow-sm shrink-0">
+                            Apply Now <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Category Tab Switcher
+        function filterJobs(category) {
+            activeCategory = category;
+
+            // Reset tab styling to inactive state
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => {
+                tab.className = "tab-btn bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all";
+            });
+
+            // Set chosen tab active styling
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.className = "tab-btn bg-[#0B0F19] text-white px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm border border-[#0B0F19] transition-all";
+            }
+
+            renderJobs(category);
+        }
+
+        // Bottom Navigation Switcher
+        function switchNav(view) {
+            const mainContent = document.getElementById('main-content');
+            const learnContent = document.getElementById('learn-content');
+            const postContent = document.getElementById('post-content');
+
+            // Hide all sections
+            mainContent.classList.add('hidden');
+            learnContent.classList.add('hidden');
+            postContent.classList.add('hidden');
+
+            // Reset bottom nav buttons
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.className = "nav-btn bg-gray-100 text-gray-700 hover:bg-gray-200 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all";
+            });
+
+            // Activate chosen view & bottom tab highlight
+            if (view === 'jobs') {
+                mainContent.classList.remove('hidden');
+                document.getElementById('nav-jobs').className = "nav-btn bg-[#0B0F19] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all";
+            } else if (view === 'learn') {
+                learnContent.classList.remove('hidden');
+                document.getElementById('nav-learn').className = "nav-btn bg-[#0B0F19] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all";
+            } else if (view === 'post') {
+                postContent.classList.remove('hidden');
+                document.getElementById('nav-post').className = "nav-btn bg-[#0B0F19] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all";
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle Post Job Submission Mockup
+        function handlePostJob(e) {
+            e.preventDefault();
+            const msg = document.getElementById('post-success-msg');
+            msg.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 4000);
+        }
+
+        // XSS Prevention helper
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Initial Load
+        window.onload = function() {
+            renderJobs('all');
+        };
+    </script>
+</body>
+</html>
+```
