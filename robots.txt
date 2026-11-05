@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://powrnet.github.io/powernet/sitemap.xml
