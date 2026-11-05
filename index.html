@@ -1,74 +1,308 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWRNET | Learn AI & Earn in Dollars</title>
-<meta name="description" content="Learn AI Training, Annotation, Freelancing & Writing. Get real AI jobs paying in Dollars.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="POWRNET | Learn AI & Earn in Dollars">
-<meta property="og:description" content="Learn AI Training, Annotation, Freelancing & Writing. Get real AI jobs paying in Dollars.">
-<meta property="og:url" content="https://powrnet.github.io/powernet/">
-<meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4712/4712107.png">
+
+<title>POWRNET | Real Jobs, AI Training & Learn AI</title>
+
+<meta name="description" content="Discover online jobs, AI training opportunities, free AI courses and practical artificial intelligence learning resources on POWRNET.">
+<meta name="keywords" content="online jobs, AI jobs, AI training, learn artificial intelligence, remote jobs, free AI courses">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#071b15">
+
+<link rel="canonical" href="https://powrnet.github.io/">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f6f7fb;color:#111;padding-bottom:90px}
-.page{display:none}.page.active{display:block}
-.header{background:linear-gradient(135deg,#7c3aed,#2563eb,#06b6d4);color:#fff;padding:28px 16px 24px;text-align:center;border-radius:0 0 24px 24px}
-.header h1{font-size:38px}.header h1 span{color:#facc15}
-.header p{margin-top:8px;font-size:14px;line-height:1.5}
-.wrap{padding:14px}
-.card{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.06);border-top:5px solid #7c3aed}
-.card.anno{border-top-color:#f59e0b}.card.free{border-top-color:#06b6d4}.card.write{border-top-color:#ec4899}
-.top{display:flex;gap:12px;align-items:center}
-.icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0}
-.purple{background:#7c3aed}.orange{background:#f59e0b}.cyan{background:#06b6d4}.pink{background:#ec4899}
-.top b{font-size:15px;display:block}.top small{color:#888;font-size:12px}
-.title{color:#1d4ed8;font-size:19px;font-weight:bold;margin:12px 0 6px;display:block;text-decoration:none;line-height:1.35}
-.desc{color:#555;font-size:14px;line-height:1.6}
-.tags{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.tags span{background:#ecfdf5;color:#047857;padding:7px 12px;border-radius:20px;font-size:13px;font-weight:bold}
-.tags span:last-child{background:#fef3c7;color:#92400e}
-.apply{display:block;background:#16a34a;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:bold;margin-top:12px;text-decoration:none}
-.apply.blue{background:#2563eb}
-.lesson{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:11px;margin:8px 0}
-.lesson b{font-size:14px}.lesson p{font-size:13px;color:#555;margin-top:4px;line-height:1.5}
-.filter{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
-.filter button{white-space:nowrap;border:none;background:#fff;padding:10px 16px;border-radius:25px;font-weight:bold;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.filter button.on{background:#111;color:#fff}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;padding:10px;gap:8px;border-top:1px solid #e2e8f0}
-.tabs button{flex:1;padding:13px;border:none;border-radius:14px;font-weight:bold;cursor:pointer;background:#f1f5f9}
-.tabs button.on{background:#111;color:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ font-family:Arial,sans-serif;
+ background:#071b15;color:white;
+ line-height:1.6;
+}
+header{
+ padding:18px 7%;
+ display:flex;justify-content:space-between;
+ align-items:center;background:#0c281e;
+ position:sticky;top:0;z-index:10;
+}
+.logo{font-size:25px;font-weight:bold;color:#42d69b}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#42d69b}
+.hero{
+ text-align:center;padding:75px 20px 55px;
+ background:linear-gradient(135deg,#103c2c,#071b15);
+}
+.hero h1{font-size:42px;margin-bottom:15px}
+.hero h1 span{color:#42d69b}
+.hero p{color:#c6d9d0;max-width:650px;margin:auto}
+.search{
+ margin:25px auto;max-width:600px;
+ display:flex;gap:8px;
+}
+.search input{
+ flex:1;padding:15px;border:0;border-radius:8px;
+ outline:none;min-width:0;
+}
+button,.btn{
+ background:#32c98e;color:#062016;
+ border:0;padding:13px 18px;border-radius:7px;
+ font-weight:bold;cursor:pointer;text-decoration:none;
+}
+section{padding:50px 7%}
+.heading{text-align:center;margin-bottom:30px}
+.heading h2{font-size:29px;color:#42d69b}
+.heading p{color:#b5c8bf}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:20px;
+}
+.card{
+ background:#103126;padding:23px;
+ border:1px solid #245341;border-radius:12px;
+}
+.card h3{margin-bottom:10px}
+.card p{color:#c2d4cb;font-size:14px;margin-bottom:17px}
+.card a{display:inline-block;margin-top:5px}
+.tag{color:#42d69b;font-size:12px;font-weight:bold}
+.jobs{background:#0a241b}
+.learn{background:#0d2c20}
+footer{
+ background:#06150f;text-align:center;
+ padding:30px;color:#9eb5a9;font-size:13px;
+}
+input:focus{outline:2px solid #42d69b}
+@media(max-width:650px){
+ header{align-items:flex-start;gap:12px;flex-direction:column}
+ nav{gap:12px}
+ .hero h1{font-size:32px}
+ .search{flex-direction:column}
+}
 </style>
 </head>
+
 <body>
-<div class="header"><h1>⚡ POWR<span>NET</span></h1><p>Learn AI • Get Real Jobs • Earn in <b style="color:#fde047">DOLLARS ($)</b><br>AI Training • Annotation • Freelancing • Writing</p></div>
-<div class="wrap">
-<div id="tab-learn" class="page active">
-<h2>🎓 Learn AI — Free</h2><p style="color:#888;font-size:13px;margin:4px 0 6px">Learn first (10 mins), then apply. Even if you know nothing.</p>
-<div class="card"><div class="top"><div class="icon purple">🤖</div><div><b>POWRNET Academy</b><small>powrnet.github.io • Learn</small></div></div><a class="title" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank">What is AI Training? Learn AI & Earn $20/hr</a><p class="desc">AI Training = You teach AI. Rate AI answers, write prompts, label images. Companies pay $15-$25/hr. No coding needed.</p><div class="lesson"><b>📖 Lesson 1: What is AI?</b><p>AI learns from humans. You are the teacher. Rate: Good vs Bad answer.</p></div><div class="lesson"><b>📖 Lesson 2: What is Annotation?</b><p>Annotation = Labelling. Draw box around a car. AI learns: This is a car.</p></div><div class="lesson"><b>📖 Lesson 3: How to Pass Tests</b><p>Read slowly. Be consistent. Never rush. Use good English.</p></div><div class="tags"><span>💰 $20/hr</span><span>⏱️ 10 Mins</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=what+is+ai+training+job+for+beginners" target="_blank">▶️ Watch Free Lesson</a></div>
-<div class="card anno"><div class="top"><div class="icon orange">🏷️</div><div><b>POWRNET Academy</b><small>powrnet.github.io • Learn</small></div></div><a class="title" href="https://www.remotasks.com" target="_blank">Learn Annotation — Label Images & Text for AI</a><p class="desc">Easiest AI job. Label Car, Person, Dog. Text: Positive / Negative. Practice free on Remotasks.</p><div class="tags"><span>💰 $15/hr</span><span>⏱️ Easy Start</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=how+to+do+data+annotation+remotasks+tutorial" target="_blank">▶️ Watch Annotation Tutorial</a></div>
-<div class="card free"><div class="top"><div class="icon cyan">💻</div><div><b>POWRNET Academy</b><small>powrnet.github.io • Learn</small></div></div><a class="title" href="https://www.upwork.com" target="_blank">Learn Freelancing — Upwork & Fiverr for Beginners</a><p class="desc">Sell your skill to US/UK clients. VA, Design, Data Entry. Create profile → Apply 10 jobs daily → Reply fast.</p><div class="tags"><span>💰 $15/hr</span><span>⏱️ First Client in 7 Days</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=how+to+get+first+job+on+upwork+beginner" target="_blank">▶️ Watch Upwork Tutorial</a></div>
-<div class="card write"><div class="top"><div class="icon pink">✍️</div><div><b>POWRNET Academy</b><small>powrnet.github.io • Learn</small></div></div><a class="title" href="https://www.textbroker.com" target="_blank">Learn Writing — Blog & SEO Writing $15 Per Article</a><p class="desc">Write 500-word articles for $15. Title + Intro + 3 Headings + Conclusion. Simple English.</p><div class="tags"><span>💰 $15/Article</span><span>⏱️ No Experience</span></div><a class="apply blue" href="https://www.youtube.com/results?search_query=how+to+write+blog+article+for+beginners+earn+money" target="_blank">▶️ Watch Writing Tutorial</a></div>
+
+<header>
+ <div class="logo">POWRNET</div>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#jobs">Find Jobs</a>
+  <a href="#training">AI Training</a>
+  <a href="#learn">Learn AI</a>
+  <a href="#resources">AI Resources</a>
+ </nav>
+</header>
+
+<div class="hero" id="home">
+ <h1>Discover Opportunities.<br><span>Learn AI. Build Your Future.</span></h1>
+ <p>
+ Your destination for discovering genuine online opportunities,
+ AI training programmes and artificial intelligence education.
+ </p>
+
+ <div class="search">
+  <input id="searchInput" placeholder="Search jobs, training or AI courses...">
+  <button onclick="searchSite()">Search</button>
+ </div>
 </div>
-<div id="tab-jobs" class="page">
-<h2>💼 Real Jobs — Apply Now</h2><p style="color:#888;font-size:13px;margin:4px 0 6px">Tap <b>Apply Now</b> → Goes to OFFICIAL site.</p>
-<div class="filter"><button class="on" onclick="filterJobs('All',this)">All</button><button onclick="filterJobs('AI',this)">AI Training</button><button onclick="filterJobs('Annotation',this)">Annotation</button><button onclick="filterJobs('Freelancing',this)">Freelancing</button><button onclick="filterJobs('Writing',this)">Writing</button></div>
-<div id="jobsList"></div>
-</div>
-<div style="text-align:center;color:#999;font-size:12px;padding:10px">POWRNET 2026 • Learn AI • Real Jobs • Made in Kenya 🇰🇪</div>
-</div>
-<div class="tabs"><button id="btn-learn" class="on" onclick="showTab('learn')">🎓 LEARN</button><button id="btn-jobs" onclick="showTab('jobs')">💼 JOBS</button></div>
+
+<section class="jobs" id="jobs">
+ <div class="heading">
+  <h2>Find Real Jobs</h2>
+  <p>Explore job opportunities and visit original application websites.</p>
+ </div>
+
+ <div class="grid searchable">
+
+  <div class="card">
+   <span class="tag">REMOTE WORK</span>
+   <h3>Remote Jobs</h3>
+   <p>Explore remote job vacancies across different industries.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.google.com/search?q=remote+jobs+apply">Find Jobs</a>
+  </div>
+
+  <div class="card">
+   <span class="tag">TECHNOLOGY</span>
+   <h3>Technology Jobs</h3>
+   <p>Discover software, IT support and technology opportunities.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.google.com/search?q=technology+jobs+careers">Explore</a>
+  </div>
+
+  <div class="card">
+   <span class="tag">AI OPPORTUNITIES</span>
+   <h3>AI Related Jobs</h3>
+   <p>Explore artificial intelligence and data-related vacancies.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.google.com/search?q=AI+jobs+careers+apply">Explore</a>
+  </div>
+
+  <div class="card">
+   <span class="tag">FREELANCE</span>
+   <h3>Freelance Work</h3>
+   <p>Find independent projects and freelance opportunities.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.upwork.com/">Visit Upwork</a>
+  </div>
+
+  <div class="card">
+   <span class="tag">GLOBAL</span>
+   <h3>Indeed Jobs</h3>
+   <p>Search job opportunities in different countries.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.indeed.com/">Find Opportunities</a>
+  </div>
+
+  <div class="card">
+   <span class="tag">PROFESSIONAL</span>
+   <h3>LinkedIn Jobs</h3>
+   <p>Discover professional opportunities and vacancies.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.linkedin.com/jobs/">Explore Jobs</a>
+  </div>
+
+ </div>
+</section>
+
+<section id="training">
+ <div class="heading">
+  <h2>AI Training Opportunities</h2>
+  <p>Discover real artificial intelligence learning programmes.</p>
+ </div>
+
+ <div class="grid searchable">
+
+  <div class="card">
+   <h3>Google AI Learning</h3>
+   <p>Explore AI courses and practical learning resources.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://grow.google/ai/">Start Learning</a>
+  </div>
+
+  <div class="card">
+   <h3>IBM SkillsBuild</h3>
+   <p>Explore AI, technology and professional skills training.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://skillsbuild.org/">Explore Training</a>
+  </div>
+
+  <div class="card">
+   <h3>Microsoft Learn</h3>
+   <p>Learn AI, cloud computing and technical skills.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://learn.microsoft.com/training/">Start Training</a>
+  </div>
+
+  <div class="card">
+   <h3>Elements of AI</h3>
+   <p>Discover an introductory artificial intelligence course.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.elementsofai.com/">Take the Course</a>
+  </div>
+
+ </div>
+</section>
+
+<section class="learn" id="learn">
+ <div class="heading">
+  <h2>Learn Artificial Intelligence</h2>
+  <p>Build your knowledge from beginner to advanced levels.</p>
+ </div>
+
+ <div class="grid searchable">
+
+  <div class="card">
+   <h3>Introduction to AI</h3>
+   <p>Understand artificial intelligence and how it works.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.ibm.com/think/topics/artificial-intelligence">Learn More</a>
+  </div>
+
+  <div class="card">
+   <h3>Prompt Engineering</h3>
+   <p>Learn how to communicate effectively with AI systems.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.promptingguide.ai/">Start Learning</a>
+  </div>
+
+  <div class="card">
+   <h3>Machine Learning</h3>
+   <p>Understand how machines learn from data.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://developers.google.com/machine-learning">Learn More</a>
+  </div>
+
+  <div class="card">
+   <h3>Generative AI</h3>
+   <p>Discover how AI generates text, images and other content.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://www.cloudskillsboost.google/">Explore</a>
+  </div>
+
+ </div>
+</section>
+
+<section id="resources">
+ <div class="heading">
+  <h2>AI Resources</h2>
+  <p>Discover useful tools and educational platforms.</p>
+ </div>
+
+ <div class="grid searchable">
+
+  <div class="card">
+   <h3>ChatGPT</h3>
+   <p>Explore AI assistance, research and productivity.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://chatgpt.com/">Visit Website</a>
+  </div>
+
+  <div class="card">
+   <h3>Google Gemini</h3>
+   <p>Explore Google's AI assistant.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://gemini.google.com/">Visit Website</a>
+  </div>
+
+  <div class="card">
+   <h3>Hugging Face</h3>
+   <p>Explore AI models, datasets and community projects.</p>
+   <a class="btn" target="_blank" rel="noopener"
+   href="https://huggingface.co/">Explore</a>
+  </div>
+
+ </div>
+</section>
+
+<footer>
+ <h2 style="color:#42d69b">POWRNET</h2>
+ <p>Discover Jobs. Learn AI. Build Your Future.</p>
+ <p>Always verify job requirements and eligibility before applying.
+ Never pay someone to guarantee you a job.</p>
+ <p>© 2026 POWRNET. All rights reserved.</p>
+</footer>
+
 <script>
-var jobs=[
-["DataAnnotation","dataannotation.tech","AI Trainer - DataAnnotation | Earn $20/hr","Rate AI answers, write prompts. Top paying AI trainer site.","$20 / Hour","AI Training","https://www.dataannotation.tech","🤖","purple",""],
-["Remotasks","remotasks.com","AI Trainer - Remotasks | $15/hr","Image labelling, Lidar tasks. Free training inside. Most popular in Kenya.","$15 / Hour","AI Training","https://www.remotasks.com","🤖","purple",""],
-["Outlier AI","outlier.ai","AI Trainer - Outlier AI | $25/hr","Writing, math, coding AI tasks. Flexible hours.","$25 / Hour","AI Training","https://outlier.ai","🤖","purple",""],
-["Mercor","mercor.com","AI Trainer - Mercor Swahili | $22/hr","Swahili speakers needed to train AI. Translate + rate answers.","$22 / Hour","AI Training","https://mercor.com","🤖","purple",""],
-["Alignerr","alignerr.com","AI Trainer - Alignerr | $15/hr","Rate AI, check answers. No experience needed.","$15 / Hour","AI Training","https://alignerr.com","🤖","purple",""],
-["Scale AI","scale.com","Annotation - Scale AI | $18/hr","Label images for ChatGPT, self-driving cars.","$18 / Hour","Annotation","https://scale.com","🏷️","orange","anno"],
-["Appen","appen.com","Annotation - Appen | $12/hr","Text, image, voice annotation. Oldest AI data company.","$12 / Hour","Annotation","https://appen.com","🏷️","orange","anno"],
-["Sama","sama.com","Annotation - Sama AI | $13/hr","AI data labelling. Hiring in Kenya.","$13 / Hour","Annotation","https://www.sama.com","🏷️","orange","anno"],
-["Upwork","upwork.com","Freelancing - Upwork VA | $15/hr","Virtual Assistant, data entry for US clients.","$15 / Hour","Freelancing","https://www.upwork.com","💻","cyan","free"],
-["Fiverr","fiverr.com","Freelancing - Fiverr | $50/Gig","Sell logo, video editing, writing gigs.","$50 / Gig","Freelancing","https://www.fiverr.com","💻","cyan","free"],
-["Rev","rev.com","Freelancing - Rev Transcription | $15/hr","Listen to audio
+function searchSite(){
+ const query=document.getElementById("searchInput").value.toLowerCase().trim();
+ const cards=document.querySelectorAll(".searchable .card");
+
+ cards.forEach(card=>{
+  card.style.display=card.innerText.toLowerCase().includes(query)
+   ? "block":"none";
+ });
+
+ if(!query){
+  cards.forEach(card=>card.style.display="block");
+ }
+}
+
+document.getElementById("searchInput").addEventListener("input",searchSite);
+</script>
+
+</body>
+</html>
